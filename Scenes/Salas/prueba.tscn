@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ct314u7f57x3v"]
 
-[ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/Player/player.tscn" id="2_g4thu"]
+[ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="2_g4thu"]
 [ext_resource type="TileSet" uid="uid://exr0kbybk0o" path="res://Assets/Tilesets/pruebatile_set.tres" id="2_nskf2"]
 
 [node name="Prueba" type="Node2D" unique_id=1072542583]
