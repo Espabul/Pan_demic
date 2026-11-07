@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://07m5ayr1p8ih"]
+
+[ext_resource type="Texture2D" uid="uid://f7ag5us5odxt" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0000.png" id="1_hexjo"]
+[ext_resource type="Texture2D" uid="uid://c1t3h2qilyydw" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0001.png" id="2_3eqeo"]
+[ext_resource type="Texture2D" uid="uid://bdckkc86mvd3l" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0003.png" id="3_p0bux"]
+[ext_resource type="Texture2D" uid="uid://cstwljwofa1af" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0004.png" id="4_hkc6e"]
+[ext_resource type="Texture2D" uid="uid://cnpd5np31xib7" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0005.png" id="5_7u2p0"]
+[ext_resource type="Texture2D" uid="uid://bhblg2v7go24y" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0006.png" id="6_hnbqb"]
+[ext_resource type="Texture2D" uid="uid://dtmvh46v7q4wv" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0007.png" id="7_ahtu4"]
+[ext_resource type="Texture2D" uid="uid://g67d5nolfag5" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0008.png" id="8_s7dyo"]
+[ext_resource type="Texture2D" uid="uid://cckm17wus6owp" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0009.png" id="9_hw7am"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w0r3"]
+size = Vector2(221, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvt60"]
+atlas = ExtResource("1_hexjo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wtll"]
+atlas = ExtResource("2_3eqeo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj812"]
+atlas = ExtResource("3_p0bux")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l77ex"]
+atlas = ExtResource("4_hkc6e")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtp5y"]
+atlas = ExtResource("5_7u2p0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55etf"]
+atlas = ExtResource("6_hnbqb")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1j5n"]
+atlas = ExtResource("7_ahtu4")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uahlu"]
+atlas = ExtResource("8_s7dyo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp683"]
+atlas = ExtResource("9_hw7am")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w0r3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvt60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wtll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj812")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l77ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtp5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55etf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1j5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uahlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp683")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 9.0
+}]
+
+[node name="caterpanillar" type="CharacterBody2D" unique_id=1768466993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811172143]
+position = Vector2(-2.5, 1)
+shape = SubResource("RectangleShape2D_8w0r3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1373274088]
+sprite_frames = SubResource("SpriteFrames_8w0r3")
+animation = &"move"
