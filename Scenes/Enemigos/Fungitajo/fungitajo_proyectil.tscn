@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dk2slwv8d154s"]
+
+[ext_resource type="Texture2D" uid="uid://b0mky1bmx4bss" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_impacto_0001.PNG" id="1_g71py"]
+[ext_resource type="Script" uid="uid://opimsjm0dvbc" path="res://Scripts/Enemigos/Fungitajo/Proyectil/fungitajo_proyectil.gd" id="1_nd631"]
+[ext_resource type="Texture2D" uid="uid://1amn4c16jygr" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_impacto_0002.PNG" id="2_nd631"]
+[ext_resource type="Texture2D" uid="uid://cpu6td7lc00ps" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_impacto_0003.PNG" id="3_opc70"]
+[ext_resource type="Texture2D" uid="uid://omqpckso6swe" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_impacto_0004.PNG" id="4_et4wq"]
+[ext_resource type="Texture2D" uid="uid://crf7th14dww6e" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_0000.PNG" id="5_f1rhl"]
+[ext_resource type="Texture2D" uid="uid://dc8vp0kqsfk21" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_0001.PNG" id="6_xefhu"]
+[ext_resource type="Texture2D" uid="uid://l8g50en8jyab" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_0002.PNG" id="7_peedh"]
+[ext_resource type="Texture2D" uid="uid://ckmeqnc648m5f" path="res://Assets/Sprites/Fungitajo/Fungitajo_proyectil/Fungitajo_proyectil_impacto_0000.PNG" id="8_7utlw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58ocd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g71py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nd631")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_opc70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_et4wq")
+}],
+"loop": 0,
+"name": &"Impacto",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f1rhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xefhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_peedh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7utlw")
+}],
+"loop": 1,
+"name": &"Volar",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6xtk"]
+radius = 36.013885
+
+[node name="Fungitajo_Proyectil" type="Area2D" unique_id=436198129]
+position = Vector2(949, 288)
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_nd631")
+direccion = Vector2(1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=990108040]
+sprite_frames = SubResource("SpriteFrames_58ocd")
+animation = &"Impacto"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544652004]
+position = Vector2(-5, 4)
+scale = Vector2(1.1999995, 0.679999)
+shape = SubResource("CircleShape2D_r6xtk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

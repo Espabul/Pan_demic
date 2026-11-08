@@ -22,6 +22,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="juego_gamejam"
 
+[global_group]
+
+player=""
+
 [input]
 
 "mover izquierda"={

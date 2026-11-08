@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
 size = Vector2(142, 176)
 
-[node name="Player" type="CharacterBody2D" unique_id=1080565387]
+[node name="Player" type="CharacterBody2D" unique_id=1080565387 groups=["player"]]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123497989]

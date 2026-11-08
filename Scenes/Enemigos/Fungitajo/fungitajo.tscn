@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://dreftishfbwx6"]
+
+[ext_resource type="Script" uid="uid://fq0b6e5ffxsd" path="res://Scripts/Enemigos/Fungitajo/Fungitajo/fungitajo.gd" id="1_4d8di"]
+[ext_resource type="Texture2D" uid="uid://cd1kv0att12te" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0000.PNG" id="1_56c72"]
+[ext_resource type="PackedScene" uid="uid://dk2slwv8d154s" path="res://Scenes/Enemigos/Fungitajo/fungitajo_proyectil.tscn" id="2_0roii"]
+[ext_resource type="Texture2D" uid="uid://18vgfjptmw7h" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0001.PNG" id="2_4d8di"]
+[ext_resource type="Texture2D" uid="uid://dlikibtgcxcax" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0002.PNG" id="3_0roii"]
+[ext_resource type="Texture2D" uid="uid://bt3hnu3wgtyfi" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0003.PNG" id="4_ml8p2"]
+[ext_resource type="Texture2D" uid="uid://dekvjbo02n74d" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0004.PNG" id="5_augox"]
+[ext_resource type="Texture2D" uid="uid://l7jg8u4h4u1a" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0005.PNG" id="6_x57x7"]
+[ext_resource type="Texture2D" uid="uid://bv61f362ymljo" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0006.PNG" id="7_3wskg"]
+[ext_resource type="Texture2D" uid="uid://bwjo7s1ho1ec0" path="res://Assets/Sprites/Fungitajo/Fungitajo_attack/Fungitajo_attack_0007.PNG" id="8_6q8lt"]
+[ext_resource type="Texture2D" uid="uid://cupw873hf24vh" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0000.PNG" id="9_nlysp"]
+[ext_resource type="Texture2D" uid="uid://ct3e4f1esnbfw" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0001.PNG" id="10_6yu73"]
+[ext_resource type="Texture2D" uid="uid://cg1jdwrhax5dm" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0002.PNG" id="11_s3rn6"]
+[ext_resource type="Texture2D" uid="uid://cdbwa7trperby" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0003.PNG" id="12_17glb"]
+[ext_resource type="Texture2D" uid="uid://cfrq771pyha2" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0004.PNG" id="13_1gqin"]
+[ext_resource type="Texture2D" uid="uid://bww4nf8h3w1p5" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0005.PNG" id="14_s4bv3"]
+[ext_resource type="Texture2D" uid="uid://brcn8wp6c6nc2" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0006.PNG" id="15_cr2er"]
+[ext_resource type="Texture2D" uid="uid://ckjqoyedr8yh5" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0007.PNG" id="16_ytg7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56c72"]
+size = Vector2(163, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd631"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_56c72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_56c72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4d8di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4d8di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0roii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0roii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ml8p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ml8p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_augox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_augox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x57x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x57x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3wskg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3wskg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6q8lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6q8lt")
+}],
+"loop": 0,
+"name": &"Attack",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_nlysp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nlysp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6yu73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6yu73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s3rn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s3rn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_17glb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_17glb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1gqin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1gqin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s4bv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s4bv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cr2er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cr2er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ytg7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ytg7o")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60dfp"]
+radius = 44.058056
+
+[node name="Fungitajo" type="StaticBody2D" unique_id=1545032201]
+collision_layer = 2
+script = ExtResource("1_4d8di")
+proyectil_escena = ExtResource("2_0roii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014781746]
+position = Vector2(13.5, 5)
+shape = SubResource("RectangleShape2D_56c72")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=164897210]
+sprite_frames = SubResource("SpriteFrames_nd631")
+animation = &"Attack"
+frame = 15
+frame_progress = 1.0
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=541639399]
+position = Vector2(-32, -32)
+
+[node name="Timer" type="Timer" parent="." unique_id=1711826081]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1459502005]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=347912807]
+scale = Vector2(31.999998, 4.2800016)
+shape = SubResource("CircleShape2D_60dfp")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
