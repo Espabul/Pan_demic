@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dth2ljmmqgu1s"]
+
+[ext_resource type="SpriteFrames" uid="uid://bsy8humoy4vnn" path="res://Scenes/player/sprite_frames_personaje.tres" id="2_eo61r"]
+[ext_resource type="Script" uid="uid://b4p14u2vbqkov" path="res://Scripts/state_machine.gd" id="3_6upyo"]
+[ext_resource type="Script" uid="uid://bx7i5tpufnn6n" path="res://Scripts/Player_states/idle_state.gd" id="4_xxarj"]
+[ext_resource type="Script" uid="uid://ladi5jou5kti" path="res://Scripts/Player_states/jump_state.gd" id="5_6k3cy"]
+[ext_resource type="Script" uid="uid://bybe5e7vp2sxj" path="res://Scripts/Player_states/walk_state.gd" id="6_kd672"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
+size = Vector2(142, 176)
+
+[node name="Player" type="CharacterBody2D" unique_id=1080565387]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123497989]
+position = Vector2(-6, 1)
+shape = SubResource("RectangleShape2D_w7mgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=577541438]
+sprite_frames = ExtResource("2_eo61r")
+animation = &"dash"
+
+[node name="StateMachine" type="Node" parent="." unique_id=884089471 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_6upyo")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://b4p14u2vbqkov"
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1499015714]
+script = ExtResource("4_xxarj")
+metadata/_custom_type_script = "uid://bx7i5tpufnn6n"
+
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=2115760261]
+script = ExtResource("5_6k3cy")
+metadata/_custom_type_script = "uid://ladi5jou5kti"
+
+[node name="WalkState" type="Node" parent="StateMachine" unique_id=466739892]
+script = ExtResource("6_kd672")
+metadata/_custom_type_script = "uid://bybe5e7vp2sxj"
