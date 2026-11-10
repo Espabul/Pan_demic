@@ -140,6 +140,7 @@ script = ExtResource("1_4d8di")
 proyectil_escena = ExtResource("2_0roii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014781746]
+light_mask = 2
 position = Vector2(13.5, 5)
 shape = SubResource("RectangleShape2D_56c72")
 

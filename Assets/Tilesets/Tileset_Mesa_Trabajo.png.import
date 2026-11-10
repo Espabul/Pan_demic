@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxtlbbkyetalp"
-path="res://.godot/imported/Player_walk_0002.png-4a92b768d980efdb5131eb293971fcb1.ctex"
+uid="uid://cpc7p4k3e203k"
+path="res://.godot/imported/Tileset_Mesa_Trabajo.png-3a106d04481c1ef61fd46db3093fd207.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/player/player_run/Player_walk_0002.png"
-dest_files=["res://.godot/imported/Player_walk_0002.png-4a92b768d980efdb5131eb293971fcb1.ctex"]
+source_file="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png"
+dest_files=["res://.godot/imported/Tileset_Mesa_Trabajo.png-3a106d04481c1ef61fd46db3093fd207.ctex"]
 
 [params]
 

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://l2r370u51jhc"]
+
+[ext_resource type="Texture2D" uid="uid://bcem3ioxy7fp" path="res://Assets/Sprites/player/Proyectil flojo v1/Proyectil_flojoV1_0000.png" id="1_unune"]
+[ext_resource type="Texture2D" uid="uid://miej3tiyompv" path="res://Assets/Sprites/player/Proyectil flojo v1/Proyectil_flojoV1_0001.png" id="2_gvwpc"]
+[ext_resource type="Texture2D" uid="uid://8l2ti3ojb4xe" path="res://Assets/Sprites/player/Proyectil flojo v1/Proyectil_flojoV1_0002.png" id="3_aj8j4"]
+[ext_resource type="Texture2D" uid="uid://g1g7cvkawj8j" path="res://Assets/Sprites/player/Proyectil flojo v1/Proyectil_flojoV1_0003.png" id="4_ybg1d"]
+[ext_resource type="Script" uid="uid://b4kxxwqnnd8h6" path="res://Scripts/Player_states/proyectil_flojo.gd" id="5_gvwpc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_unune")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gvwpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aj8j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ybg1d")
+}],
+"loop": 1,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfun"]
+radius = 44.0
+height = 88.0
+
+[node name="Proyectil_flojo" type="AnimatedSprite2D" unique_id=1466051505]
+sprite_frames = SubResource("SpriteFrames_vbfun")
+animation = &"shoot"
+frame = 1
+frame_progress = 0.18329994
+script = ExtResource("5_gvwpc")
+
+[node name="bullet_time" type="Timer" parent="." unique_id=1385289465]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="area_hitbox" type="Area2D" parent="." unique_id=2022551147]
+
+[node name="hitbox" type="CollisionShape2D" parent="area_hitbox" unique_id=1689352182]
+shape = SubResource("CapsuleShape2D_vbfun")
+
+[connection signal="timeout" from="bullet_time" to="." method="_on_bullet_time_timeout"]

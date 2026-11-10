@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt2rwu6v0keeg"
-path="res://.godot/imported/Player_walk_0001.png-5eb07d037826cb441a1315ef44ddff98.ctex"
+uid="uid://dhnlm2dyv3m27"
+path="res://.godot/imported/Player_punch_0003.png-c7007afe563e1b22e9beb0a8dede0592.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/player/player_run/Player_walk_0001.png"
-dest_files=["res://.godot/imported/Player_walk_0001.png-5eb07d037826cb441a1315ef44ddff98.ctex"]
+source_file="res://Assets/Sprites/player/player_attack/Player_punch_0003.png"
+dest_files=["res://.godot/imported/Player_punch_0003.png-c7007afe563e1b22e9beb0a8dede0592.ctex"]
 
 [params]
 

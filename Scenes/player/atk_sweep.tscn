@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cqcms6y2ormnc"]
+
+[ext_resource type="Texture2D" uid="uid://ktjnif3l4wi4" path="res://Assets/Sprites/player/Player_atk_sweep/Punch_Sweep_0000.png" id="1_5a0d0"]
+[ext_resource type="Texture2D" uid="uid://x68ak8po8woi" path="res://Assets/Sprites/player/Player_atk_sweep/Punch_Sweep_0001.png" id="2_gfal5"]
+[ext_resource type="Texture2D" uid="uid://bhbp1am4woyoq" path="res://Assets/Sprites/player/Player_atk_sweep/Punch_Sweep_0002.png" id="3_1fwpx"]
+[ext_resource type="Texture2D" uid="uid://bpcyy4smbmsbf" path="res://Assets/Sprites/player/Player_atk_sweep/Punch_Sweep_0003.png" id="4_n5dy3"]
+[ext_resource type="Script" uid="uid://b40r4fyye7iou" path="res://Scripts/Player_states/atk_sweep.gd" id="5_gfal5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5a0d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_5a0d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfal5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfal5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1fwpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n5dy3")
+}],
+"loop": 0,
+"name": &"sweep",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ohoec"]
+radius = 57.0
+height = 226.0
+
+[node name="AttackSprite_Player" type="AnimatedSprite2D" unique_id=58880257]
+sprite_frames = SubResource("SpriteFrames_vbfun")
+animation = &"sweep"
+autoplay = "sweep"
+frame_progress = 0.3014351
+script = ExtResource("5_gfal5")
+
+[node name="atk_time" type="Timer" parent="." unique_id=759245134]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1435104527]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=69309219]
+position = Vector2(-90, 5)
+shape = SubResource("CapsuleShape2D_ohoec")
+
+[connection signal="timeout" from="atk_time" to="." method="_on_atk_time_timeout"]

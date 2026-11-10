@@ -7,7 +7,8 @@ func enter():
 	print("Entering State Jump")
 	var character = state_machine.get_parent()
 	character.velocity.y = -1400
-	
+	#animacion
+	character.animacion.play("jump")
 	
 
 
@@ -16,17 +17,28 @@ func physics_update(delta: float):
 	
 	
 	#gravedad
-	character.velocity.y += 2000 * delta
+	character.velocity.y += character.gravedad * delta
 	
 	#movimiento horizontal
 	var direction = Input.get_axis("mover izquierda", "mover_derecha")
 	character.velocity.x = direction * 400
 	
+	if direction != 0:
+		character.animacion.flip_h = direction < 0
+	
 	character.move_and_slide()
 	
-	#volver al estado apropiado al aterrizar
-	if character.is_on_floor():
-		if direction !=0:
-			state_machine.change_state("walkstate")
-		else:
-			state_machine.change_state("idlestate")
+	#volver al estado apropiado al comenzar la bajada
+	if character.velocity.y >= 0 and not character.animacion.is_playing():
+		state_machine.change_state("fallstate")
+	
+	
+func handle_input(event: InputEvent):
+	var character = state_machine.get_parent()
+	if Input.is_action_just_pressed("disparo") and character.can_shoot:
+		state_machine.change_state("disparojumpstate")
+	elif Input.is_action_just_pressed("dash"):
+		state_machine.change_state("dashstate")
+	elif Input.is_action_just_pressed("ataque") and character.can_atk:
+		state_machine.change_state("ataquestate")
+	

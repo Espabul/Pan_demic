@@ -16,10 +16,8 @@ func exit():
 
 
 
-
 func update(delta: float):
 	pass
-
 
 
 

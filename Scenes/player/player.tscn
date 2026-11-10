@@ -1,24 +1,34 @@
 [gd_scene format=3 uid="uid://dth2ljmmqgu1s"]
 
+[ext_resource type="Script" uid="uid://cnfohfpsk73se" path="res://Scripts/player.gd" id="1_6upyo"]
 [ext_resource type="SpriteFrames" uid="uid://bsy8humoy4vnn" path="res://Scenes/player/sprite_frames_personaje.tres" id="2_eo61r"]
 [ext_resource type="Script" uid="uid://b4p14u2vbqkov" path="res://Scripts/state_machine.gd" id="3_6upyo"]
 [ext_resource type="Script" uid="uid://bx7i5tpufnn6n" path="res://Scripts/Player_states/idle_state.gd" id="4_xxarj"]
 [ext_resource type="Script" uid="uid://ladi5jou5kti" path="res://Scripts/Player_states/jump_state.gd" id="5_6k3cy"]
 [ext_resource type="Script" uid="uid://bybe5e7vp2sxj" path="res://Scripts/Player_states/walk_state.gd" id="6_kd672"]
+[ext_resource type="Script" uid="uid://c6kwlswuh3tij" path="res://Scripts/Player_states/fall_state.gd" id="7_xxarj"]
+[ext_resource type="Script" uid="uid://b6dwxent0xrnq" path="res://Scripts/Player_states/dash_state.gd" id="8_6k3cy"]
+[ext_resource type="Script" uid="uid://dagcoq4ts2vci" path="res://Scripts/Player_states/ataque_state.gd" id="9_uawwb"]
+[ext_resource type="Script" uid="uid://45wh3i52nuu2" path="res://Scripts/Player_states/disparo_state.gd" id="10_ag54m"]
+[ext_resource type="Script" uid="uid://dntcffy2thel3" path="res://Scripts/Player_states/falldisparo_state.gd" id="11_g7b1g"]
+[ext_resource type="Script" uid="uid://wcrjkikhe8kp" path="res://Scripts/Player_states/disparojump_state.gd" id="12_h0khc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
-size = Vector2(142, 176)
+size = Vector2(138, 142)
 
-[node name="Player" type="CharacterBody2D" unique_id=1080565387 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1080565387]
 collision_layer = 4
+script = ExtResource("1_6upyo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123497989]
-position = Vector2(-6, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123497989 groups=["player"]]
+light_mask = 4
+position = Vector2(-8, 5)
 shape = SubResource("RectangleShape2D_w7mgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=577541438]
+position = Vector2(-6, -11)
 sprite_frames = ExtResource("2_eo61r")
-animation = &"dash"
+animation = &"attack mele"
 
 [node name="StateMachine" type="Node" parent="." unique_id=884089471 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_6upyo")
@@ -36,3 +46,51 @@ metadata/_custom_type_script = "uid://ladi5jou5kti"
 [node name="WalkState" type="Node" parent="StateMachine" unique_id=466739892]
 script = ExtResource("6_kd672")
 metadata/_custom_type_script = "uid://bybe5e7vp2sxj"
+
+[node name="FallState" type="Node" parent="StateMachine" unique_id=47003061]
+script = ExtResource("7_xxarj")
+metadata/_custom_type_script = "uid://c6kwlswuh3tij"
+
+[node name="DashState" type="Node" parent="StateMachine" unique_id=1853134497]
+script = ExtResource("8_6k3cy")
+metadata/_custom_type_script = "uid://b6dwxent0xrnq"
+
+[node name="AtaqueState" type="Node" parent="StateMachine" unique_id=167703344]
+script = ExtResource("9_uawwb")
+metadata/_custom_type_script = "uid://dagcoq4ts2vci"
+
+[node name="DisparoState" type="Node" parent="StateMachine" unique_id=1003951195]
+script = ExtResource("10_ag54m")
+metadata/_custom_type_script = "uid://45wh3i52nuu2"
+
+[node name="DisparofallState" type="Node" parent="StateMachine" unique_id=742147918]
+script = ExtResource("11_g7b1g")
+metadata/_custom_type_script = "uid://dntcffy2thel3"
+
+[node name="DisparojumpState" type="Node" parent="StateMachine" unique_id=1206899077]
+script = ExtResource("12_h0khc")
+metadata/_custom_type_script = "uid://wcrjkikhe8kp"
+
+[node name="dashtimer" type="Timer" parent="." unique_id=629045943]
+one_shot = true
+
+[node name="dash_cooldowntimer" type="Timer" parent="." unique_id=1134696972]
+one_shot = true
+
+[node name="atk_cooldowntimer" type="Timer" parent="." unique_id=1630399806]
+wait_time = 0.5
+one_shot = true
+
+[node name="shoot_timer" type="Timer" parent="." unique_id=318674477]
+wait_time = 0.6
+one_shot = true
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1765017090]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=1274670034]
+
+[connection signal="timeout" from="dash_cooldowntimer" to="." method="_on_dash_cooldowntimer_timeout"]
+[connection signal="timeout" from="atk_cooldowntimer" to="." method="_on_atk_cooldowntimer_timeout"]
+[connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]

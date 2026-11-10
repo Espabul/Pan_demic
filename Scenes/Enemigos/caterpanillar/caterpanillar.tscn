@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://qheuo3qvasx0"]
+
+[ext_resource type="Script" uid="uid://cddkylnypx05l" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.gd" id="1_kn05t"]
+[ext_resource type="Texture2D" uid="uid://f7ag5us5odxt" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0000.png" id="1_yb1dv"]
+[ext_resource type="Texture2D" uid="uid://c1t3h2qilyydw" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0001.png" id="2_kn05t"]
+[ext_resource type="Texture2D" uid="uid://bdckkc86mvd3l" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0003.png" id="3_4g6ya"]
+[ext_resource type="Texture2D" uid="uid://cstwljwofa1af" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0004.png" id="4_gc2xd"]
+[ext_resource type="Texture2D" uid="uid://cnpd5np31xib7" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0005.png" id="5_4un4h"]
+[ext_resource type="Texture2D" uid="uid://bhblg2v7go24y" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0006.png" id="6_fj63j"]
+[ext_resource type="Texture2D" uid="uid://dtmvh46v7q4wv" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0007.png" id="7_dh3al"]
+[ext_resource type="Texture2D" uid="uid://g67d5nolfag5" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0008.png" id="8_g3ud8"]
+[ext_resource type="Texture2D" uid="uid://cckm17wus6owp" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0009.png" id="9_pfxyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_268t0"]
+size = Vector2(88.5, 198)
+
+[sub_resource type="Animation" id="Animation_4g6ya"]
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_yb1dv"), ExtResource("2_kn05t"), ExtResource("3_4g6ya"), ExtResource("4_gc2xd"), ExtResource("5_4un4h"), ExtResource("6_fj63j"), ExtResource("7_dh3al"), ExtResource("8_g3ud8"), ExtResource("9_pfxyj")]
+}
+
+[sub_resource type="Animation" id="Animation_gc2xd"]
+resource_name = "walk"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_yb1dv"), ExtResource("2_kn05t"), ExtResource("3_4g6ya"), ExtResource("4_gc2xd"), ExtResource("5_4un4h"), ExtResource("6_fj63j"), ExtResource("7_dh3al"), ExtResource("8_g3ud8"), ExtResource("9_pfxyj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4un4h"]
+_data = {
+&"RESET": SubResource("Animation_4g6ya"),
+&"walk": SubResource("Animation_gc2xd")
+}
+
+[node name="caterpanillar" type="CharacterBody2D" unique_id=355569004]
+collision_layer = 2
+script = ExtResource("1_kn05t")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=15556152]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1489350081]
+light_mask = 2
+position = Vector2(-7.0000005, 5.2500057)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_268t0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=467957402]
+light_mask = 2
+scale = Vector2(0.9254261, 1)
+texture = ExtResource("1_yb1dv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=2103761034]
+libraries/ = SubResource("AnimationLibrary_4un4h")
+autoplay = &"RESET"

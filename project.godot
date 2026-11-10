@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="juego_gamejam"
+run/main_scene="uid://e2hith58jgnm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
@@ -21,6 +22,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="juego_gamejam"
+
+[editor]
+
+movie_writer/fps=90
 
 [global_group]
 
@@ -52,16 +57,33 @@ dash={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+disparo={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":79,"key_label":0,"unicode":111,"location":0,"echo":false,"script":null)
+]
+}
+disparoplus={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
+ataque={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":75,"key_label":0,"unicode":107,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
-2d_physics/layer_1="solido"
-2d_physics/layer_2="daño"
+2d_physics/layer_1="paredes"
+2d_physics/layer_2="enemigos"
 2d_physics/layer_3="jugador"
 2d_physics/layer_4="recolectable"
+2d_physics/layer_5="daño jugador enemigos"
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
 
 [rendering]
