@@ -48,8 +48,12 @@ one_shot = true
 autostart = true
 
 [node name="area_hitbox" type="Area2D" parent="." unique_id=2022551147]
+collision_layer = 16
+collision_mask = 3
 
 [node name="hitbox" type="CollisionShape2D" parent="area_hitbox" unique_id=1689352182]
 shape = SubResource("CapsuleShape2D_vbfun")
 
 [connection signal="timeout" from="bullet_time" to="." method="_on_bullet_time_timeout"]
+[connection signal="area_entered" from="area_hitbox" to="." method="_on_area_hitbox_area_entered"]
+[connection signal="body_entered" from="area_hitbox" to="." method="_on_area_hitbox_body_entered"]

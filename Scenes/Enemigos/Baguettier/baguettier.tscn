@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://t742p21fjpwv"]
+
+[ext_resource type="Texture2D" uid="uid://cet0h0wsetfbp" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0000.png" id="1_4pr75"]
+[ext_resource type="Script" uid="uid://cp4gt546rn4jr" path="res://Scenes/Enemigos/Baguettier/baguettier.gd" id="1_hh4mj"]
+[ext_resource type="Texture2D" uid="uid://cio55iqsb4j85" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0002.png" id="2_hh4mj"]
+[ext_resource type="Texture2D" uid="uid://ceiqyeisjm1ph" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0004.png" id="3_xiejl"]
+[ext_resource type="Texture2D" uid="uid://cikk14ydwy0vt" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0006.png" id="4_7q5ya"]
+[ext_resource type="Texture2D" uid="uid://cqo06qdw3lbge" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0008.png" id="5_w7p5p"]
+[ext_resource type="Texture2D" uid="uid://bmyvvrc66xks0" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0010.png" id="6_e47t4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfun"]
+radius = 45.0
+height = 422.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_268t0"]
+radius = 51.0
+height = 102.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gah4e"]
+radius = 55.0
+height = 442.0
+
+[sub_resource type="Animation" id="Animation_x2uwq"]
+resource_name = "Baguettier_walk"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_4pr75"), ExtResource("2_hh4mj"), ExtResource("3_xiejl"), ExtResource("4_7q5ya"), ExtResource("5_w7p5p"), ExtResource("6_e47t4")]
+}
+
+[sub_resource type="Animation" id="Animation_ypeuf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8p8g1"]
+_data = {
+&"Baguettier_walk": SubResource("Animation_x2uwq"),
+&"RESET": SubResource("Animation_ypeuf")
+}
+
+[node name="Baguettier" type="CharacterBody2D" unique_id=1171065870]
+script = ExtResource("1_hh4mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062416478]
+position = Vector2(129, 8)
+shape = SubResource("CapsuleShape2D_vbfun")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1494990392]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=447628217]
+position = Vector2(46, -271)
+shape = SubResource("CapsuleShape2D_268t0")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=756624933]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=381039477]
+position = Vector2(129, 7)
+shape = SubResource("CapsuleShape2D_gah4e")
+debug_color = Color(0.1426534, 0.6461214, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024839414]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1178811389]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_8p8g1")
+autoplay = &"Baguettier_walk"
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
