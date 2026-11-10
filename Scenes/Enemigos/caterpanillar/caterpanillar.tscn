@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://g67d5nolfag5" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0008.png" id="8_g3ud8"]
 [ext_resource type="Texture2D" uid="uid://cckm17wus6owp" path="res://Assets/Sprites/caterpanillar/caterpanillar_move/Caterpanillar_move_0009.png" id="9_pfxyj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_268t0"]
-size = Vector2(88.5, 198)
-
 [sub_resource type="Animation" id="Animation_4g6ya"]
 length = 0.9
 loop_mode = 1
@@ -53,19 +50,22 @@ _data = {
 &"walk": SubResource("Animation_gc2xd")
 }
 
-[node name="caterpanillar" type="CharacterBody2D" unique_id=355569004]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w7mgy"]
+radius = 42.0
+height = 216.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4e15o"]
+radius = 41.0
+height = 200.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydnqi"]
+radius = 39.0
+height = 198.0
+
+[node name="caterpanillar" type="CharacterBody2D" unique_id=355569004 groups=["enemy"]]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_kn05t")
-
-[node name="hitbox" type="Area2D" parent="." unique_id=15556152]
-collision_layer = 2
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1489350081]
-light_mask = 2
-position = Vector2(-7.0000005, 5.2500057)
-rotation = -1.5707964
-shape = SubResource("RectangleShape2D_268t0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=467957402]
 light_mask = 2
@@ -75,3 +75,29 @@ texture = ExtResource("1_yb1dv")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=2103761034]
 libraries/ = SubResource("AnimationLibrary_4un4h")
 autoplay = &"RESET"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538165084]
+position = Vector2(-4, 6)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_w7mgy")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=359531658]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1802437075]
+position = Vector2(-3, 4)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_4e15o")
+debug_color = Color(0.9631769, 0.027777988, 0.48698866, 0.41960785)
+
+[node name="hitbox" type="Area2D" parent="." unique_id=15556152]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1489350081]
+light_mask = 2
+position = Vector2(-2, 3)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_ydnqi")
+debug_color = Color(0.22954467, 0.5092197, 1, 0.41960785)

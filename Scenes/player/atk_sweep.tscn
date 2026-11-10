@@ -48,12 +48,14 @@ wait_time = 0.4
 one_shot = true
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1435104527]
+[node name="hitbox" type="Area2D" parent="." unique_id=1435104527]
 collision_layer = 16
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=69309219]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=69309219]
 position = Vector2(-90, 5)
 shape = SubResource("CapsuleShape2D_ohoec")
 
 [connection signal="timeout" from="atk_time" to="." method="_on_atk_time_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
