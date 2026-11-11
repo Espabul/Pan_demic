@@ -135,7 +135,6 @@ animations = [{
 [sub_resource type="Animation" id="Animation_0roii"]
 resource_name = "Daño"
 length = 0.7
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -150,7 +149,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ml8p2"]
-length = 0.001
+length = 0.033333335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -172,6 +171,9 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60dfp"]
 radius = 44.058056
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfsr1"]
+radius = 84.0238
 
 [node name="Fungitajo" type="StaticBody2D" unique_id=1545032201]
 collision_layer = 2
@@ -203,7 +205,17 @@ collision_mask = 4
 scale = Vector2(31.999998, 4.2800016)
 shape = SubResource("CircleShape2D_60dfp")
 
+[node name="Hurtbox" type="Area2D" parent="." unique_id=698632401]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1131660257]
+position = Vector2(8, 6)
+shape = SubResource("CircleShape2D_bfsr1")
+debug_color = Color(0.9653159, 2.3102762e-06, 0.4903596, 0.41960785)
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
