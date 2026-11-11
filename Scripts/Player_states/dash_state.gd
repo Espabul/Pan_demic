@@ -28,6 +28,10 @@ func physics_update(delta: float):
 	else:
 		direction = 1
 	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
+	
 	if character.dashtimer.is_stopped() and not character.is_on_floor:
 		state_machine.change_state("fallstate")
 		return

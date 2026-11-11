@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c044fk3fto5kn"]
+
+[ext_resource type="Script" uid="uid://dbrsd00i0neo8" path="res://Scripts/UI/health_bar.gd" id="1_4c3qa"]
+[ext_resource type="Texture2D" uid="uid://df73tixeyjhnn" path="res://Assets/UI/HealthBar/Tileset_ui.png" id="2_1s5oa"]
+
+[node name="HealthBar" type="Node2D" unique_id=194130277]
+script = ExtResource("1_4c3qa")
+
+[node name="BreadBar" type="Sprite2D" parent="." unique_id=1110271338]
+position = Vector2(256, 64)
+texture = ExtResource("2_1s5oa")
+vframes = 6
+region_enabled = true
+region_rect = Rect2(256, 128, 256, 768)
+
+[node name="PlayerIcon" type="Sprite2D" parent="." unique_id=505015680]
+position = Vector2(64, 64)
+texture = ExtResource("2_1s5oa")
+region_enabled = true
+region_rect = Rect2(128, 128, 128, 128)

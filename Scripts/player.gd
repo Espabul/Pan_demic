@@ -14,10 +14,14 @@ const DASH_COOLDOWN = 0.6
 const DASH_VELOCITY = 1500
 const ATK_COOLDOWN = 0.5
 const SHOOT_COOLDOWN = 0.5
+const HURT_COOLDOWN = 0.4
 
 var can_dash = false
 var can_atk = true
 var can_shoot = false
+var can_be_hit = true
+var hurt_direction = 1
+var hurtstate = false
 
 @export var gravedad = 3000
 @onready var animacion = $AnimatedSprite2D
@@ -25,6 +29,11 @@ var can_shoot = false
 @onready var dash_cooldowntimer = $dash_cooldowntimer
 @onready var atk_cooldowntimer = $atk_cooldowntimer
 @onready var shoot_timer = $shoot_timer
+@onready var hurt_cooldowntimer = $Hurt_cooldown
+@onready var hit_animation = $HitAnimationPlayer
+
+
+
 
 var proyect_flojo = preload("res://Scenes/player/proyectil_flojo.tscn")
 var atk_proyect = preload("res://Scenes/player/atk_sweep.tscn")
@@ -62,6 +71,7 @@ func atk_proyectile():
 	add_child(atk_instance)
 
 
+
 func _on_dash_cooldowntimer_timeout() -> void:
 	if upgrades >= 1: can_dash = true
 
@@ -72,3 +82,23 @@ func _on_atk_cooldowntimer_timeout() -> void:
 
 func _on_shoot_timer_timeout() -> void:
 	if upgrades >= 2: can_shoot = true
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy") and can_be_hit and not hurtstate:
+		
+		if body.global_position.x > global_position.x:
+			hurt_direction = 1
+		else:
+			hurt_direction = -1
+		
+		hurtstate = true
+		
+		HealthManager.decrease_health(body.damage_amount)
+
+
+
+
+
+func _on_hurt_cooldown_timeout() -> void:
+	can_be_hit = true

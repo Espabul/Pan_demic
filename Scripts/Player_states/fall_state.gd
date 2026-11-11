@@ -27,7 +27,9 @@ func physics_update(delta: float):
 	character.move_and_slide()
 	
 	
-	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
 	
 #volver al estado apropiado al aterrizar
 	if character.is_on_floor():

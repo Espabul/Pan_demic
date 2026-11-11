@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var enemy_health : int = 5
+@export var damage_amount : int = 1
+
 
 var direction = 1
 
