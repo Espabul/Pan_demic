@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var velocidad = 300
+@export var velocidad = 500
 @export var direccion = Vector2(Vector2.LEFT)
 var impactando = false
 

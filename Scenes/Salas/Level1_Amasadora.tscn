@@ -418,7 +418,7 @@ tile_map_data = PackedByteArray("AAAKAAIAAAAEAAEAAAAJAAMAAAAEAAIAAAAJAAIAAAAEAAE
 tile_set = SubResource("TileSet_vbfun")
 
 [node name="Fungitajo" parent="." unique_id=1545032201 instance=ExtResource("3_2s2wd")]
-position = Vector2(1635, -2235)
+position = Vector2(1635, -293)
 
 [node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("4_mya04")]
-position = Vector2(1798, -287)
+position = Vector2(1411, -899)

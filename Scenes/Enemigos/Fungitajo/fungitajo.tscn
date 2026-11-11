@@ -19,8 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://brcn8wp6c6nc2" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0006.PNG" id="15_cr2er"]
 [ext_resource type="Texture2D" uid="uid://ckjqoyedr8yh5" path="res://Assets/Sprites/Fungitajo/Fungitajo_idle/Fungitajo_idle_0007.PNG" id="16_ytg7o"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_56c72"]
-size = Vector2(163, 150)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mya04"]
+radius = 78.5
+height = 157.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nd631"]
 animations = [{
@@ -75,7 +76,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Attack",
-"speed": 11.0
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -128,8 +129,46 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
-"speed": 11.0
+"speed": 20.0
 }]
+
+[sub_resource type="Animation" id="Animation_0roii"]
+resource_name = "Daño"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(4.168796e-05, 1e-05, 3.1593823e-05, 1e-05),
+"update": 0,
+"values": [Color(10.579, 10.579, 3.424, 1), Color(1, 1, 1, 1), Color(10.579, 10.579, 3.464, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ml8p2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_augox"]
+_data = {
+&"Daño": SubResource("Animation_0roii"),
+&"RESET": SubResource("Animation_ml8p2")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60dfp"]
 radius = 44.058056
@@ -141,14 +180,15 @@ proyectil_escena = ExtResource("2_0roii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014781746]
 light_mask = 2
-position = Vector2(13.5, 5)
-shape = SubResource("RectangleShape2D_56c72")
+position = Vector2(8, 5)
+shape = SubResource("CapsuleShape2D_mya04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=164897210]
 sprite_frames = SubResource("SpriteFrames_nd631")
 animation = &"Attack"
-frame = 15
-frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=1867668486]
+libraries/ = SubResource("AnimationLibrary_augox")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=541639399]
 position = Vector2(-32, -32)
