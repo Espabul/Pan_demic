@@ -197,11 +197,11 @@ position = Vector2(-32, -32)
 
 [node name="Timer" type="Timer" parent="." unique_id=1711826081]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1459502005]
+[node name="Detección" type="Area2D" parent="." unique_id=1459502005]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=347912807]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detección" unique_id=347912807]
 scale = Vector2(31.999998, 4.2800016)
 shape = SubResource("CircleShape2D_60dfp")
 
@@ -216,6 +216,6 @@ debug_color = Color(0.9653159, 2.3102762e-06, 0.4903596, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Detección" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Detección" to="." method="_on_area_2d_body_exited"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
