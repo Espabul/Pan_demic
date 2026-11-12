@@ -10,7 +10,11 @@ func enter():
 		character.animacion.play("idle")
 	
 
-
+func physics_update(delta: float):
+	var character = state_machine.get_parent()
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
 
 func handle_input(event: InputEvent):
 	var character = state_machine.get_parent()

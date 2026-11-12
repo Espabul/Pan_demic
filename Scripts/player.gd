@@ -37,7 +37,7 @@ var hurtstate = false
 
 var proyect_flojo = preload("res://Scenes/player/proyectil_flojo.tscn")
 var atk_proyect = preload("res://Scenes/player/atk_sweep.tscn")
-
+var player_death_effect = preload("res://Scenes/player/player_death_effect.tscn")
 
 func _ready() -> void:
 	if upgrades >=1:
@@ -95,9 +95,28 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		hurtstate = true
 		
 		HealthManager.decrease_health(body.damage_amount)
+		
+		if HealthManager.current_health == 0:
+			player_death()
 
 
-
+func player_death():
+	var camera = $Camera2D
+	
+	camera.position_smoothing_enabled = false
+	camera.enabled = false
+	var camera_pos = camera.global_position
+	camera.reparent(get_tree().current_scene, true)
+	camera.global_position = camera_pos
+	camera.enabled = true
+	
+	await get_tree().create_timer(0.2).timeout
+	var player_death_effect_instance = player_death_effect.instantiate() as Node2D
+	player_death_effect_instance.global_position = global_position
+	get_parent().add_child(player_death_effect_instance)
+	
+	queue_free()
+	
 
 
 func _on_hurt_cooldown_timeout() -> void:

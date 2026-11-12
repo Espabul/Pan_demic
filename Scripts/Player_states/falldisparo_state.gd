@@ -24,6 +24,10 @@ func physics_update(delta: float):
 	#gravedad
 	character.velocity.y += character.gravedad * delta
 	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
+	
 	#movimiento horizontal
 	var direction = Input.get_axis("mover izquierda", "mover_derecha")
 	character.velocity.x = direction * 400

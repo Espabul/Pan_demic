@@ -23,6 +23,10 @@ func physics_update(delta: float):
 	var direction = Input.get_axis("mover izquierda", "mover_derecha")
 	character.velocity.x = direction * 400
 	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
+	
 	if direction != 0:
 		character.animacion.flip_h = direction < 0
 

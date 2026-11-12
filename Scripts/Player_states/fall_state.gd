@@ -6,7 +6,8 @@ func enter():
 	print("Entering State fall")
 	var character = state_machine.get_parent()
 	#animacion
-	character.animacion.play("jump_fall")
+	if character.animacion:
+		character.animacion.play("jump_fall")
 
 
 

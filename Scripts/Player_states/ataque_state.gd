@@ -23,6 +23,11 @@ func physics_update(delta: float):
 	if not character.is_on_floor():
 		character.velocity.y += character.gravedad * delta
 	
+	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
+	
 	#dirección y movimiento
 	var direction = Input.get_axis("mover izquierda", "mover_derecha")
 	

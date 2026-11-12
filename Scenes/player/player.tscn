@@ -29,7 +29,7 @@ height = 166.0
 
 [sub_resource type="Animation" id="Animation_g7b1g"]
 resource_name = "Hit"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,7 +84,7 @@ frame_progress = 0.08020582
 
 [node name="StateMachine" type="Node" parent="." unique_id=884089471 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_6upyo")
-initial_state = NodePath("IdleState")
+initial_state = NodePath("FallState")
 metadata/_custom_type_script = "uid://b4p14u2vbqkov"
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=1499015714]
