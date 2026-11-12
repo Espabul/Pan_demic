@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://7lh2rhx7cxy6" path="res://Assets/Tilesets/Tileset_Amasadora.png" id="2_2s2wd"]
 [ext_resource type="PackedScene" uid="uid://dreftishfbwx6" path="res://Scenes/Enemigos/Fungitajo/fungitajo.tscn" id="3_2s2wd"]
 [ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="4_mya04"]
-[ext_resource type="PackedScene" uid="uid://t742p21fjpwv" path="res://Scenes/Enemigos/Baguettier/baguettier.tscn" id="5_4n4k6"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="6_268t0"]
+[ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="6_s5y0r"]
 
 [sub_resource type="GDScript" id="GDScript_l5sf6"]
 script/source = "extends Camera2D
@@ -425,7 +425,8 @@ position = Vector2(1635, -293)
 [node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("4_mya04")]
 position = Vector2(1411, -899)
 
-[node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("5_4n4k6")]
-position = Vector2(-604, 47)
-
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("6_268t0")]
+
+[node name="Door" parent="." unique_id=1599704378 instance=ExtResource("6_s5y0r")]
+position = Vector2(-441, 198)
+next_scene = "LevelTEST"

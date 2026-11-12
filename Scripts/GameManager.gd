@@ -1,7 +1,6 @@
 extends Node
 
 
-var levels : Dictionary = {"Level1_Amasadora": "res://Scenes/Salas/Level1_Amasadora.tscn"}
 var pause_menu_screen = preload("res://Scenes/UI/pause_menu_scene.tscn")
 var main_menu_screen = preload("res://Scenes/UI/main_menu_scene.tscn")
 
@@ -15,7 +14,7 @@ func start_game():
 		continue_game()
 		return
 	
-	transition_to_scene(levels.get("Level1_Amasadora"))
+	SceneManager.transition_to_scene("Level1_Amasadora")
 
 
 
@@ -40,8 +39,3 @@ func continue_game():
 func main_menu():
 	var main_menu_screen_instance = main_menu_screen.instantiate()
 	get_tree().get_root().add_child(main_menu_screen_instance)
-
-
-func transition_to_scene(scene_path):
-	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file(scene_path)
