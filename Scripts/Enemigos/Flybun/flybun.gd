@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var velocidad = 300
 @export var rango = 400
 @export var gravedad = 2000
+@export var velocidad_subida = 150
 
 var detectar_jugador = null
 var tiempo = 0.0
@@ -33,12 +34,28 @@ func _physics_process(delta: float)->void:
 	if estado == "cayendo":
 		velocity.x = 0
 		velocity.y += gravedad * delta
+		
 	move_and_slide()
+	
 	if estado == "cayendo" and is_on_floor() ==true:
 		estado = "en_suelo"
 		tiempo = 2.0
 		velocity = Vector2(0,0)
 		print("En el suelo")
+		
+	if estado == "en_suelo":
+		tiempo -= delta
+		if tiempo <= 0:
+			estado = "subiendo"
+			$AnimatedSprite2D.play("Volar")
+			
+	if estado == "subiendo":
+		velocity.x = 0
+		velocity.y = -150
+		if global_position.y <= pos_y:
+			global_position.y = pos_y
+			estado = "volando"
+		
 		
 
 func _on_detección_body_entered(body: Node2D) -> void:
@@ -52,3 +69,16 @@ func _on_detección_body_entered(body: Node2D) -> void:
 func _on_detección_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		detectar_jugador = null
+		
+		
+func recibir_daño(cantidad):
+	vida -= cantidad
+	if vida<= 0:
+		queue_free()
+	else:
+		$AnimatedSprite2D/AnimationPlayer.play("Daño")
+		
+		
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	recibir_daño(1)
+	print("Flybun golpeado")

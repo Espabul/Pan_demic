@@ -150,6 +150,8 @@ position = Vector2(-11, 266)
 shape = SubResource("CapsuleShape2D_60dfp")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=2079157896]
+collision_layer = 2
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1130918976]
 position = Vector2(-8, 0)
@@ -159,3 +161,4 @@ debug_color = Color(1, 0.0102878995, 0.06065727, 0.41960785)
 
 [connection signal="body_entered" from="Detección" to="." method="_on_detección_body_entered"]
 [connection signal="body_exited" from="Detección" to="." method="_on_detección_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
