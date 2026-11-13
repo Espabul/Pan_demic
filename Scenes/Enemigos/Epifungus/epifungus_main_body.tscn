@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b4deblaa37eth"]
+
+[ext_resource type="Texture2D" uid="uid://cd2w0cssjvcj3" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0000.png" id="1_l1ljs"]
+[ext_resource type="Script" uid="uid://ctkty7fskpm4d" path="res://Scripts/Enemigos/Epifungus/epifungus_main_body.gd" id="1_yh6fx"]
+[ext_resource type="Texture2D" uid="uid://bf76wgnbmrb54" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0004.png" id="2_yh6fx"]
+[ext_resource type="Texture2D" uid="uid://fmas8eqea025" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0008.png" id="3_gc1xd"]
+[ext_resource type="Texture2D" uid="uid://b0n408ex0f3wb" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0012.png" id="4_jab88"]
+[ext_resource type="Texture2D" uid="uid://bw7xg4yyqthpn" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0016.png" id="5_yr2xc"]
+[ext_resource type="Texture2D" uid="uid://bt12uqcofodn7" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0020.png" id="6_cfdwh"]
+[ext_resource type="Texture2D" uid="uid://dolehtb5532jq" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0024.png" id="7_o4hhf"]
+[ext_resource type="Texture2D" uid="uid://bf1qruhid7q2m" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0028.png" id="8_gv373"]
+[ext_resource type="Script" uid="uid://b4p14u2vbqkov" path="res://Scripts/state_machine.gd" id="10_gc1xd"]
+[ext_resource type="Script" uid="uid://ct6kvob7bpngi" path="res://Scripts/Enemigos/Epifungus/Epifungus_States/epi_summon_state.gd" id="11_yr2xc"]
+[ext_resource type="Script" uid="uid://c3aliextp3ggb" path="res://Scripts/Enemigos/Epifungus/Epifungus_States/epi_wait_state.gd" id="12_cfdwh"]
+
+[sub_resource type="Animation" id="Animation_vrgi8"]
+resource_name = "Idle_Epifungus"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_l1ljs"), ExtResource("2_yh6fx"), ExtResource("3_gc1xd"), ExtResource("4_jab88"), ExtResource("5_yr2xc"), ExtResource("6_cfdwh"), ExtResource("7_o4hhf"), ExtResource("8_gv373")]
+}
+
+[sub_resource type="Animation" id="Animation_fl4nh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_l1ljs")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vde1i"]
+_data = {
+&"Idle_Epifungus": SubResource("Animation_vrgi8"),
+&"RESET": SubResource("Animation_fl4nh")
+}
+
+[sub_resource type="Animation" id="Animation_yr2xc"]
+resource_name = "damage_effect"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(6.276706e-05, 6.276706e-05, 1e-05),
+"update": 0,
+"values": [Color(2.458793, 0, 0.13705948, 1), Color(2.458793, 0, 0.13705948, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfdwh"]
+_data = {
+&"damage_effect": SubResource("Animation_yr2xc")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wt8x3"]
+radius = 69.0
+height = 906.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfun"]
+radius = 87.0
+height = 946.0
+
+[node name="Epifungus_main_body" type="CharacterBody2D" unique_id=1842748894]
+z_index = 1
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("1_yh6fx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1938485597]
+texture = ExtResource("1_l1ljs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1496114808]
+libraries/ = SubResource("AnimationLibrary_vde1i")
+autoplay = &"Idle_Epifungus"
+
+[node name="DamageEffect" type="AnimationPlayer" parent="Sprite2D" unique_id=379913076]
+libraries/ = SubResource("AnimationLibrary_cfdwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=967351384]
+position = Vector2(135, 31)
+shape = SubResource("CapsuleShape2D_wt8x3")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=407144662]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=597987782 groups=["enemy"]]
+position = Vector2(130, 51)
+shape = SubResource("CapsuleShape2D_vbfun")
+debug_color = Color(0.2850505, 0.6209913, 0.32700935, 0.41960785)
+
+[node name="StateMachine" type="Node" parent="." unique_id=2080777087]
+script = ExtResource("10_gc1xd")
+metadata/_custom_type_script = "uid://b4p14u2vbqkov"
+
+[node name="EpiSummonState" type="Node" parent="StateMachine" unique_id=943671841]
+script = ExtResource("11_yr2xc")
+metadata/_custom_type_script = "uid://ct6kvob7bpngi"
+
+[node name="EpiWaitState" type="Node" parent="StateMachine" unique_id=1161695188]
+script = ExtResource("12_cfdwh")
+metadata/_custom_type_script = "uid://c3aliextp3ggb"
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dreftishfbwx6" path="res://Scenes/Enemigos/Fungitajo/fungitajo.tscn" id="3_2s2wd"]
 [ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="4_mya04"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="6_268t0"]
-[ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="6_s5y0r"]
+[ext_resource type="PackedScene" uid="uid://t742p21fjpwv" path="res://Scenes/Enemigos/Baguettier/baguettier.tscn" id="6_s5y0r"]
 
 [sub_resource type="GDScript" id="GDScript_l5sf6"]
 script/source = "extends Camera2D
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mya04"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dy24i"]
 texture = ExtResource("2_2s2wd")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -397,12 +397,12 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "thick_g"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_mya04")
+sources/0 = SubResource("TileSetAtlasSource_dy24i")
 
 [node name="Level1Amasadora" type="Node2D" unique_id=783983454]
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_l5sf6")]
-position = Vector2(-847, 193)
+position = Vector2(-203, -60)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1835708003]
 position = Vector2(60, -36)
@@ -427,6 +427,5 @@ position = Vector2(1411, -899)
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("6_268t0")]
 
-[node name="Door" parent="." unique_id=1599704378 instance=ExtResource("6_s5y0r")]
-position = Vector2(-441, 198)
-next_scene = "LevelTEST"
+[node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("6_s5y0r")]
+position = Vector2(-577, 40)

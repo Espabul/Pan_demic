@@ -86,8 +86,12 @@ func _on_shoot_timer_timeout() -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") and can_be_hit and not hurtstate:
-		
-		if body.global_position.x > global_position.x:
+		print("player hurt")
+		if velocity.x < -200:
+			hurt_direction = 1
+		elif velocity.x >200:
+			hurt_direction = -1
+		elif body.global_position.x > global_position.x:
 			hurt_direction = 1
 		else:
 			hurt_direction = -1
