@@ -40,7 +40,6 @@ height = 226.0
 sprite_frames = SubResource("SpriteFrames_vbfun")
 animation = &"sweep"
 autoplay = "sweep"
-frame_progress = 0.3014351
 script = ExtResource("5_gfal5")
 
 [node name="atk_time" type="Timer" parent="." unique_id=759245134]
