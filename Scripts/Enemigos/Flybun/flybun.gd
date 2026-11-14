@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var rango = 400
 @export var gravedad = 2000
 @export var velocidad_subida = 150
+@export var damage_amount:int = 1
 
 var detectar_jugador = null
 var tiempo = 0.0

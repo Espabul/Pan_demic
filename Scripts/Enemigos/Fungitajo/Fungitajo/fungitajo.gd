@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var cooldown = 2.0
 @export var proyectil_escena: PackedScene
 @export var vida = 3.0
+@export var damage_amount:int = 1
 
 var detectar_jugador = null
 var esta_atacando = false
