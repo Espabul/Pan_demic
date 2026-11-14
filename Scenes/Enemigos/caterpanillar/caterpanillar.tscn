@@ -52,7 +52,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w7mgy"]
 radius = 42.0
-height = 216.0
+height = 190.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4e15o"]
 radius = 41.0
@@ -77,27 +77,34 @@ libraries/ = SubResource("AnimationLibrary_4un4h")
 autoplay = &"RESET"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538165084]
-position = Vector2(-4, 6)
+position = Vector2(-1, 7)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_w7mgy")
 
+[node name="Timer" type="Timer" parent="." unique_id=1122046772]
+wait_time = 0.5
+autostart = true
+
 [node name="hurtbox" type="Area2D" parent="." unique_id=359531658]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1802437075]
-position = Vector2(-3, 4)
+position = Vector2(0, 5)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_4e15o")
 debug_color = Color(0.9631769, 0.027777988, 0.48698866, 0.41960785)
 
 [node name="hitbox" type="Area2D" parent="." unique_id=15556152]
+position = Vector2(-1, -2)
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1489350081]
 light_mask = 2
-position = Vector2(-2, 3)
+position = Vector2(2, 8)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_ydnqi")
 debug_color = Color(0.22954467, 0.5092197, 1, 0.41960785)
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -2,6 +2,8 @@ extends Area2D
 
 @export var velocidad = 500
 @export var direccion = Vector2(Vector2.LEFT)
+@export var damage_amount:int = 1
+
 var impactando = false
 
 
@@ -19,6 +21,7 @@ func _physics_process(delta: float)->void:
 	position += direccion * velocidad * delta
 
 
+@warning_ignore("unused_parameter")
 func _on_body_entered(body: Node2D) -> void:
 	if impactando == true:
 		return

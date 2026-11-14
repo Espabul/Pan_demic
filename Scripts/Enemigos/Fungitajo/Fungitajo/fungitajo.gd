@@ -2,6 +2,8 @@ extends StaticBody2D
 
 @export var cooldown = 2.0
 @export var proyectil_escena: PackedScene
+@export var vida = 3.0
+@export var damage_amount:int = 1
 
 var detectar_jugador = null
 var esta_atacando = false
@@ -59,3 +61,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if $AnimatedSprite2D.animation == "Attack" and $AnimatedSprite2D.frame == 6:
 		disparar()
+
+
+func recibir_daño(cantidad):
+	vida -= cantidad
+	if vida<= 0:
+		queue_free()
+	else:
+		$AnimatedSprite2D/AnimationPlayer.play("Daño")
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	recibir_daño(1)
+	print("Fungitajo golpeado")

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bks11k5adur6j"]
+
+[ext_resource type="Texture2D" uid="uid://bu1swnlosa3ab" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0000.PNG" id="1_8bsck"]
+[ext_resource type="Script" uid="uid://dg6nubw0xl3f4" path="res://Scenes/Enemigos/zumbon/zumbon.gd" id="1_fgivi"]
+[ext_resource type="Texture2D" uid="uid://3183l8nj80c3" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0001.PNG" id="2_mnqc2"]
+[ext_resource type="Texture2D" uid="uid://bbhey87ck8oxs" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0002.PNG" id="3_fgivi"]
+[ext_resource type="Texture2D" uid="uid://b7grb8v40gnsh" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0003.PNG" id="4_cqbfs"]
+[ext_resource type="Texture2D" uid="uid://dvf41tnjdyr8l" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0004.PNG" id="5_p5627"]
+
+[sub_resource type="Animation" id="Animation_qetqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_8bsck")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b5m7g"]
+load_path = "res://.godot/imported/Zumbón_move_0000.PNG-47d27bc9c7070c5456b892f64f7ae06b.ctex"
+
+[sub_resource type="Animation" id="Animation_thyff"]
+resource_name = "move"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_b5m7g"), ExtResource("2_mnqc2"), ExtResource("3_fgivi"), ExtResource("4_cqbfs"), ExtResource("5_p5627")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8bsck"]
+_data = {
+&"RESET": SubResource("Animation_qetqd"),
+&"move": SubResource("Animation_thyff")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mnqc2"]
+radius = 34.132095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8w0r3"]
+radius = 494.0162
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgivi"]
+radius = 32.06244
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqbfs"]
+radius = 31.0
+
+[node name="zumbon" type="CharacterBody2D" unique_id=1922201499]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_fgivi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1074915874]
+texture = ExtResource("1_8bsck")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1660426454]
+libraries/ = SubResource("AnimationLibrary_8bsck")
+autoplay = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=535465677]
+position = Vector2(4, -1)
+shape = SubResource("CircleShape2D_mnqc2")
+debug_color = Color(1.1551381e-06, 0.6396427, 0.3662154, 0.41960785)
+
+[node name="detection_area" type="Area2D" parent="." unique_id=1351638429]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=317473964]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_8w0r3")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1990920545]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1291397422]
+position = Vector2(4, -1)
+shape = SubResource("CircleShape2D_fgivi")
+debug_color = Color(0.97429806, 0, 0.43122897, 0.41960785)
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1668728707]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1687781655]
+position = Vector2(4, -1)
+shape = SubResource("CircleShape2D_cqbfs")
+debug_color = Color(0.32503247, 0.4902842, 1, 0.41960785)
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
