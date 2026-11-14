@@ -426,6 +426,6 @@ position = Vector2(1635, -293)
 position = Vector2(1411, -899)
 
 [node name="Flybun" parent="." unique_id=14139485 instance=ExtResource("5_4n4k6")]
-position = Vector2(169, -678)
+position = Vector2(-318, -2264)
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("6_268t0")]
