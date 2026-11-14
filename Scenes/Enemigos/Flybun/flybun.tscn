@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://dlexo6get3obp"]
+
+[ext_resource type="Script" uid="uid://d304roc564ktm" path="res://Scripts/Enemigos/Flybun/flybun.gd" id="1_3n1rm"]
+[ext_resource type="Texture2D" uid="uid://b6egujw21as4n" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0000.png" id="1_sn5gp"]
+[ext_resource type="Texture2D" uid="uid://cq8d8djl5w3g8" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0001.png" id="2_3n1rm"]
+[ext_resource type="Texture2D" uid="uid://2je015iwxmyg" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0010.png" id="3_xko1r"]
+[ext_resource type="Texture2D" uid="uid://chemencdlslxs" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0011.png" id="4_fia7b"]
+[ext_resource type="Texture2D" uid="uid://cjt30dtodoyjr" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0002.png" id="5_gh7jl"]
+[ext_resource type="Texture2D" uid="uid://vijrdt704u8h" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0003.png" id="6_e7gtr"]
+[ext_resource type="Texture2D" uid="uid://dndqr80l1ibt8" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0004.png" id="7_oswo1"]
+[ext_resource type="Texture2D" uid="uid://b48nir5a724xb" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0005.png" id="8_63who"]
+[ext_resource type="Texture2D" uid="uid://basaxlpfqama0" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0006.png" id="9_bbu6n"]
+[ext_resource type="Texture2D" uid="uid://bvhajba7ktm47" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0007.png" id="10_ny1lm"]
+[ext_resource type="Texture2D" uid="uid://7xa0xcbphb0f" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0008.png" id="11_et0rj"]
+[ext_resource type="Texture2D" uid="uid://bv5d77cubuuxi" path="res://Assets/Sprites/Flybun/Flybun_fly/Flybun_fly_0009.png" id="12_1sbj4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60dfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sn5gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3n1rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xko1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fia7b")
+}],
+"loop": 0,
+"name": &"Caer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sn5gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3n1rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gh7jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e7gtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oswo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_63who")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bbu6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ny1lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_et0rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1sbj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xko1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fia7b")
+}],
+"loop": 1,
+"name": &"Volar",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_0roii"]
+resource_name = "Daño"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(4.168796e-05, 1e-05, 3.1593823e-05, 1e-05),
+"update": 0,
+"values": [Color(10.579, 10.579, 3.424, 1), Color(1, 1, 1, 1), Color(10.579, 10.579, 3.464, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ml8p2"]
+length = 0.033333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sn5gp"]
+_data = {
+&"Daño": SubResource("Animation_0roii"),
+&"RESET": SubResource("Animation_ml8p2")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckxn3"]
+radius = 67.53424
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60dfp"]
+radius = 76.0
+height = 644.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60dfp"]
+radius = 86.100876
+
+[node name="Flybun" type="CharacterBody2D" unique_id=14139485]
+script = ExtResource("1_3n1rm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1202568300]
+sprite_frames = SubResource("SpriteFrames_60dfp")
+animation = &"Caer"
+frame = 3
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=1788503822]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sn5gp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1039347265]
+position = Vector2(-6.999999, 0)
+scale = Vector2(1.5785432, 0.7964859)
+shape = SubResource("CircleShape2D_ckxn3")
+
+[node name="Detección" type="Area2D" parent="." unique_id=213075633]
+position = Vector2(0, 4)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detección" unique_id=76539687]
+position = Vector2(-11, 266)
+shape = SubResource("CapsuleShape2D_60dfp")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=2079157896]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1130918976]
+position = Vector2(-8, 0)
+scale = Vector2(1.4400014, 0.8780209)
+shape = SubResource("CircleShape2D_60dfp")
+debug_color = Color(1, 0.0102878995, 0.06065727, 0.41960785)
+
+[connection signal="body_entered" from="Detección" to="." method="_on_detección_body_entered"]
+[connection signal="body_exited" from="Detección" to="." method="_on_detección_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
