@@ -13,6 +13,11 @@ func physics_update(delta: float):
 	var character = state_machine.get_parent()
 	var direction = Input.get_axis("mover izquierda", "mover_derecha")
 	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
+	
+	
 	if !character.is_on_floor():
 		print("Entering fall")
 		state_machine.change_state("fallstate")

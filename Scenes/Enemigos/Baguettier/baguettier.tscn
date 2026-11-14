@@ -22,7 +22,7 @@ height = 442.0
 
 [sub_resource type="Animation" id="Animation_x2uwq"]
 resource_name = "Baguettier_walk"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -58,7 +58,8 @@ _data = {
 &"RESET": SubResource("Animation_ypeuf")
 }
 
-[node name="Baguettier" type="CharacterBody2D" unique_id=1171065870]
+[node name="Baguettier" type="CharacterBody2D" unique_id=1171065870 groups=["enemy"]]
+collision_layer = 2
 script = ExtResource("1_hh4mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062416478]

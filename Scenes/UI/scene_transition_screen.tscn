@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://qx8vmdyybjqc"]
+
+[ext_resource type="Texture2D" uid="uid://qsqddfe5kv3b" path="res://Assets/UI/TransitionAnimation/Transition_cater_0000.png" id="1_khxc0"]
+[ext_resource type="Script" uid="uid://b3k0lamrlw4ax" path="res://Scenes/UI/scene_transition_screen.gd" id="1_nejt1"]
+[ext_resource type="Texture2D" uid="uid://bqmb3obcj5pd4" path="res://Assets/UI/TransitionAnimation/Transition_cater_0001.png" id="2_nejt1"]
+[ext_resource type="Texture2D" uid="uid://cctshk18wbncr" path="res://Assets/UI/TransitionAnimation/Transition_cater_0002.png" id="3_leq46"]
+[ext_resource type="Texture2D" uid="uid://6j4sdd7pextc" path="res://Assets/UI/TransitionAnimation/Transition_cater_0003.png" id="4_8kf8p"]
+[ext_resource type="Texture2D" uid="uid://q1pckor4v3qu" path="res://Assets/UI/TransitionAnimation/Transition_cater_0004.png" id="5_j6u01"]
+[ext_resource type="Texture2D" uid="uid://b7021au6nr4mi" path="res://Assets/UI/TransitionAnimation/Transition_cater_0005.png" id="6_pbvuu"]
+
+[sub_resource type="Animation" id="Animation_nejt1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_khxc0")]
+}
+
+[sub_resource type="Animation" id="Animation_leq46"]
+resource_name = "transition_caterpanillar"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_khxc0"), ExtResource("2_nejt1"), ExtResource("3_leq46"), ExtResource("4_8kf8p"), ExtResource("5_j6u01"), ExtResource("6_pbvuu"), ExtResource("2_nejt1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kf8p"]
+_data = {
+&"RESET": SubResource("Animation_nejt1"),
+&"transition_caterpanillar": SubResource("Animation_leq46")
+}
+
+[sub_resource type="Animation" id="Animation_j6u01"]
+resource_name = "Fade"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pbvuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e3lsv"]
+_data = {
+&"Fade": SubResource("Animation_j6u01"),
+&"RESET": SubResource("Animation_pbvuu")
+}
+
+[node name="SceneTransitionScreen" type="CanvasLayer" unique_id=1905989348]
+process_mode = 3
+layer = 4
+script = ExtResource("1_nejt1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=646963318]
+z_index = 9
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_khxc0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Animations" type="AnimationPlayer" parent="TextureRect" unique_id=168463304]
+libraries/ = SubResource("AnimationLibrary_8kf8p")
+autoplay = &"transition_caterpanillar"
+
+[node name="Fades" type="AnimationPlayer" parent="TextureRect" unique_id=2128308389]
+libraries/ = SubResource("AnimationLibrary_e3lsv")
+autoplay = &"Fade"

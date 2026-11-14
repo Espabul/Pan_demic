@@ -6,7 +6,8 @@ func enter():
 	print("Entering State fall")
 	var character = state_machine.get_parent()
 	#animacion
-	character.animacion.play("jump_fall")
+	if character.animacion:
+		character.animacion.play("jump_fall")
 
 
 
@@ -27,7 +28,9 @@ func physics_update(delta: float):
 	character.move_and_slide()
 	
 	
-	
+	if character.hurtstate:
+		state_machine.change_state("hurtstate")
+		return
 	
 #volver al estado apropiado al aterrizar
 	if character.is_on_floor():

@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mya04"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dy24i"]
 texture = ExtResource("2_2s2wd")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -396,12 +396,12 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "thick_g"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_mya04")
+sources/0 = SubResource("TileSetAtlasSource_dy24i")
 
 [node name="Level1Amasadora" type="Node2D" unique_id=783983454]
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_l5sf6")]
-position = Vector2(-847, 193)
+position = Vector2(-203, -60)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1835708003]
 position = Vector2(60, -36)

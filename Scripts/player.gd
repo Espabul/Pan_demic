@@ -2,9 +2,7 @@ extends CharacterBody2D
 
 
 
-var health = 5
-var upgrades = 3
-
+var upgrades : int
 
 
 const SPEED = 300.0
@@ -14,10 +12,14 @@ const DASH_COOLDOWN = 0.6
 const DASH_VELOCITY = 1500
 const ATK_COOLDOWN = 0.5
 const SHOOT_COOLDOWN = 0.5
+const HURT_COOLDOWN = 0.4
 
 var can_dash = false
 var can_atk = true
 var can_shoot = false
+var can_be_hit = true
+var hurt_direction = 1
+var hurtstate = false
 
 @export var gravedad = 3000
 @onready var animacion = $AnimatedSprite2D
@@ -25,12 +27,18 @@ var can_shoot = false
 @onready var dash_cooldowntimer = $dash_cooldowntimer
 @onready var atk_cooldowntimer = $atk_cooldowntimer
 @onready var shoot_timer = $shoot_timer
+@onready var hurt_cooldowntimer = $Hurt_cooldown
+@onready var hit_animation = $HitAnimationPlayer
+
+
+
 
 var proyect_flojo = preload("res://Scenes/player/proyectil_flojo.tscn")
 var atk_proyect = preload("res://Scenes/player/atk_sweep.tscn")
-
+var player_death_effect = preload("res://Scenes/player/player_death_effect.tscn")
 
 func _ready() -> void:
+	upgrades = SceneManager.upgrades
 	if upgrades >=1:
 		can_dash = true
 	if upgrades >=2:
@@ -62,6 +70,7 @@ func atk_proyectile():
 	add_child(atk_instance)
 
 
+
 func _on_dash_cooldowntimer_timeout() -> void:
 	if upgrades >= 1: can_dash = true
 
@@ -72,3 +81,47 @@ func _on_atk_cooldowntimer_timeout() -> void:
 
 func _on_shoot_timer_timeout() -> void:
 	if upgrades >= 2: can_shoot = true
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy") and can_be_hit and not hurtstate:
+		print("player hurt")
+		if velocity.x < -200:
+			hurt_direction = 1
+		elif velocity.x >200:
+			hurt_direction = -1
+		elif body.global_position.x > global_position.x:
+			hurt_direction = 1
+		else:
+			hurt_direction = -1
+		
+		hurtstate = true
+		
+		HealthManager.decrease_health(body.damage_amount)
+		
+		if HealthManager.current_health == 0:
+			player_death()
+
+
+func player_death():
+	var camera = $Camera2D
+	
+	camera.position_smoothing_enabled = false
+	camera.enabled = false
+	var camera_pos = camera.global_position
+	camera.reparent(get_tree().current_scene, true)
+	camera.global_position = camera_pos
+	camera.enabled = true
+	
+	await get_tree().create_timer(0.2).timeout
+	var player_death_effect_instance = player_death_effect.instantiate() as Node2D
+	player_death_effect_instance.global_position = global_position
+	get_parent().add_child(player_death_effect_instance)
+	
+	queue_free()
+	
+	SceneManager.transition_to_scene_checkpoint()
+
+
+func _on_hurt_cooldown_timeout() -> void:
+	can_be_hit = true

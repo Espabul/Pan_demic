@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://cetvj4vjn8esd"]
+
+[ext_resource type="Texture2D" uid="uid://mbfthnvu8v76" path="res://Assets/Sprites/Pancio/Pancio_idle/Pancio_Boss_Idle_0000.PNG" id="1_kv2ce"]
+[ext_resource type="Texture2D" uid="uid://roa6d528cb0e" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0000.PNG" id="2_gcxrr"]
+[ext_resource type="Texture2D" uid="uid://cf0nr35qqt4gk" path="res://Assets/Sprites/Pancio/Pancio_idle/Pancio_Boss_Idle_0001.PNG" id="2_s77cg"]
+[ext_resource type="Texture2D" uid="uid://gn24l8hslb2g" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0001.PNG" id="3_56v4t"]
+[ext_resource type="Texture2D" uid="uid://dl85stwiwa0in" path="res://Assets/Sprites/Pancio/Pancio_idle/Pancio_Boss_Idle_0002.PNG" id="3_sprdb"]
+[ext_resource type="Texture2D" uid="uid://x4k0q7334vj" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0002.PNG" id="4_cfxi2"]
+[ext_resource type="Texture2D" uid="uid://d27bexaegbm1u" path="res://Assets/Sprites/Pancio/Pancio_idle/Pancio_Boss_Idle_0003.PNG" id="4_y85st"]
+[ext_resource type="Texture2D" uid="uid://d1jo3lncy23ik" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0003.PNG" id="5_60uec"]
+[ext_resource type="Texture2D" uid="uid://bk4c35gofv8ee" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0000.PNG" id="5_ltr08"]
+[ext_resource type="Texture2D" uid="uid://cnuo4c52qjrsp" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0004.PNG" id="6_a5a25"]
+[ext_resource type="Texture2D" uid="uid://c3xvgor3inrvw" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0001.PNG" id="6_h8jay"]
+[ext_resource type="Texture2D" uid="uid://dlr6hq3ybmf34" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0002.PNG" id="7_3bm77"]
+[ext_resource type="Texture2D" uid="uid://wprnbk2ilxq8" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0005.PNG" id="7_vvs5b"]
+[ext_resource type="Texture2D" uid="uid://n8us4p1u0qa5" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0006.PNG" id="8_7c84m"]
+[ext_resource type="Texture2D" uid="uid://bslfshcd7dq7e" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0003.PNG" id="8_qd03m"]
+[ext_resource type="Texture2D" uid="uid://c5ve0f7gedntb" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0007.PNG" id="9_80xaj"]
+[ext_resource type="Texture2D" uid="uid://pj641ekx4err" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0004.PNG" id="9_vn4x8"]
+[ext_resource type="Texture2D" uid="uid://cne6vmxvcgelr" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0005.PNG" id="10_1kcxi"]
+[ext_resource type="Texture2D" uid="uid://76ggosdts0w6" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0008.PNG" id="10_gyvve"]
+[ext_resource type="Texture2D" uid="uid://db5dari4yhyys" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0009.PNG" id="11_i0l0q"]
+[ext_resource type="Texture2D" uid="uid://upi1pxi21o73" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0006.PNG" id="11_knjsh"]
+[ext_resource type="Texture2D" uid="uid://dhjglnkwvl2nl" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0010.PNG" id="12_if6by"]
+[ext_resource type="Texture2D" uid="uid://dyd32gbv6af05" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0007.PNG" id="12_mrume"]
+[ext_resource type="Texture2D" uid="uid://c1y3yuh0l6xpr" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0008.PNG" id="13_kqyv6"]
+[ext_resource type="Texture2D" uid="uid://dwo4hkbctyxqh" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0011.PNG" id="13_q5kqh"]
+[ext_resource type="Texture2D" uid="uid://inocexf56h8g" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0012.PNG" id="14_fvp5j"]
+[ext_resource type="Texture2D" uid="uid://da3edl2ucab18" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0009.PNG" id="14_rh1tt"]
+[ext_resource type="Texture2D" uid="uid://c6de2ntbca4ye" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0010.PNG" id="15_qtjmm"]
+[ext_resource type="Texture2D" uid="uid://bpuo0dcsumhrk" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0013.PNG" id="15_wryd1"]
+[ext_resource type="Texture2D" uid="uid://cumj5qfhaqet8" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0011.PNG" id="16_66wei"]
+[ext_resource type="Texture2D" uid="uid://baq36alwtm3qc" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0014.PNG" id="16_kutsi"]
+[ext_resource type="Texture2D" uid="uid://bkdbr0482quen" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0012.PNG" id="17_nqpas"]
+[ext_resource type="Texture2D" uid="uid://bqn7im6vs6y1f" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0013.PNG" id="18_wlfya"]
+[ext_resource type="Texture2D" uid="uid://dmg28ceanu8s3" path="res://Assets/Sprites/Pancio/Pancio_walk/Pancio_Boss_Walk_0014.PNG" id="19_w3nxc"]
+[ext_resource type="Texture2D" uid="uid://dwxo0tcha4gyj" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0000.PNG" id="20_juuql"]
+[ext_resource type="Texture2D" uid="uid://cess3u8d1po7e" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0001.PNG" id="21_iqj7e"]
+[ext_resource type="Texture2D" uid="uid://c0t6ivpjp8u4c" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0002.PNG" id="22_8cehc"]
+[ext_resource type="Texture2D" uid="uid://da8ojdkqx112l" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0003.PNG" id="23_oybw2"]
+[ext_resource type="Texture2D" uid="uid://dte80askj00vb" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0004.PNG" id="24_h8su8"]
+[ext_resource type="Texture2D" uid="uid://db5346m2knmjs" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0005.PNG" id="25_41t77"]
+[ext_resource type="Texture2D" uid="uid://cnys60sp6j1wq" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0006.PNG" id="26_8fthf"]
+[ext_resource type="Texture2D" uid="uid://c2om3vdiown3a" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0007.PNG" id="27_0dyol"]
+[ext_resource type="Texture2D" uid="uid://b5rn21fb0wol8" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0008.PNG" id="28_bnvdy"]
+[ext_resource type="Texture2D" uid="uid://c7753toefa4f" path="res://Assets/Sprites/Pancio/Pancio_jump_atk/Pancio_Boss_Attack_2_0009.PNG" id="29_00gg7"]
+[ext_resource type="Texture2D" uid="uid://bescvecyqks07" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0000.PNG" id="30_ved88"]
+[ext_resource type="Texture2D" uid="uid://d3af40mur12as" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0001.PNG" id="31_0j1ja"]
+[ext_resource type="Texture2D" uid="uid://m0xc5k6g622w" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0002.PNG" id="32_ce5qs"]
+[ext_resource type="Texture2D" uid="uid://cehqjrv3qbv5b" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0003.PNG" id="33_c8yrm"]
+[ext_resource type="Texture2D" uid="uid://c63ypy2bjlele" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0004.PNG" id="34_8ohnf"]
+[ext_resource type="Texture2D" uid="uid://d3tm4lrhmjhsk" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0005.PNG" id="35_esokw"]
+[ext_resource type="Texture2D" uid="uid://ub2p230krgrw" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0006.PNG" id="36_6tx0w"]
+[ext_resource type="Texture2D" uid="uid://dntu6i16l4hlm" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0007.PNG" id="37_sbvft"]
+[ext_resource type="Texture2D" uid="uid://142refiy1r7w" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0008.PNG" id="38_us3mo"]
+[ext_resource type="Texture2D" uid="uid://cvutuw8k0rwgv" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0009.PNG" id="39_15t5c"]
+[ext_resource type="Texture2D" uid="uid://b6iu2m14orkhc" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0010.PNG" id="40_kmr1d"]
+[ext_resource type="Texture2D" uid="uid://eckrpsp6bhg6" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0011.PNG" id="41_15jic"]
+[ext_resource type="Texture2D" uid="uid://d0rtnw4ha0yoo" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0012.PNG" id="42_x7y6y"]
+[ext_resource type="Texture2D" uid="uid://cbtoqsuurryh" path="res://Assets/Sprites/Pancio/Pancio_melee_atk/Pancio_Boss_Attack_1_0013.PNG" id="43_8j2m3"]
+
+[sub_resource type="Animation" id="Animation_xc47j"]
+resource_name = "Explode"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_gcxrr"), ExtResource("3_56v4t"), ExtResource("4_cfxi2"), ExtResource("5_60uec"), ExtResource("6_a5a25"), ExtResource("7_vvs5b"), ExtResource("8_7c84m"), ExtResource("9_80xaj"), ExtResource("10_gyvve"), ExtResource("11_i0l0q"), ExtResource("12_if6by"), ExtResource("13_q5kqh"), ExtResource("14_fvp5j"), ExtResource("15_wryd1"), ExtResource("16_kutsi")]
+}
+
+[sub_resource type="Animation" id="Animation_mflhk"]
+resource_name = "Idle"
+length = 0.63
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_kv2ce"), ExtResource("2_s77cg"), ExtResource("3_sprdb"), ExtResource("4_y85st")]
+}
+
+[sub_resource type="Animation" id="Animation_n26aq"]
+resource_name = "Jump_atk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_juuql"), ExtResource("21_iqj7e"), ExtResource("22_8cehc"), ExtResource("23_oybw2"), ExtResource("24_h8su8"), ExtResource("25_41t77"), ExtResource("26_8fthf"), ExtResource("27_0dyol"), ExtResource("28_bnvdy"), ExtResource("29_00gg7")]
+}
+
+[sub_resource type="Animation" id="Animation_vixf7"]
+resource_name = "Melee_atk"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("30_ved88"), ExtResource("31_0j1ja"), ExtResource("32_ce5qs"), ExtResource("33_c8yrm"), ExtResource("34_8ohnf"), ExtResource("35_esokw"), ExtResource("36_6tx0w"), ExtResource("37_sbvft"), ExtResource("38_us3mo"), ExtResource("39_15t5c"), ExtResource("40_kmr1d"), ExtResource("41_15jic"), ExtResource("42_x7y6y"), ExtResource("43_8j2m3")]
+}
+
+[sub_resource type="Animation" id="Animation_e64a4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_kv2ce")]
+}
+
+[sub_resource type="Animation" id="Animation_wodtw"]
+resource_name = "Walk"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_ltr08"), ExtResource("6_h8jay"), ExtResource("7_3bm77"), ExtResource("8_qd03m"), ExtResource("9_vn4x8"), ExtResource("10_1kcxi"), ExtResource("11_knjsh"), ExtResource("12_mrume"), ExtResource("13_kqyv6"), ExtResource("14_rh1tt"), ExtResource("15_qtjmm"), ExtResource("16_66wei"), ExtResource("17_nqpas"), ExtResource("18_wlfya"), ExtResource("19_w3nxc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2cef"]
+_data = {
+&"Explode": SubResource("Animation_xc47j"),
+&"Idle": SubResource("Animation_mflhk"),
+&"Jump_atk": SubResource("Animation_n26aq"),
+&"Melee_atk": SubResource("Animation_vixf7"),
+&"RESET": SubResource("Animation_e64a4"),
+&"Walk": SubResource("Animation_wodtw")
+}
+
+[sub_resource type="Animation" id="Animation_gcxrr"]
+resource_name = "damage_effect"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.3),
+"transitions": PackedFloat32Array(6.276706e-05, 6.276706e-05, 1e-05),
+"update": 0,
+"values": [Color(2.458793, 0, 0.13705948, 1), Color(2.458793, 0, 0.13705948, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_56v4t"]
+_data = {
+&"damage_effect": SubResource("Animation_gcxrr")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ri765"]
+radius = 169.0
+height = 436.0
+
+[node name="Pancio" type="CharacterBody2D" unique_id=674618156]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=720745504]
+texture = ExtResource("1_kv2ce")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1215059287]
+libraries/ = SubResource("AnimationLibrary_s2cef")
+autoplay = &"Idle"
+
+[node name="DamageEffect" type="AnimationPlayer" parent="Sprite2D" unique_id=119500487]
+libraries/ = SubResource("AnimationLibrary_56v4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1976517268]
+position = Vector2(20, 122)
+shape = SubResource("CapsuleShape2D_ri765")

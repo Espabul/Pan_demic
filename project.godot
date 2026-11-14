@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="juego_gamejam"
-run/main_scene="uid://e2hith58jgnm"
+run/main_scene="uid://dv7d8rofrggrp"
 config/features=PackedStringArray("4.7", "Forward Plus")
+
+[autoload]
+
+HealthManager="*uid://cvsxakys5ut35"
+GameManager="*uid://dfbxmvo45pnhd"
+SceneManager="*uid://bwb4t64h6qf6d"
+DataManager="*uid://cyayewl0lvf1"
 
 [display]
 
@@ -30,6 +37,7 @@ movie_writer/fps=90
 [global_group]
 
 player=""
+enemy=""
 
 [input]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dth2ljmmqgu1s"]
 
 [ext_resource type="Script" uid="uid://cnfohfpsk73se" path="res://Scripts/player.gd" id="1_6upyo"]
+[ext_resource type="Shader" uid="uid://bnnoxql6ff568" path="res://Assets/Sprites/player/player_hit_flash_shader.tres" id="2_ag54m"]
 [ext_resource type="SpriteFrames" uid="uid://bsy8humoy4vnn" path="res://Scenes/player/sprite_frames_personaje.tres" id="2_eo61r"]
 [ext_resource type="Script" uid="uid://b4p14u2vbqkov" path="res://Scripts/state_machine.gd" id="3_6upyo"]
 [ext_resource type="Script" uid="uid://bx7i5tpufnn6n" path="res://Scripts/Player_states/idle_state.gd" id="4_xxarj"]
@@ -12,27 +13,78 @@
 [ext_resource type="Script" uid="uid://45wh3i52nuu2" path="res://Scripts/Player_states/disparo_state.gd" id="10_ag54m"]
 [ext_resource type="Script" uid="uid://dntcffy2thel3" path="res://Scripts/Player_states/falldisparo_state.gd" id="11_g7b1g"]
 [ext_resource type="Script" uid="uid://wcrjkikhe8kp" path="res://Scripts/Player_states/disparojump_state.gd" id="12_h0khc"]
+[ext_resource type="Script" uid="uid://de5v18wni06h7" path="res://Scripts/Player_states/hurt_state.gd" id="14_g7b1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
-size = Vector2(138, 142)
+size = Vector2(111, 142)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqp1q"]
+shader = ExtResource("2_ag54m")
+shader_parameter/Enabled = false
+shader_parameter/Hit_colour = Color(2.002402, 0.847799, 0.597414, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6l2gj"]
+radius = 67.0
+height = 166.0
+
+[sub_resource type="Animation" id="Animation_g7b1g"]
+resource_name = "Hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/Enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_h0khc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/Enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vj4j"]
+_data = {
+&"Hit": SubResource("Animation_g7b1g"),
+&"RESET": SubResource("Animation_h0khc")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=1080565387 groups=["player"]]
 collision_layer = 4
 script = ExtResource("1_6upyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123497989 groups=["player"]]
+visible = false
 light_mask = 4
-position = Vector2(-8, 5)
+position = Vector2(-8.5, 5)
 shape = SubResource("RectangleShape2D_w7mgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=577541438]
+material = SubResource("ShaderMaterial_tqp1q")
 position = Vector2(-6, -11)
 sprite_frames = ExtResource("2_eo61r")
-animation = &"attack mele"
+animation = &"daño"
+frame = 3
+frame_progress = 0.08020582
 
 [node name="StateMachine" type="Node" parent="." unique_id=884089471 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_6upyo")
-initial_state = NodePath("IdleState")
+initial_state = NodePath("FallState")
 metadata/_custom_type_script = "uid://b4p14u2vbqkov"
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=1499015714]
@@ -71,6 +123,10 @@ metadata/_custom_type_script = "uid://dntcffy2thel3"
 script = ExtResource("12_h0khc")
 metadata/_custom_type_script = "uid://wcrjkikhe8kp"
 
+[node name="HurtState" type="Node" parent="StateMachine" unique_id=1504908028]
+script = ExtResource("14_g7b1g")
+metadata/_custom_type_script = "uid://de5v18wni06h7"
+
 [node name="dashtimer" type="Timer" parent="." unique_id=629045943]
 one_shot = true
 
@@ -86,11 +142,23 @@ wait_time = 0.6
 one_shot = true
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1765017090]
-collision_layer = 0
+visible = false
+collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=1274670034]
+position = Vector2(-8, -11)
+shape = SubResource("CapsuleShape2D_6l2gj")
+debug_color = Color(0.7930866, 0.41936132, 0.22373873, 0.41960785)
+
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1479456065]
+libraries/ = SubResource("AnimationLibrary_6vj4j")
+
+[node name="Hurt_cooldown" type="Timer" parent="." unique_id=792129356]
+one_shot = true
 
 [connection signal="timeout" from="dash_cooldowntimer" to="." method="_on_dash_cooldowntimer_timeout"]
 [connection signal="timeout" from="atk_cooldowntimer" to="." method="_on_atk_cooldowntimer_timeout"]
 [connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="Hurt_cooldown" to="." method="_on_hurt_cooldown_timeout"]

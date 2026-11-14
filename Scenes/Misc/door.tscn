@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cifogrnvs7twy"]
+
+[ext_resource type="Script" uid="uid://d3iju0i3cwjwe" path="res://Scripts/Misc/door.gd" id="1_5kh6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbfun"]
+size = Vector2(186, 176)
+
+[node name="Door" type="Node2D" unique_id=1599704378]
+script = ExtResource("1_5kh6l")
+
+[node name="ExitArea2D" type="Area2D" parent="." unique_id=816527651]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea2D" unique_id=1829405902]
+shape = SubResource("RectangleShape2D_vbfun")
+
+[connection signal="body_entered" from="ExitArea2D" to="." method="_on_exit_area_2d_body_entered"]
