@@ -6,6 +6,8 @@ var main_menu_screen = preload("res://Scenes/UI/main_menu_scene.tscn")
 
 func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color(0.79, 0.525, 0.23, 1.0))
+	
+	DataManager.load_data()
 
 
 
@@ -14,11 +16,12 @@ func start_game():
 		continue_game()
 		return
 	
-	SceneManager.transition_to_scene("Level1_Amasadora")
+	SceneManager.transition_to_scene(DataManager.game_data.checkpoint_scene)
 
 
 
 func quit_game():
+	DataManager.save_data()
 	get_tree().quit()
 
 

@@ -2,9 +2,7 @@ extends CharacterBody2D
 
 
 
-var health = 5
-var upgrades = 3
-
+var upgrades : int
 
 
 const SPEED = 300.0
@@ -40,6 +38,7 @@ var atk_proyect = preload("res://Scenes/player/atk_sweep.tscn")
 var player_death_effect = preload("res://Scenes/player/player_death_effect.tscn")
 
 func _ready() -> void:
+	upgrades = SceneManager.upgrades
 	if upgrades >=1:
 		can_dash = true
 	if upgrades >=2:
@@ -121,6 +120,7 @@ func player_death():
 	
 	queue_free()
 	
+	SceneManager.transition_to_scene_checkpoint()
 
 
 func _on_hurt_cooldown_timeout() -> void:
