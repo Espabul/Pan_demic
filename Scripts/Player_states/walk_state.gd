@@ -30,7 +30,8 @@ func physics_update(delta: float):
 		state_machine.change_state("idlestate")
 		return
 	
-	character.velocity.x = direction * 600
+	character.velocity.x = direction * character.SPEED
+	
 	character.move_and_slide()
 	
 

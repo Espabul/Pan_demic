@@ -6,7 +6,7 @@ class_name JumpState
 func enter():
 	print("Entering State Jump")
 	var character = state_machine.get_parent()
-	character.velocity.y = -1400
+	character.velocity.y = character.JUMP_VELOCITY
 	#animacion
 	character.animacion.play("jump")
 	
@@ -25,7 +25,7 @@ func physics_update(delta: float):
 	
 	#movimiento horizontal
 	var direction = Input.get_axis("mover izquierda", "mover_derecha")
-	character.velocity.x = direction * 400
+	character.velocity.x = direction * character.SPEED
 	
 	if direction != 0:
 		character.animacion.flip_h = direction < 0
@@ -41,7 +41,7 @@ func handle_input(event: InputEvent):
 	var character = state_machine.get_parent()
 	if Input.is_action_just_pressed("disparo") and character.can_shoot:
 		state_machine.change_state("disparojumpstate")
-	elif Input.is_action_just_pressed("dash"):
+	elif Input.is_action_just_pressed("dash") and character.can_dash:
 		state_machine.change_state("dashstate")
 	elif Input.is_action_just_pressed("ataque") and character.can_atk:
 		state_machine.change_state("ataquestate")

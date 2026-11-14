@@ -69,14 +69,12 @@ collision_layer = 4
 script = ExtResource("1_6upyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123497989 groups=["player"]]
-visible = false
 light_mask = 4
-position = Vector2(-8.5, 5)
+position = Vector2(4, 11)
 shape = SubResource("RectangleShape2D_w7mgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=577541438]
 material = SubResource("ShaderMaterial_tqp1q")
-position = Vector2(-6, -11)
 sprite_frames = ExtResource("2_eo61r")
 animation = &"daño"
 frame = 3
@@ -142,12 +140,11 @@ wait_time = 0.6
 one_shot = true
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1765017090]
-visible = false
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=1274670034]
-position = Vector2(-8, -11)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_6l2gj")
 debug_color = Color(0.7930866, 0.41936132, 0.22373873, 0.41960785)
 
@@ -160,5 +157,6 @@ one_shot = true
 [connection signal="timeout" from="dash_cooldowntimer" to="." method="_on_dash_cooldowntimer_timeout"]
 [connection signal="timeout" from="atk_cooldowntimer" to="." method="_on_atk_cooldowntimer_timeout"]
 [connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Hurt_cooldown" to="." method="_on_hurt_cooldown_timeout"]

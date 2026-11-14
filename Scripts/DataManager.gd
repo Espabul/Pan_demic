@@ -35,4 +35,4 @@ func change_data():
 
 func reset_data():
 	game_data.checkpoint_scene = "Level1_Amasadora"
-	game_data.upgrades = 0
+	game_data.upgrades = 3

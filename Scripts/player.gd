@@ -5,8 +5,8 @@ extends CharacterBody2D
 var upgrades : int
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 500.0
+const JUMP_VELOCITY = -1800.0
 const DASH_DURATION = 0.2
 const DASH_COOLDOWN = 0.6
 const DASH_VELOCITY = 1500
@@ -103,6 +103,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			player_death()
 
 
+
+
 func player_death():
 	var camera = $Camera2D
 	
@@ -125,3 +127,23 @@ func player_death():
 
 func _on_hurt_cooldown_timeout() -> void:
 	can_be_hit = true
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy") and can_be_hit and not hurtstate:
+		print("player hurt")
+		if velocity.x < -200:
+			hurt_direction = 1
+		elif velocity.x >200:
+			hurt_direction = -1
+		elif area.global_position.x > global_position.x:
+			hurt_direction = 1
+		else:
+			hurt_direction = -1
+		
+		hurtstate = true
+		
+		HealthManager.decrease_health(area.damage_amount)
+		
+		if HealthManager.current_health == 0:
+			player_death()

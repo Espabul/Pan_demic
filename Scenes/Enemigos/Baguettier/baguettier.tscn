@@ -3,22 +3,84 @@
 [ext_resource type="Texture2D" uid="uid://cet0h0wsetfbp" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0000.png" id="1_4pr75"]
 [ext_resource type="Script" uid="uid://cp4gt546rn4jr" path="res://Scenes/Enemigos/Baguettier/baguettier.gd" id="1_hh4mj"]
 [ext_resource type="Texture2D" uid="uid://cio55iqsb4j85" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0002.png" id="2_hh4mj"]
+[ext_resource type="Texture2D" uid="uid://scxpfxyl2ehj" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0000.png" id="2_t5065"]
+[ext_resource type="Texture2D" uid="uid://dliwduqhfuksx" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0002.png" id="3_f43vj"]
 [ext_resource type="Texture2D" uid="uid://ceiqyeisjm1ph" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0004.png" id="3_xiejl"]
+[ext_resource type="Texture2D" uid="uid://cx3ocv5txaw4n" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0004.png" id="4_6vjb0"]
 [ext_resource type="Texture2D" uid="uid://cikk14ydwy0vt" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0006.png" id="4_7q5ya"]
 [ext_resource type="Texture2D" uid="uid://cqo06qdw3lbge" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0008.png" id="5_w7p5p"]
+[ext_resource type="Texture2D" uid="uid://b4d64d8pvfoo5" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0006.png" id="5_x03yq"]
 [ext_resource type="Texture2D" uid="uid://bmyvvrc66xks0" path="res://Assets/Sprites/Baguettier/Baguettier_walk/Baguettier_walk_0010.png" id="6_e47t4"]
+[ext_resource type="Texture2D" uid="uid://d1n0xiph3msdj" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0008.png" id="6_jaxdn"]
+[ext_resource type="Texture2D" uid="uid://x7vha0xh6iu3" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0010.png" id="7_bhu12"]
+[ext_resource type="Texture2D" uid="uid://cfyas3fqg3o7d" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0012.png" id="8_qv1ki"]
+[ext_resource type="Texture2D" uid="uid://bpyml6mex2rue" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0014.png" id="9_ma8s2"]
+[ext_resource type="Texture2D" uid="uid://cp3kot5r7ci0k" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0016.png" id="10_uc2xy"]
+[ext_resource type="Texture2D" uid="uid://dhijrp0pti2p0" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0018.png" id="11_yqdwm"]
+[ext_resource type="Texture2D" uid="uid://bm5fld7i5j7v6" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0020.png" id="12_u75st"]
+[ext_resource type="Texture2D" uid="uid://yhycfcr0twng" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0022.png" id="13_hhvlg"]
+[ext_resource type="Texture2D" uid="uid://cflqxgai8re1w" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0024.png" id="14_oleco"]
+[ext_resource type="Texture2D" uid="uid://ckhe2yxlhepfp" path="res://Assets/Sprites/Baguettier/Baguettier_attack/Baguettier_attack_0026.png" id="15_7jnv8"]
+[ext_resource type="Texture2D" uid="uid://43fhljt1cfsr" path="res://Assets/Sprites/Baguettier/Baguettier_hurt/Baguettier_hurt_0000.png" id="16_x03yq"]
+[ext_resource type="Texture2D" uid="uid://8g0wx72ydn0" path="res://Assets/Sprites/Baguettier/Baguettier_hurt/Baguettier_hurt_0002.png" id="17_jaxdn"]
+[ext_resource type="Texture2D" uid="uid://nhwrl2sf6e32" path="res://Assets/Sprites/Baguettier/Baguettier_hurt/Baguettier_hurt_0004.png" id="18_bhu12"]
+[ext_resource type="Script" uid="uid://b4p14u2vbqkov" path="res://Scripts/state_machine.gd" id="25_jaxdn"]
+[ext_resource type="Script" uid="uid://dqlw5er0kss8x" path="res://Scenes/Enemigos/Baguettier/Baguettier_states/bag_walk_state.gd" id="26_uc2xy"]
+[ext_resource type="Script" uid="uid://12pmmi1pppu1" path="res://Scenes/Enemigos/Baguettier/Baguettier_states/bag_attack_state.gd" id="27_yqdwm"]
+[ext_resource type="Script" uid="uid://cupyhab2niup0" path="res://Scenes/Enemigos/Baguettier/Baguettier_states/bag_chase_state.gd" id="28_u75st"]
+[ext_resource type="Script" uid="uid://bpfynu4ymncn7" path="res://Scenes/Enemigos/Baguettier/Baguettier_states/bag_hurt_state.gd" id="29_hhvlg"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfun"]
-radius = 45.0
-height = 422.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_268t0"]
-radius = 51.0
-height = 102.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jipjl"]
+size = Vector2(62, 388)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gah4e"]
 radius = 55.0
 height = 442.0
+
+[sub_resource type="Animation" id="Animation_cddfs"]
+resource_name = "Baguettier_attack"
+length = 0.96
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.6666667, 0.73333335, 0.8, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_t5065"), ExtResource("3_f43vj"), ExtResource("4_6vjb0"), ExtResource("5_x03yq"), ExtResource("6_jaxdn"), ExtResource("7_bhu12"), ExtResource("8_qv1ki"), ExtResource("9_ma8s2"), ExtResource("10_uc2xy"), ExtResource("11_yqdwm"), ExtResource("12_u75st"), ExtResource("13_hhvlg"), ExtResource("14_oleco"), ExtResource("15_7jnv8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack_collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_qv1ki"]
+resource_name = "Baguettier_hurt"
+length = 0.26
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_x03yq"), ExtResource("17_jaxdn"), ExtResource("18_bhu12"), ExtResource("17_jaxdn")]
+}
 
 [sub_resource type="Animation" id="Animation_x2uwq"]
 resource_name = "Baguettier_walk"
@@ -51,30 +113,82 @@ tracks/0/keys = {
 "update": 1,
 "values": [null]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack_collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8p8g1"]
 _data = {
+&"Baguettier_attack": SubResource("Animation_cddfs"),
+&"Baguettier_hurt": SubResource("Animation_qv1ki"),
 &"Baguettier_walk": SubResource("Animation_x2uwq"),
 &"RESET": SubResource("Animation_ypeuf")
 }
+
+[sub_resource type="Animation" id="Animation_uc2xy"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e-05),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hh4mj"]
+resource_name = "damage_effect"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(6.276706e-05, 6.276706e-05, 1e-05),
+"update": 0,
+"values": [Color(2.458793, 0, 0.13705948, 1), Color(2.458793, 0, 0.13705948, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xiejl"]
+_data = {
+&"RESET": SubResource("Animation_uc2xy"),
+&"damage_effect": SubResource("Animation_hh4mj")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8g73"]
+radius = 164.0
+height = 328.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nyvdy"]
+radius = 214.0
+height = 1222.0
 
 [node name="Baguettier" type="CharacterBody2D" unique_id=1171065870 groups=["enemy"]]
 collision_layer = 2
 script = ExtResource("1_hh4mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062416478]
-position = Vector2(129, 8)
-shape = SubResource("CapsuleShape2D_vbfun")
-
-[node name="Hitbox" type="Area2D" parent="." unique_id=1494990392]
-collision_layer = 2
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=447628217]
-position = Vector2(46, -271)
-shape = SubResource("CapsuleShape2D_268t0")
+position = Vector2(1, 20)
+shape = SubResource("RectangleShape2D_jipjl")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=756624933]
+position = Vector2(-128, -1)
 collision_layer = 2
 collision_mask = 16
 
@@ -84,10 +198,57 @@ shape = SubResource("CapsuleShape2D_gah4e")
 debug_color = Color(0.1426534, 0.6461214, 0, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024839414]
+offset = Vector2(-129, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1178811389]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_8p8g1")
 autoplay = &"Baguettier_walk"
 
+[node name="DamageEffect" type="AnimationPlayer" parent="Sprite2D" unique_id=1144208178]
+libraries/ = SubResource("AnimationLibrary_xiejl")
+autoplay = &"RESET"
+
+[node name="Attack_collision" type="CollisionShape2D" parent="." unique_id=633951201]
+position = Vector2(130, 48)
+shape = SubResource("CapsuleShape2D_r8g73")
+disabled = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=645375813 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("25_jaxdn")
+initial_state = NodePath("BagWalkState")
+metadata/_custom_type_script = "uid://b4p14u2vbqkov"
+
+[node name="BagWalkState" type="Node" parent="StateMachine" unique_id=1345959745]
+script = ExtResource("26_uc2xy")
+metadata/_custom_type_script = "uid://dqlw5er0kss8x"
+
+[node name="BagAttackState" type="Node" parent="StateMachine" unique_id=619851108]
+script = ExtResource("27_yqdwm")
+metadata/_custom_type_script = "uid://12pmmi1pppu1"
+
+[node name="BagChaseState" type="Node" parent="StateMachine" unique_id=270865878]
+script = ExtResource("28_u75st")
+metadata/_custom_type_script = "uid://cupyhab2niup0"
+
+[node name="BagHurtState" type="Node" parent="StateMachine" unique_id=569073125]
+script = ExtResource("29_hhvlg")
+metadata/_custom_type_script = "uid://bpfynu4ymncn7"
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=338760946]
+position = Vector2(-125, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=120349055]
+position = Vector2(133, 6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nyvdy")
+debug_color = Color(0.7700791, 0.28449512, 0.8528684, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1043562448]
+one_shot = true
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
