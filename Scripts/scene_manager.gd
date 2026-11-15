@@ -12,6 +12,8 @@ var transition_caterpanillar_screen = preload("res://Scenes/UI/scene_transition_
 
 var upgrades : int = 0
 
+var level_name = "Level1_Amasadora"
+
 
 func transition_to_scene(level : String):
 	var scene_path : String = scenes.get(level)
@@ -29,6 +31,8 @@ func transition_to_scene_checkpoint():
 	await get_tree().create_timer(0.6).timeout
 	transition_to_scene("Checkpoint")
 	HealthManager.increase_health(10)
+	if last_scene == "Checkpoint":
+		last_scene = level_name
 
 
 func play_transition_animation():
@@ -38,3 +42,5 @@ func play_transition_animation():
 
 func set_checkpoint_scene(level: String):
 	scenes.set("Checkpoint", scenes.get(level))
+	level_name = level
+	
