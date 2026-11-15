@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://w6mwvtb4rust"]
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_irm5c"]
+[ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_j0ne3"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_3mii2"]
+[ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_ndh2h"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_3mii2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_kybpr"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_pg5ad"]
@@ -393,14 +395,29 @@ sources/0 = SubResource("TileSetAtlasSource_kybpr")
 
 [node name="level_9_enfriado" type="Node2D" unique_id=724676458]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=869241816]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1144315362]
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1676567094]
+position = Vector2(475, -69)
+scale = Vector2(0.9557292, 0.8935186)
+texture = ExtResource("1_j0ne3")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=600065330]
+
+[node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=972992358]
+position = Vector2(758, -332)
+texture = ExtResource("2_ndh2h")
+
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_irm5c")]
 position = Vector2(-619, 155)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1349208614]
 zoom = Vector2(0.45, 0.45)
-limit_left = -1400
+limit_left = -1300
 limit_top = -1150
-limit_right = 2450
+limit_right = 2400
 limit_bottom = 440
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=92991611]

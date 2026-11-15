@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dlw70ca1redh1"]
 
+[ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_a4v64"]
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_chk01"]
+[ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_8j50v"]
 [ext_resource type="Texture2D" uid="uid://cpc7p4k3e203k" path="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png" id="2_ntval"]
 [ext_resource type="PackedScene" uid="uid://t742p21fjpwv" path="res://Scenes/Enemigos/Baguettier/baguettier.tscn" id="3_j6xlt"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_1swy8"]
@@ -389,6 +391,22 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_2252j")
 
 [node name="level3_mesa_de_trabajo_2" type="Node2D" unique_id=171684994]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=403016762]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1738467580]
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=922179198]
+position = Vector2(648, -1146)
+scale = Vector2(1.273177, 1.3023148)
+texture = ExtResource("1_a4v64")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=202488483]
+
+[node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=122616629]
+position = Vector2(1131, -1078.9999)
+scale = Vector2(1.2942708, 1.3055557)
+texture = ExtResource("2_8j50v")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_chk01")]
 position = Vector2(-1066, 192)

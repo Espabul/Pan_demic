@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_l5sf6"]
 [ext_resource type="Texture2D" uid="uid://7lh2rhx7cxy6" path="res://Assets/Tilesets/Tileset_Amasadora.png" id="2_2s2wd"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_mya04"]
+[ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="5_4n4k6"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="6_268t0"]
 
 [sub_resource type="GDScript" id="GDScript_l5sf6"]
@@ -398,6 +399,15 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_dy24i")
 
 [node name="Level1Amasadora" type="Node2D" unique_id=783983454]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=170489019]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1387860173]
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=88707627]
+position = Vector2(585.49994, -1223.9999)
+scale = Vector2(1.233073, 1.4972222)
+texture = ExtResource("5_4n4k6")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_l5sf6")]
 position = Vector2(-743, 182)
