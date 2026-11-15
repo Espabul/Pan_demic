@@ -46,13 +46,16 @@ var player_death_effect = preload("res://Scenes/player/player_death_effect.tscn"
 func _ready() -> void:
 	
 	global_position = SceneManager.spawn_pos
+	check_abilities()
 	
+
+
+func check_abilities():
 	upgrades = SceneManager.upgrades
 	if upgrades >=1:
 		can_shoot = true
 	if upgrades >=2:
 		can_dash = true
-
 
 func shoot_proyectile():
 	var bullet_instance = proyect_flojo.instantiate() as Node2D
@@ -83,7 +86,7 @@ func atk_proyectile():
 
 
 func _on_dash_cooldowntimer_timeout() -> void:
-	if upgrades >= 1: can_dash = true
+	if upgrades >= 2: can_dash = true
 
 
 func _on_atk_cooldowntimer_timeout() -> void:
@@ -91,7 +94,7 @@ func _on_atk_cooldowntimer_timeout() -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
-	if upgrades >= 2: can_shoot = true
+	if upgrades >= 1: can_shoot = true
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

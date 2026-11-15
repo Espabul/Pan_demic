@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://t18ekutgrmy0"]
+
+[ext_resource type="Texture2D" uid="uid://cd2w0cssjvcj3" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0000.png" id="1_21gbg"]
+[ext_resource type="Texture2D" uid="uid://cyy3r25r3jh2t" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0001.png" id="2_dh6hy"]
+[ext_resource type="Texture2D" uid="uid://bq0sbvg6pvnsx" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0002.png" id="3_6qlaj"]
+[ext_resource type="Texture2D" uid="uid://d280c01pgknx5" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0003.png" id="4_o5s6m"]
+[ext_resource type="Texture2D" uid="uid://bf76wgnbmrb54" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0004.png" id="5_10r48"]
+[ext_resource type="Texture2D" uid="uid://dmblwugvdtpg4" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0005.png" id="6_2cjeu"]
+[ext_resource type="Texture2D" uid="uid://ng81wtwxqc2n" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0006.png" id="7_d4efl"]
+[ext_resource type="Texture2D" uid="uid://6ariubg4554w" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0007.png" id="8_bc5bm"]
+[ext_resource type="Texture2D" uid="uid://fmas8eqea025" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0008.png" id="9_booeb"]
+[ext_resource type="Texture2D" uid="uid://bataweng0s1ty" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0009.png" id="10_gts5k"]
+[ext_resource type="Texture2D" uid="uid://do6ahuii5w0d0" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0010.png" id="11_go0c3"]
+[ext_resource type="Texture2D" uid="uid://m5nhsbmxad6v" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0011.png" id="12_g6q5l"]
+[ext_resource type="Texture2D" uid="uid://b0n408ex0f3wb" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0012.png" id="13_oenug"]
+[ext_resource type="Texture2D" uid="uid://dsf8paku835q3" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0013.png" id="14_lg4yy"]
+[ext_resource type="Texture2D" uid="uid://cp6bvcmfwpx8c" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0014.png" id="15_2pc1w"]
+[ext_resource type="Texture2D" uid="uid://dyrs86lj8u52p" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0015.png" id="16_ormjb"]
+[ext_resource type="Texture2D" uid="uid://bw7xg4yyqthpn" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0016.png" id="17_nl86n"]
+[ext_resource type="Texture2D" uid="uid://crf6xn2gg7nnx" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0017.png" id="18_l7tw5"]
+[ext_resource type="Texture2D" uid="uid://dsybph8gntjja" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0018.png" id="19_53r0e"]
+[ext_resource type="Texture2D" uid="uid://ctds7mf1mk314" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0019.png" id="20_2vxuw"]
+[ext_resource type="Texture2D" uid="uid://bt12uqcofodn7" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0020.png" id="21_wq5s0"]
+[ext_resource type="Texture2D" uid="uid://cytwfdclc4lor" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0021.png" id="22_k3w88"]
+[ext_resource type="Texture2D" uid="uid://crcpqw0kjb48a" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0022.png" id="23_jrvav"]
+[ext_resource type="Texture2D" uid="uid://rxu5xacfxg5y" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0023.png" id="24_27wmg"]
+[ext_resource type="Texture2D" uid="uid://dolehtb5532jq" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0024.png" id="25_m5vvf"]
+[ext_resource type="Texture2D" uid="uid://dcrtc2ftnlwx0" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0025.png" id="26_d0rld"]
+[ext_resource type="Texture2D" uid="uid://crbjetu2uwd5l" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0026.png" id="27_w6muc"]
+[ext_resource type="Texture2D" uid="uid://c5sde3nt63k34" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0027.png" id="28_o6xts"]
+[ext_resource type="Texture2D" uid="uid://bf1qruhid7q2m" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0028.png" id="29_lclum"]
+[ext_resource type="Texture2D" uid="uid://c8m7uguv232v2" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0029.png" id="30_o1ggu"]
+[ext_resource type="Texture2D" uid="uid://bibowamvirjji" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0030.png" id="31_3jdjv"]
+[ext_resource type="Texture2D" uid="uid://cieqwtoubhn6p" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0031.png" id="32_g6mwl"]
+[ext_resource type="Script" uid="uid://dfkximd8olju6" path="res://Scenes/Enemigos/Epifungus/epifungus_death_effect.gd" id="33_6qlaj"]
+[ext_resource type="Texture2D" uid="uid://rywkbbsl83hw" path="res://Assets/Particles/WhiteParticle.png" id="33_dh6hy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_21gbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dh6hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6qlaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o5s6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_10r48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2cjeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d4efl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bc5bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_booeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gts5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_go0c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g6q5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oenug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lg4yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2pc1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ormjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nl86n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l7tw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_53r0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2vxuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wq5s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_k3w88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jrvav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_27wmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_m5vvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_d0rld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_w6muc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_o6xts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_lclum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_o1ggu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3jdjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_g6mwl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_6qlaj"]
+colors = PackedColorArray(0.7921569, 0.49019608, 0.25490198, 1, 0.92941177, 0.7294118, 0.46666667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r8g73"]
+gradient = SubResource("Gradient_6qlaj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o5s6m"]
+lifetime_randomness = 0.12
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 326.52
+initial_velocity_max = 377.55
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_r8g73")
+
+[sub_resource type="Animation" id="Animation_d7ctf"]
+resource_name = "Death"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.5999999, 1.7, 1.8, 1.9000001, 2, 2.1000001, 2.2, 2.3000002, 2.4, 2.5000002, 2.6, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-0.03490658503988659, 0.13962634015954636, -0.03490658503988659, 0.13962634015954636, -0.03490658503988659, 0.13962634015954636, -0.03490658503988659, 0.13962634015954636, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004, 1.2, 1.5, 1.8333334, 2.1333334, 2.4666667, 2.7666667, 3.0666666, 3.2333333),
+"transitions": PackedFloat32Array(1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(2.4589493, 0.8652482, 0.7228457, 1), Color(1, 1, 1, 1), Color(2.4589992, 0.5519444, 0.4532901, 1), Color(1, 1, 1, 1), Color(2.459, 0.4135434, 0.34671313, 1), Color(1, 1, 1, 1), Color(2.459, 0.25416088, 0.23814276, 1), Color(1, 1, 1, 1), Color(2.458793, 0, 0.13705948, 1), Color(1, 1, 1, 1), Color(2.458793, 0, 0.13705948, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmg8w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10r48"]
+_data = {
+&"Death": SubResource("Animation_d7ctf"),
+&"RESET": SubResource("Animation_kmg8w")
+}
+
+[node name="EpifungusDeathEffect" type="AnimatedSprite2D" unique_id=1254025865]
+modulate = Color(2.458793, 0, 0.13705948, 1)
+sprite_frames = SubResource("SpriteFrames_vbfun")
+autoplay = "default"
+frame = 17
+frame_progress = 0.718742
+script = ExtResource("33_6qlaj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=787324056]
+z_index = -1
+position = Vector2(73, 97)
+emitting = false
+amount = 60
+texture = ExtResource("33_dh6hy")
+lifetime = 1.3
+speed_scale = 2.0
+explosiveness = 0.29
+randomness = 0.09
+process_material = SubResource("ParticleProcessMaterial_o5s6m")
+
+[node name="ExtraEffects" type="AnimationPlayer" parent="." unique_id=1661750205]
+libraries/ = SubResource("AnimationLibrary_10r48")
+autoplay = &"Death"
+
+[node name="Timer" type="Timer" parent="." unique_id=378984295]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

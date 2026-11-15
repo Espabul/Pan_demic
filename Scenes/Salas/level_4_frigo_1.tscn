@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_54rje"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_giacs"]
 [ext_resource type="AudioStream" uid="uid://bf1kjvc5ncdrq" path="res://Assets/music/the_mountain-funky-508017.mp3" id="8_qyns5"]
+[ext_resource type="PackedScene" uid="uid://t742p21fjpwv" path="res://Scenes/Enemigos/Baguettier/baguettier.tscn" id="10_16ote"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_54rje"]
 texture = ExtResource("2_2csk2")
@@ -446,16 +447,13 @@ next_scene = "level_7_dibujado"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_54rje")]
 
-[node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("5_giacs")]
-position = Vector2(-1223, 111)
-
-[node name="Puerta2" parent="." unique_id=1632708818 instance=ExtResource("5_giacs")]
-position = Vector2(1797, 312)
-rotation = 1.5707964
-
 [node name="Puerta3" parent="." unique_id=5251555 instance=ExtResource("5_giacs")]
 position = Vector2(2272, -261)
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1048269799]
 stream = ExtResource("8_qyns5")
 autoplay = true
+
+[node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("10_16ote")]
+position = Vector2(272, 60)
+patrol_point_xpos = 272

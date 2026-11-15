@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_a81gw"]
 [ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="5_pjhlv"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="6_16ais"]
-[ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="7_16ais"]
 [ext_resource type="PackedScene" uid="uid://baf2dabpi87hd" path="res://Scenes/Misc/masa_madre.tscn" id="9_xns0p"]
 [ext_resource type="AudioStream" uid="uid://bdbthd7k58iir" path="res://Assets/music/atlasaudio-funky-background-617565.mp3" id="10_neysc"]
 [ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="10_vamvg"]
@@ -447,16 +446,9 @@ spawn_pos = Vector2(-1240, 179)
 position = Vector2(-927, -1836.0001)
 scale = Vector2(1.2421875, 1.15625)
 
-[node name="MasaMadre" type="Sprite2D" parent="." unique_id=465135768]
-position = Vector2(2116, -1902)
-texture = ExtResource("7_16ais")
-
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1747179147]
 stream = ExtResource("10_neysc")
 autoplay = true
-
-[node name="masa_madre_disparo" parent="." unique_id=204618669 instance=ExtResource("9_xns0p")]
-position = Vector2(2115, -1914)
 
 [node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("10_vamvg")]
 position = Vector2(-318, 226)
@@ -475,3 +467,6 @@ position = Vector2(-814, -928)
 
 [node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("6_16ais")]
 position = Vector2(1916, -1922)
+
+[node name="MasaMadre" parent="." unique_id=1728142897 instance=ExtResource("9_xns0p")]
+position = Vector2(2119, -1905)

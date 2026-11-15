@@ -469,3 +469,6 @@ position = Vector2(3174, -57)
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1534722144]
 stream = ExtResource("11_hyxj5")
 autoplay = true
+
+[connection signal="tree_exited" from="AppendixEye" to="." method="_on_appendix_eye_tree_exited"]
+[connection signal="tree_exited" from="AppendixEye2" to="." method="_on_appendix_eye_2_tree_exited"]

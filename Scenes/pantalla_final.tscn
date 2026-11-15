@@ -4,7 +4,6 @@
 
 [node name="Pantalla_final" type="CanvasLayer" unique_id=938736282]
 process_mode = 3
-visible = false
 script = ExtResource("1_4v544")
 
 [node name="Control" type="Control" parent="." unique_id=1964242424]

@@ -15,7 +15,8 @@ var scenes : Dictionary = {"Checkpoint" : "res://Scenes/Salas/Level1_Amasadora.t
 							"level_8_horno": "res://Scenes/Salas/level_8_horno.tscn",
 							"level_9_enfriado": "res://Scenes/Salas/level_9_enfriado.tscn",
 							"level_10_enfriado": "res://Scenes/Salas/level_10_enfriado.tscn",
-							"level_11_enfriado": "res://Scenes/Salas/level_11_enfriado.tscn"}
+							"level_11_enfriado": "res://Scenes/Salas/level_11_enfriado.tscn",
+							"pantalla_final": "res://Scenes/pantalla_final.tscn"}
 
 
 
