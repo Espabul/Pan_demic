@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_3mii2"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_3mii2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_kybpr"]
+[ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_pg5ad"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kybpr"]
 texture = ExtResource("2_3mii2")
@@ -393,7 +394,7 @@ sources/0 = SubResource("TileSetAtlasSource_kybpr")
 [node name="level_9_enfriado" type="Node2D" unique_id=724676458]
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_irm5c")]
-position = Vector2(-1224, -202)
+position = Vector2(-619, 155)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1349208614]
 zoom = Vector2(0.45, 0.45)
@@ -417,3 +418,10 @@ scale = Vector2(1.5, 1.5)
 next_scene = "level_10_enfriado"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_kybpr")]
+
+[node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("5_pg5ad")]
+position = Vector2(-1218, -262)
+
+[node name="Puerta2" parent="." unique_id=2013085028 instance=ExtResource("5_pg5ad")]
+position = Vector2(1796, 310)
+rotation = 1.5707964

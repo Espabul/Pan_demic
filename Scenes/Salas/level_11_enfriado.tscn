@@ -423,6 +423,10 @@ position = Vector2(-159, -171)
 [node name="AppendixMouth" parent="." unique_id=1732114737 instance=ExtResource("6_36wdx")]
 position = Vector2(-1482, -1418)
 
+[node name="AppendixMouth3" parent="." unique_id=159712702 instance=ExtResource("6_36wdx")]
+position = Vector2(2149, -1451)
+scale = Vector2(-1, 1)
+
 [node name="AppendixMouth2" parent="." unique_id=917191212 instance=ExtResource("6_36wdx")]
 position = Vector2(2981, -1454)
 

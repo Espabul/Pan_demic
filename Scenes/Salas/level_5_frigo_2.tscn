@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_irnpp"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_irnpp"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_yoii5"]
+[ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="5_rvnco"]
+[ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="6_xvbsd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoii5"]
 texture = ExtResource("2_irnpp")
@@ -417,3 +419,11 @@ scale = Vector2(1.5, 1.5)
 next_scene = "level_4_frigo"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_yoii5")]
+
+[node name="Boton" parent="." unique_id=61881143 instance=ExtResource("5_rvnco")]
+position = Vector2(-955, -1069.0001)
+scale = Vector2(1.4609375, 1.2890625)
+
+[node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("6_xvbsd")]
+position = Vector2(1800, 316)
+rotation = 1.5707964

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cpc7p4k3e203k" path="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png" id="2_sg5nx"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_ic0pg"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_a81gw"]
+[ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="5_pjhlv"]
+[ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="6_16ais"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxjcb"]
 texture = ExtResource("2_sg5nx")
@@ -412,3 +414,11 @@ scale = Vector2(1.5, 1.5)
 next_scene = "level_3_mesa_de_trabajo"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_a81gw")]
+
+[node name="Boton" parent="." unique_id=61881143 instance=ExtResource("5_pjhlv")]
+position = Vector2(-927, -1836.0001)
+scale = Vector2(1.2421875, 1.15625)
+
+[node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("6_16ais")]
+position = Vector2(1863, -1919)
+scale = Vector2(1, 0.96354175)
