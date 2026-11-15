@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_ey3qm"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_irnpp"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_irnpp"]
+[ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_yoii5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoii5"]
 texture = ExtResource("2_irnpp")
@@ -408,8 +409,11 @@ tile_set = SubResource("TileSet_pa20m")
 [node name="Door2" parent="." unique_id=1599704378 instance=ExtResource("3_irnpp")]
 position = Vector2(1791, 564)
 scale = Vector2(1.5, 1.5)
+next_scene = "level_6_frigo"
 
 [node name="Door" parent="." unique_id=782674543 instance=ExtResource("3_irnpp")]
 position = Vector2(1800, -2776)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_4_frigo"
+
+[node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_yoii5")]
