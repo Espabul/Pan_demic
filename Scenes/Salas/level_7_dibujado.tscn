@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_6xox2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_l0oyq"]
 [ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="5_1fl3a"]
-[ext_resource type="AudioStream" uid="uid://cihkli2u0ffi5" path="res://Assets/music/lnplusmusic-funky-funky-music-628830.mp3" id="8_xai0j"]
 [ext_resource type="PackedScene" uid="uid://baf2dabpi87hd" path="res://Scenes/Misc/masa_madre.tscn" id="7_m2ghb"]
 [ext_resource type="PackedScene" uid="uid://w8xi85jpkga0" path="res://Scenes/Misc/pinchos.tscn" id="8_xai0j"]
 
@@ -449,8 +448,8 @@ position = Vector2(-1292, -1692)
 texture = ExtResource("5_1fl3a")
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1077712560]
-stream = ExtResource("8_xai0j")
 autoplay = true
+
 [node name="masa_madre_dash" parent="." unique_id=204618669 instance=ExtResource("7_m2ghb")]
 position = Vector2(-1291.4402, -1685.7686)
 

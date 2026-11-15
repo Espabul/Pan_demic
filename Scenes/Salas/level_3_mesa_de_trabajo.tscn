@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="7_t0r4m"]
 [ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="10_8j50v"]
 [ext_resource type="PackedScene" uid="uid://dreftishfbwx6" path="res://Scenes/Enemigos/Fungitajo/fungitajo.tscn" id="11_0ovnv"]
+[ext_resource type="PackedScene" uid="uid://mottsa8j4ujx" path="res://Scenes/checkpoint.tscn" id="13_7ht13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2252j"]
 texture = ExtResource("2_ntval")
@@ -461,3 +462,7 @@ position = Vector2(1823, -289)
 
 [node name="Fungitajo" parent="." unique_id=1545032201 instance=ExtResource("11_0ovnv")]
 position = Vector2(1402, -2088)
+
+[node name="Checkpoint" parent="." unique_id=2045484885 instance=ExtResource("13_7ht13")]
+position = Vector2(-823.00006, -2055)
+scale = Vector2(1.5, 1.5)
