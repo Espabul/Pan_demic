@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cmc16eja22xv"]
+
+[ext_resource type="Texture2D" uid="uid://cge5v6asvggfq" path="res://Assets/Tilesets/Puertas/Puertrampilla_0000.PNG" id="1_58yui"]
+[ext_resource type="Script" uid="uid://ceb0iklklcdtp" path="res://Scenes/Misc/puerta.gd" id="2_17p0u"]
+[ext_resource type="Texture2D" uid="uid://1p8tkq6cp4vo" path="res://Assets/Tilesets/Puertas/Puertrampilla_0001.PNG" id="2_mr26b"]
+[ext_resource type="Texture2D" uid="uid://cthy8r50hkane" path="res://Assets/Tilesets/Puertas/Puertrampilla_0002.PNG" id="3_17p0u"]
+[ext_resource type="Texture2D" uid="uid://cpwnknjprr5c3" path="res://Assets/Tilesets/Puertas/Puertrampilla_0003.PNG" id="4_0oqnr"]
+
+[sub_resource type="Animation" id="Animation_mqmj4"]
+resource_name = "Close"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_58yui"), ExtResource("2_mr26b"), ExtResource("3_17p0u"), ExtResource("4_0oqnr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barrier/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 2), Vector2(1, -103), Vector2(0, -220), Vector2(0, -340)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Barrier/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_nwuvp"]
+resource_name = "Open"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_0oqnr"), ExtResource("3_17p0u"), ExtResource("2_mr26b"), ExtResource("1_58yui")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barrier/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -340), Vector2(0, -220), Vector2(1, -103), Vector2(0.5, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Barrier/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_tylf5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_58yui")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barrier/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Barrier/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x65b7"]
+_data = {
+&"Close": SubResource("Animation_mqmj4"),
+&"Open": SubResource("Animation_nwuvp"),
+&"RESET": SubResource("Animation_tylf5")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbfun"]
+size = Vector2(51, 370)
+
+[node name="Puerta" type="Sprite2D" unique_id=1948629910]
+texture = ExtResource("1_58yui")
+script = ExtResource("2_17p0u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=101043494]
+libraries/ = SubResource("AnimationLibrary_x65b7")
+
+[node name="Barrier" type="Area2D" parent="." unique_id=204197692]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" unique_id=642370172]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_vbfun")
