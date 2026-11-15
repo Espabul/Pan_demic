@@ -434,6 +434,7 @@ tile_set = SubResource("TileSet_gdx5d")
 position = Vector2(1791, -2901)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_5_frigo"
+spawn_pos = Vector2(1505, 0)
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("5_gdx5d")]
 

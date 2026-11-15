@@ -416,7 +416,7 @@ scale = Vector2(0.9671876, 0.6490741)
 texture = ExtResource("2_qyns5")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_uxktc")]
-position = Vector2(-1272, 186)
+position = Vector2(-1300, 191)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=770915038]
 zoom = Vector2(0.45, 0.45)
@@ -439,11 +439,13 @@ spawn_pos = Vector2(2289, -2249)
 position = Vector2(1791, 650)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_5_frigo"
+spawn_pos = Vector2(1800, -2435)
 
 [node name="Door3" parent="." unique_id=1305721584 instance=ExtResource("3_2csk2")]
 position = Vector2(2579, -248)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_7_dibujado"
+spawn_pos = Vector2(-1745, -88)
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_54rje")]
 

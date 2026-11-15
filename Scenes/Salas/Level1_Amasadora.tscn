@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_l5sf6"]
 [ext_resource type="Texture2D" uid="uid://7lh2rhx7cxy6" path="res://Assets/Tilesets/Tileset_Amasadora.png" id="2_2s2wd"]
-[ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="4_mya04"]
-[ext_resource type="AudioStream" uid="uid://bdbthd7k58iir" path="res://Assets/music/atlasaudio-funky-background-617565.mp3" id="5_4n4k6"]
+[ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_s5y0r"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_mya04"]
 [ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="5_4n4k6"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="6_268t0"]
@@ -403,8 +402,23 @@ sources/0 = SubResource("TileSetAtlasSource_dy24i")
 
 [node name="Level1Amasadora" type="Node2D" unique_id=783983454]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=550449426]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2116052370]
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1056538260]
+position = Vector2(413, -1225)
+scale = Vector2(1.1751953, 1.4623843)
+texture = ExtResource("5_4n4k6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=734751769]
+
+[node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1971745206]
+position = Vector2(1433, -1203)
+scale = Vector2(1.3950521, 1.4078704)
+texture = ExtResource("2_s5y0r")
+
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_l5sf6")]
-position = Vector2(-203, -60)
 position = Vector2(-854, 180)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1835708003]
@@ -424,22 +438,20 @@ tile_set = SubResource("TileSet_vbfun")
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("6_268t0")]
 
-[node name="caterpanillar2" parent="." unique_id=569712923 instance=ExtResource("4_mya04")]
-position = Vector2(1126, -268)
-
-[node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("6_268t0")]
-
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1360987288]
-stream = ExtResource("5_4n4k6")
 autoplay = true
+
 [node name="Door" parent="." unique_id=1599704378 instance=ExtResource("4_mya04")]
 position = Vector2(2661, -2558)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_2_mesa_de_trabajo"
 spawn_pos = Vector2(-1264, 196)
 
-[node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("6_s5y0r")]
-position = Vector2(1584, -416)
+[node name="caterpanillar2" parent="." unique_id=569712923 instance=ExtResource("4_mya04")]
+position = Vector2(1434, -833)
 
-[node name="caterpanillar2" parent="." unique_id=1543928408 instance=ExtResource("6_s5y0r")]
+[node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("6_s5y0r")]
+position = Vector2(1512, -283)
+
+[node name="caterpanillar3" parent="." unique_id=1543928408 instance=ExtResource("6_s5y0r")]
 position = Vector2(1676, -2214)

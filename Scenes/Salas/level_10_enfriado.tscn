@@ -415,7 +415,7 @@ position = Vector2(657, -592)
 texture = ExtResource("2_evuax")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_4fii3")]
-position = Vector2(1765, -1200)
+position = Vector2(1789, -1212)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1175535190]
 zoom = Vector2(0.45, 0.45)
@@ -432,11 +432,13 @@ tile_set = SubResource("TileSet_ng01w")
 position = Vector2(1791, -1527)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_9_enfriado"
+spawn_pos = Vector2(1494, 170)
 
 [node name="Door2" parent="." unique_id=2090636263 instance=ExtResource("3_f4kwe")]
 position = Vector2(-760.9999, 653.0001)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_11_enfriado"
+spawn_pos = Vector2(-797, -2381)
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_ng01w")]
 
