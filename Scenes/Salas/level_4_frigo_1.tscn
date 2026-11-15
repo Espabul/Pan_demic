@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://boip1ukb8tjmj"]
 
+[ext_resource type="Script" uid="uid://b5pbgqei2mf3" path="res://Scenes/Salas/level_4_frigo_1.gd" id="1_qyns5"]
 [ext_resource type="Texture2D" uid="uid://genrrconh5ok" path="res://Assets/backgrounds/Frigo_fondo.png" id="1_rbwja"]
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_uxktc"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_2csk2"]
@@ -394,6 +395,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_54rje")
 
 [node name="level_4_frigo_1" type="Node2D" unique_id=1296051877]
+script = ExtResource("1_qyns5")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1028176465]
 
@@ -412,6 +414,7 @@ scale = Vector2(0.9671876, 0.6490741)
 texture = ExtResource("2_qyns5")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_uxktc")]
+position = Vector2(-1272, 186)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=770915038]
 zoom = Vector2(0.45, 0.45)
@@ -428,6 +431,7 @@ tile_set = SubResource("TileSet_giacs")
 position = Vector2(-1591, 125)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_3_mesa_de_trabajo"
+spawn_pos = Vector2(2289, -2249)
 
 [node name="Door2" parent="." unique_id=919962712 instance=ExtResource("3_2csk2")]
 position = Vector2(1791, 650)

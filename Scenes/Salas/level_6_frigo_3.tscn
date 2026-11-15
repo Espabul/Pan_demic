@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://d3fcqs6ksbkl6"]
 
+[ext_resource type="Script" uid="uid://dfwioxygbxkwi" path="res://Scenes/Salas/level_6_frigo_3.gd" id="1_2677h"]
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_d03tw"]
 [ext_resource type="Texture2D" uid="uid://genrrconh5ok" path="res://Assets/backgrounds/Frigo_fondo.png" id="1_qrj0w"]
 [ext_resource type="Texture2D" uid="uid://j8ukwryq7yrx" path="res://Assets/backgrounds/Frigo_foreground.png" id="2_0urlv"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_x8n0w"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_gdx5d"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="5_gdx5d"]
+[ext_resource type="PackedScene" uid="uid://dreftishfbwx6" path="res://Scenes/Enemigos/Fungitajo/fungitajo.tscn" id="8_68cph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3snwq"]
 texture = ExtResource("2_x8n0w")
@@ -394,6 +396,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_3snwq")
 
 [node name="level_6_frigo_3" type="Node2D" unique_id=359482764]
+script = ExtResource("1_2677h")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=392298372]
 
@@ -437,3 +440,6 @@ scale = Vector2(1.5, 1.5)
 next_scene = "level_5_frigo"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("5_gdx5d")]
+
+[node name="Fungitajo" parent="." unique_id=1545032201 instance=ExtResource("8_68cph")]
+position = Vector2(987, -1317)

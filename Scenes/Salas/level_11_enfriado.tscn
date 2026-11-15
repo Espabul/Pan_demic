@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_8fpj1"]
 [ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_36wdx"]
+[ext_resource type="Script" uid="uid://d17t6i1374jol" path="res://Scenes/Salas/level_11_enfriado.gd" id="1_hyxj5"]
 [ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_g6qwk"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_pjbou"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_pjbou"]
@@ -397,6 +398,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_kxp78")
 
 [node name="level_11_enfriado" type="Node2D" unique_id=675519364]
+script = ExtResource("1_hyxj5")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1939064454]
 

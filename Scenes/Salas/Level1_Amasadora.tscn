@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_mya04"]
 [ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="5_4n4k6"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="6_268t0"]
+[ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="6_s5y0r"]
 
 [sub_resource type="GDScript" id="GDScript_l5sf6"]
 script/source = "extends Camera2D
@@ -410,7 +411,7 @@ scale = Vector2(1.233073, 1.4972222)
 texture = ExtResource("5_4n4k6")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_l5sf6")]
-position = Vector2(-743, 182)
+position = Vector2(-854, 180)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1835708003]
 position = Vector2(60, -36)
@@ -433,3 +434,10 @@ tile_set = SubResource("TileSet_vbfun")
 position = Vector2(2661, -2558)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_2_mesa_de_trabajo"
+spawn_pos = Vector2(-1264, 196)
+
+[node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("6_s5y0r")]
+position = Vector2(1584, -416)
+
+[node name="caterpanillar2" parent="." unique_id=1543928408 instance=ExtResource("6_s5y0r")]
+position = Vector2(1676, -2214)
