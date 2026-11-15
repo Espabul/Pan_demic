@@ -1,11 +1,14 @@
 [gd_scene format=4 uid="uid://clgmpcmatwkk3"]
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_b2sxc"]
+[ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_xns0p"]
+[ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_neysc"]
 [ext_resource type="Texture2D" uid="uid://cpc7p4k3e203k" path="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png" id="2_sg5nx"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_ic0pg"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_a81gw"]
 [ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="5_pjhlv"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="6_16ais"]
+[ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="7_16ais"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxjcb"]
 texture = ExtResource("2_sg5nx")
@@ -389,6 +392,22 @@ sources/0 = SubResource("TileSetAtlasSource_pxjcb")
 
 [node name="level2_mesa_de_trabajo_1" type="Node2D" unique_id=1067073317]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1993871448]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1705422496]
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1807726236]
+position = Vector2(504.00006, -1099)
+scale = Vector2(1.1876302, 1.3050926)
+texture = ExtResource("1_xns0p")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=609458124]
+
+[node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1630174769]
+position = Vector2(804, -1031)
+scale = Vector2(1.1822916, 1.261574)
+texture = ExtResource("2_neysc")
+
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_b2sxc")]
 position = Vector2(-1268, 182)
 
@@ -422,3 +441,7 @@ scale = Vector2(1.2421875, 1.15625)
 [node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("6_16ais")]
 position = Vector2(1863, -1919)
 scale = Vector2(1, 0.96354175)
+
+[node name="MasaMadre" type="Sprite2D" parent="." unique_id=465135768]
+position = Vector2(2116, -1902)
+texture = ExtResource("7_16ais")

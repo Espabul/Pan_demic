@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://d3fcqs6ksbkl6"]
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_d03tw"]
+[ext_resource type="Texture2D" uid="uid://genrrconh5ok" path="res://Assets/backgrounds/Frigo_fondo.png" id="1_qrj0w"]
+[ext_resource type="Texture2D" uid="uid://j8ukwryq7yrx" path="res://Assets/backgrounds/Frigo_foreground.png" id="2_0urlv"]
 [ext_resource type="PackedScene" uid="uid://cetvj4vjn8esd" path="res://Scenes/Enemigos/Pancio/pancio.tscn" id="2_3snwq"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_x8n0w"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_gdx5d"]
@@ -392,6 +394,22 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_3snwq")
 
 [node name="level_6_frigo_3" type="Node2D" unique_id=359482764]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=392298372]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1238009585]
+
+[node name="FrigoFondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=642978017]
+position = Vector2(518, -1118.0001)
+scale = Vector2(1.2852864, 1.4761577)
+texture = ExtResource("1_qrj0w")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1389133085]
+
+[node name="FrigoForeground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1319655635]
+position = Vector2(547.49994, -1065.9999)
+scale = Vector2(1.1809895, 1.4212962)
+texture = ExtResource("2_0urlv")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_d03tw")]
 position = Vector2(1774, -2474)

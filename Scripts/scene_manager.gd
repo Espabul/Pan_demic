@@ -29,6 +29,8 @@ var passed_fight_rooms = 0
 
 var spawn_pos : Vector2
 
+var level_name = "Level1_Amasadora"
+
 
 func transition_to_scene(level : String):
 	var scene_path : String = scenes.get(level)

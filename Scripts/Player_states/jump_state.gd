@@ -3,12 +3,13 @@ extends State
 
 class_name JumpState
 
+
 func enter():
 	var character = state_machine.get_parent()
 	character.velocity.y = character.JUMP_VELOCITY
 	#animacion
 	character.animacion.play("jump")
-	
+	character.jump.play()
 
 
 func physics_update(delta: float):

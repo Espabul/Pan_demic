@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://d4eljk54wtu23"]
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_fgkxc"]
+[ext_resource type="Texture2D" uid="uid://dqp5voh660w0n" path="res://Assets/backgrounds/Horno_fondo.png" id="1_pxrlu"]
 [ext_resource type="Texture2D" uid="uid://by6x50rs5ihsc" path="res://Assets/Tilesets/Tileset_Horno_Metal.png" id="2_7vmwe"]
+[ext_resource type="Texture2D" uid="uid://botx6sav3jje0" path="res://Assets/backgrounds/Horno_foreground.png" id="2_b1gkj"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_7vmwe"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_j0cks"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_qrkvi"]
@@ -393,6 +395,22 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_j0cks")
 
 [node name="level_8_horno" type="Node2D" unique_id=711313631]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1558196732]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=886308376]
+
+[node name="HornoFondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=300860251]
+position = Vector2(508.50003, -911)
+scale = Vector2(1.2539064, 1.3675926)
+texture = ExtResource("1_pxrlu")
+
+[node name="HornoForeground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1809940175]
+position = Vector2(516.0001, -954.50006)
+scale = Vector2(1.2609376, 1.3643519)
+texture = ExtResource("2_b1gkj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=79244891]
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_fgkxc")]
 position = Vector2(-1760, -54)

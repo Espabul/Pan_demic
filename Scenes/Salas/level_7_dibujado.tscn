@@ -1,9 +1,12 @@
 [gd_scene format=4 uid="uid://dff8n0jmjn1o0"]
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_4vke5"]
+[ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_m2ghb"]
 [ext_resource type="Texture2D" uid="uid://cpc7p4k3e203k" path="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png" id="2_4vke5"]
+[ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_xai0j"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_6xox2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_l0oyq"]
+[ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="5_1fl3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l0oyq"]
 texture = ExtResource("2_4vke5")
@@ -392,6 +395,22 @@ sources/0 = SubResource("TileSetAtlasSource_l0oyq")
 
 [node name="level_7_dibujado" type="Node2D" unique_id=1056248714]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=421598480]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1389760391]
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1407994686]
+position = Vector2(504, -1035)
+scale = Vector2(1.2786459, 1.3539351)
+texture = ExtResource("1_m2ghb")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=899715620]
+
+[node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1174790592]
+position = Vector2(772, -915.00006)
+scale = Vector2(1.3072917, 1.2601851)
+texture = ExtResource("2_xai0j")
+
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_4vke5")]
 position = Vector2(-1745, -88)
 
@@ -417,3 +436,7 @@ scale = Vector2(1.5, 1.5)
 next_scene = "level_4_frigo"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_l0oyq")]
+
+[node name="MasaMadre" type="Sprite2D" parent="." unique_id=108492509]
+position = Vector2(-1292, -1692)
+texture = ExtResource("5_1fl3a")
