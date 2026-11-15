@@ -418,7 +418,7 @@ scale = Vector2(0.9106771, 1.438889)
 texture = ExtResource("2_ihd85")
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_ey3qm")]
-position = Vector2(1754, -2431)
+position = Vector2(1794, -2458)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1444579401]
 zoom = Vector2(0.45, 0.45)
@@ -435,11 +435,13 @@ tile_set = SubResource("TileSet_pa20m")
 position = Vector2(1791, 564)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_6_frigo"
+spawn_pos = Vector2(1774, -2474)
 
 [node name="Door" parent="." unique_id=782674543 instance=ExtResource("3_irnpp")]
 position = Vector2(1800, -2776)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_4_frigo"
+spawn_pos = Vector2(1540, 191)
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_yoii5")]
 
