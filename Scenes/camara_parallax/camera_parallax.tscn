@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mnjiljxrqiim"]
+
+[ext_resource type="Script" uid="uid://vihdtn3a3vq1" path="res://Scenes/camara_parallax/camera_parallax.gd" id="1_1uasc"]
+
+[node name="Camera_parallax" type="Camera2D" unique_id=812541281]
+zoom = Vector2(0.45, 0.45)
+script = ExtResource("1_1uasc")
