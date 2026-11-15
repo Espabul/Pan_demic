@@ -12,6 +12,7 @@ var zumbon_spit = preload("res://Scenes/Enemigos/zumbon/zumbon.tscn")
 @onready var animacion = $Sprite2D/AnimationPlayer
 @onready var dmg_animacion = $Sprite2D/DamageEffect
 @onready var spawn_timer = $SpawnTimer
+@onready var daño = $Daño
 @onready var collision_shape = $CollisionShape2D
 
 
@@ -31,6 +32,7 @@ func _process(delta: float) -> void:
 func spit():
 	if animacion.current_animation == "Idle":
 		animacion.play("Spit")
+		daño.play()
 	
 	var zumbon_instance =  zumbon_spit.instantiate() as CharacterBody2D
 	

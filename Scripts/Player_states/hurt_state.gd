@@ -18,6 +18,8 @@ func enter():
 	character.velocity.x = direction * 400
 	
 	character.velocity.y = -500
+	
+	character.hurt.play()
 
 
 func physics_update(delta: float):

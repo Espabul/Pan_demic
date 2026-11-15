@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var enemy_health : int = 7
 @export var damage_amount : int = 1
+@onready var daño = $Daño
 
 var direction = 1
 var app_hand_death_effect = preload("res://Scenes/Enemigos/Epifungus/Death_effects/hand_death_effect.tscn")
@@ -46,6 +47,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 func attack_if_in_range():
 	if animacion.current_animation == "Idle":
 		animacion.play("Attack")
+		daño.play()
+
 
 func _on_detector_area_body_entered(body: Node2D) -> void:
 	character_in_range = true

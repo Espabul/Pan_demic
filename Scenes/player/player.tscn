@@ -14,6 +14,11 @@
 [ext_resource type="Script" uid="uid://dntcffy2thel3" path="res://Scripts/Player_states/falldisparo_state.gd" id="11_g7b1g"]
 [ext_resource type="Script" uid="uid://wcrjkikhe8kp" path="res://Scripts/Player_states/disparojump_state.gd" id="12_h0khc"]
 [ext_resource type="Script" uid="uid://de5v18wni06h7" path="res://Scripts/Player_states/hurt_state.gd" id="14_g7b1g"]
+[ext_resource type="AudioStream" uid="uid://ctmkxqlmvfhl2" path="res://Assets/Sounds/464503__elynch0901__attack-punch.wav" id="15_ic3d6"]
+[ext_resource type="AudioStream" uid="uid://b8p56a2lqcfth" path="res://Assets/Sounds/864774__avaol__jumpdash.wav" id="16_spm8d"]
+[ext_resource type="AudioStream" uid="uid://d2btgegfl3uge" path="res://Assets/Sounds/515625__mrickey13__throwswipe.wav" id="17_dpkfr"]
+[ext_resource type="AudioStream" uid="uid://c6o7govm5luh2" path="res://Assets/Sounds/dash-mejorado.wav" id="18_ic3d6"]
+[ext_resource type="AudioStream" uid="uid://rwql3wa518rm" path="res://Assets/Sounds/409642__las98__1-golpe1.wav" id="19_spm8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
 size = Vector2(111, 142)
@@ -153,6 +158,24 @@ libraries/ = SubResource("AnimationLibrary_6vj4j")
 
 [node name="Hurt_cooldown" type="Timer" parent="." unique_id=792129356]
 one_shot = true
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="." unique_id=36764234]
+stream = ExtResource("15_ic3d6")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=328643400]
+stream = ExtResource("16_spm8d")
+volume_db = 3.792
+
+[node name="Throw" type="AudioStreamPlayer2D" parent="." unique_id=626596613]
+stream = ExtResource("17_dpkfr")
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="." unique_id=1886053258]
+stream = ExtResource("18_ic3d6")
+volume_db = -17.051
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="." unique_id=1432723367]
+stream = ExtResource("19_spm8d")
+volume_db = -17.051
 
 [connection signal="timeout" from="dash_cooldowntimer" to="." method="_on_dash_cooldowntimer_timeout"]
 [connection signal="timeout" from="atk_cooldowntimer" to="." method="_on_atk_cooldowntimer_timeout"]
