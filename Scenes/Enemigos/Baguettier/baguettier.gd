@@ -16,6 +16,7 @@ const SPEED : int = 300
 @onready var animation = $Sprite2D/AnimationPlayer
 @onready var timer = $Timer
 @onready var atk_collision = $Attack_collision
+@onready var daño = $Daño
 
 
 var state_bag = "bagwalkstate"

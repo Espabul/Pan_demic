@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="juego_gamejam"
+config/name="Pan_demic"
 run/main_scene="uid://dv7d8rofrggrp"
 config/features=PackedStringArray("4.7", "Forward Plus")
 

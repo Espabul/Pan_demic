@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://gjagrw7ncvfx"]
+
+[ext_resource type="Script" uid="uid://b7doxb0odqcbq" path="res://Scripts/pantalla_final.gd" id="1_4v544"]
+
+[node name="Pantalla_final" type="CanvasLayer" unique_id=938736282]
+process_mode = 3
+visible = false
+script = ExtResource("1_4v544")
+
+[node name="Control" type="Control" parent="." unique_id=1964242424]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1235593963]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+color = Color(0.12863205, 0.12863205, 0.12863205, 0.6156863)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=792771602]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control" unique_id=1857642220]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 34.0
+offset_right = 942.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 80
+text = "¡Gracias por jugar!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=319770561]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 247.0
+offset_right = 1184.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 30
+text = "Programadores: Kiril Nikolov Serrán y Sergio López Fernández
+
+Artistas: Carlos Tafur Cavanillas y Nuria Escribano Hijonosa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control" unique_id=1789833696]
+process_mode = 3
+layout_mode = 0
+offset_left = 519.0
+offset_top = 589.0
+offset_right = 643.0
+offset_bottom = 620.0
+text = "Volver al menú"
