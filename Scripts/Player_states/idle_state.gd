@@ -3,7 +3,6 @@ extends State
 class_name IdleState
 
 func enter():
-	print("Entering State Idle")
 	var character = state_machine.get_parent()
 	#animacion
 	if character.animacion:

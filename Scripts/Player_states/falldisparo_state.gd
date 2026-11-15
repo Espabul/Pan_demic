@@ -3,7 +3,6 @@ extends State
 class_name DisparofallState
 
 func enter():
-	print("Entering State Disparo_fall")
 	var character = state_machine.get_parent()
 	#animacion
 	character.animacion.play("shoot fall")

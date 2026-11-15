@@ -10,7 +10,8 @@ var states: Dictionary = {}
 
 
 
-func _ready() -> void:
+func _ready() -> void:  
+	
 	#Register child States
 	for child in get_children():
 		if child is State:
@@ -19,6 +20,7 @@ func _ready() -> void:
 	
 	#Set initial state
 	if initial_state:
+		await get_parent().ready
 		change_state(initial_state.name.to_lower())
 
 

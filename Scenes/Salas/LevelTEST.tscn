@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_ik6dh"]
 [ext_resource type="Texture2D" uid="uid://7lh2rhx7cxy6" path="res://Assets/Tilesets/Tileset_Amasadora.png" id="2_ep3xk"]
-[ext_resource type="PackedScene" uid="uid://dreftishfbwx6" path="res://Scenes/Enemigos/Fungitajo/fungitajo.tscn" id="4_jipjl"]
+[ext_resource type="PackedScene" uid="uid://b8tr6ka5kr0xo" path="res://Scenes/Enemigos/Epifungus/appendix_mouth.tscn" id="4_jipjl"]
+[ext_resource type="PackedScene" uid="uid://1mkqprqns0fb" path="res://Scenes/Enemigos/Epifungus/appendix_eye.tscn" id="5_tfr6o"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="6_h4un0"]
+[ext_resource type="PackedScene" uid="uid://ceeqqiu1hefc6" path="res://Scenes/Enemigos/Epifungus/appendix_hand.tscn" id="6_ik6dh"]
 
 [sub_resource type="GDScript" id="GDScript_l5sf6"]
 script/source = "extends Camera2D
@@ -19,7 +21,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mya04"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik6dh"]
 texture = ExtResource("2_ep3xk")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -395,12 +397,12 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "thick_g"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_mya04")
+sources/0 = SubResource("TileSetAtlasSource_ik6dh")
 
 [node name="Level1Amasadora" type="Node2D" unique_id=783983454]
 
 [node name="Player" parent="." unique_id=1080565387 instance=ExtResource("1_ik6dh")]
-position = Vector2(-606, 173)
+position = Vector2(80, 180)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1835708003]
 position = Vector2(60, -36)
@@ -419,5 +421,11 @@ tile_set = SubResource("TileSet_vbfun")
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("6_h4un0")]
 
-[node name="Fungitajo" parent="." unique_id=1545032201 instance=ExtResource("4_jipjl")]
-position = Vector2(975, 203)
+[node name="AppendixMouth" parent="." unique_id=1732114737 instance=ExtResource("4_jipjl")]
+position = Vector2(-749, -17)
+
+[node name="AppendixEye" parent="." unique_id=2110285143 instance=ExtResource("5_tfr6o")]
+position = Vector2(1590.9999, 13.999999)
+
+[node name="Appendix_Hand" parent="." unique_id=2111669833 instance=ExtResource("6_ik6dh")]
+position = Vector2(997, -13)

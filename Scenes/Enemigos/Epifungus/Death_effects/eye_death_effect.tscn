@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cmpvesjgog4vu"]
+
+[ext_resource type="Texture2D" uid="uid://be7kgfqgqg6fj" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0000.png" id="1_plajj"]
+[ext_resource type="Texture2D" uid="uid://c4rcmgs6e2rsw" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0001.png" id="2_xlha1"]
+[ext_resource type="Texture2D" uid="uid://7coq1w22v7qw" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0002.png" id="3_5tcnc"]
+[ext_resource type="Texture2D" uid="uid://dum2bk21v5ixo" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0003.png" id="4_kp8hr"]
+[ext_resource type="Texture2D" uid="uid://lh8ufqktvb1h" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0004.png" id="5_v1trv"]
+[ext_resource type="Texture2D" uid="uid://cmu42mqcoju08" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0005.png" id="6_wupjg"]
+[ext_resource type="Texture2D" uid="uid://dc8oed31c1iuh" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0006.png" id="7_bu7pi"]
+[ext_resource type="Texture2D" uid="uid://cmja4i70rd644" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0007.png" id="8_8vgnk"]
+[ext_resource type="Texture2D" uid="uid://dy0pxiumro0ai" path="res://Assets/Sprites/FinalBoss/Appendix_eye/Eye_death/Eye_death_0008.png" id="9_61bux"]
+[ext_resource type="Script" uid="uid://cfjga1xqi1n46" path="res://Scripts/Enemigos/Epifungus/eye_death_effect.gd" id="10_xlha1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_plajj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xlha1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5tcnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kp8hr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v1trv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wupjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bu7pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8vgnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_61bux")
+}],
+"loop": 0,
+"name": &"EyeDeathEffect",
+"speed": 15.0
+}]
+
+[node name="EyeDeathEffect" type="AnimatedSprite2D" unique_id=92504511]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_vbfun")
+animation = &"EyeDeathEffect"
+autoplay = "EyeDeathEffect"
+script = ExtResource("10_xlha1")
+
+[node name="Timer" type="Timer" parent="." unique_id=660577741]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

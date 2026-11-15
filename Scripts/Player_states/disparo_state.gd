@@ -3,7 +3,6 @@ extends State
 class_name DisparoState
 
 func enter():
-	print("Entering State Shoot")
 	var character = state_machine.get_parent()
 	#animacion
 	if character.animacion:

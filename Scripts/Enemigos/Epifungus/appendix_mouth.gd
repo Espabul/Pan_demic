@@ -5,11 +5,15 @@ extends CharacterBody2D
 @export var damage_amount : int = 1
 
 var direction = 1
-var app_hand_death_effect = preload("res://Scenes/Enemigos/Baguettier/baguettier_death_effect.tscn")
+var app_mouth_death_effect = preload("res://Scenes/Enemigos/Epifungus/Death_effects/mouth_death_effect.tscn")
+var zumbon_spit = preload("res://Scenes/Enemigos/zumbon/zumbon.tscn")
+
 
 @onready var animacion = $Sprite2D/AnimationPlayer
 @onready var dmg_animacion = $Sprite2D/DamageEffect
 @onready var spawn_timer = $SpawnTimer
+@onready var collision_shape = $CollisionShape2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +31,12 @@ func _process(delta: float) -> void:
 func spit():
 	if animacion.current_animation == "Idle":
 		animacion.play("Spit")
+	
+	var zumbon_instance =  zumbon_spit.instantiate() as CharacterBody2D
+	
+	zumbon_instance.global_position = collision_shape.global_position
+	zumbon_instance.disparado = direction
+	get_tree().current_scene.add_child(zumbon_instance)
 
 
 
@@ -52,9 +62,9 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		
 		print(enemy_health)
 		if enemy_health <= 0:
-			var app_hand_death_effect_instance = app_hand_death_effect.instantiate() as Node2D
-			app_hand_death_effect_instance.global_position = global_position
-			app_hand_death_effect_instance.flipped = direction<0
-			get_parent().add_child(app_hand_death_effect_instance)
+			var app_mouth_death_effect_instance = app_mouth_death_effect.instantiate() as Node2D
+			app_mouth_death_effect_instance.global_position = global_position
+			app_mouth_death_effect_instance.flipped = direction<0
+			get_parent().add_child(app_mouth_death_effect_instance)
 			
 			queue_free()

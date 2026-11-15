@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dhennwrwiiq8o"]
+
+[ext_resource type="Texture2D" uid="uid://b6d0kawavtayw" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0000.png" id="1_t80p0"]
+[ext_resource type="Texture2D" uid="uid://w41s0xkkhftg" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0001.png" id="2_n4x4f"]
+[ext_resource type="Texture2D" uid="uid://cvmlq4e5y6fk6" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0002.png" id="3_mhjlv"]
+[ext_resource type="Texture2D" uid="uid://vdnaxp8x40d6" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0003.png" id="4_731gl"]
+[ext_resource type="Texture2D" uid="uid://bjm0p2oqpjb13" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0004.png" id="5_7p66i"]
+[ext_resource type="Texture2D" uid="uid://cbbv3uepm8oy" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0005.png" id="6_tpw8o"]
+[ext_resource type="Texture2D" uid="uid://bletb5a0of6pk" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0006.png" id="7_l5orm"]
+[ext_resource type="Script" uid="uid://b3tpmk0ur47ig" path="res://Scripts/Enemigos/Epifungus/mouth_death_effect.gd" id="7_xvc0x"]
+[ext_resource type="Texture2D" uid="uid://b7fbs8un6ngf4" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0007.png" id="8_mvf7i"]
+[ext_resource type="Texture2D" uid="uid://bnkatf3o0lpxb" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_death/Mouth_death_0008.png" id="9_7ir34"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t80p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n4x4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mhjlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_731gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7p66i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tpw8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l5orm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mvf7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ir34")
+}],
+"loop": 0,
+"name": &"mouth_death",
+"speed": 15.0
+}]
+
+[node name="MouthDeathEffect" type="AnimatedSprite2D" unique_id=1904434606]
+sprite_frames = SubResource("SpriteFrames_vbfun")
+animation = &"mouth_death"
+autoplay = "mouth_death"
+frame = 1
+frame_progress = 0.79976743
+script = ExtResource("7_xvc0x")
+
+[node name="Timer" type="Timer" parent="." unique_id=1798289196]
+wait_time = 0.8
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
