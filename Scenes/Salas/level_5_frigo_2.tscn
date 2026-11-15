@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_ey3qm"]
 [ext_resource type="Texture2D" uid="uid://genrrconh5ok" path="res://Assets/backgrounds/Frigo_fondo.png" id="1_i8sko"]
+[ext_resource type="Script" uid="uid://c2j16byhisan5" path="res://Scenes/Salas/level_5_frigo_2.gd" id="1_ls1pf"]
 [ext_resource type="Texture2D" uid="uid://j8ukwryq7yrx" path="res://Assets/backgrounds/Frigo_foreground.png" id="2_ihd85"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_irnpp"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_irnpp"]
@@ -9,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="5_rvnco"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="6_xvbsd"]
 [ext_resource type="AudioStream" uid="uid://bf1kjvc5ncdrq" path="res://Assets/music/the_mountain-funky-508017.mp3" id="9_ihd85"]
+[ext_resource type="PackedScene" uid="uid://t742p21fjpwv" path="res://Scenes/Enemigos/Baguettier/baguettier.tscn" id="9_rytrd"]
+[ext_resource type="PackedScene" uid="uid://bks11k5adur6j" path="res://Scenes/Enemigos/zumbon/zumbon.tscn" id="10_rytrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoii5"]
 texture = ExtResource("2_irnpp")
@@ -396,6 +399,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_yoii5")
 
 [node name="level_5_frigo_2" type="Node2D" unique_id=598813528]
+script = ExtResource("1_ls1pf")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=950621290]
 
@@ -450,3 +454,9 @@ rotation = 1.5707964
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=2030883663]
 stream = ExtResource("9_ihd85")
 autoplay = true
+
+[node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("9_rytrd")]
+position = Vector2(-163, 49)
+
+[node name="zumbon" parent="." unique_id=1922201499 instance=ExtResource("10_rytrd")]
+position = Vector2(-24, -977)

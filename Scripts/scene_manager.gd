@@ -3,6 +3,7 @@ extends Node
 
 
 var scenes : Dictionary = {"Checkpoint" : "res://Scenes/Salas/Level1_Amasadora.tscn",
+							"cinematica": "res://Scenes/Salas/cinematica_inicial.tscn",
 							"Level1_Amasadora": "res://Scenes/Salas/Level1_Amasadora.tscn",
 							"LevelTEST": "res://Scenes/Salas/LevelTEST.tscn",
 							"level_2_mesa_de_trabajo": "res://Scenes/Salas/level_2_mesa_de_trabajo.tscn",
@@ -17,6 +18,7 @@ var scenes : Dictionary = {"Checkpoint" : "res://Scenes/Salas/Level1_Amasadora.t
 							"level_11_enfriado": "res://Scenes/Salas/level_11_enfriado.tscn"}
 
 
+
 var last_scene : String = "Level1_Amasadora"
 var level_name = "Level1_Amasadora"
 
@@ -24,10 +26,9 @@ var transition_caterpanillar_screen = preload("res://Scenes/UI/scene_transition_
 
 var upgrades : int = 0
 var key_obtained = false
+var passed_fight_rooms = 0
 
 var spawn_pos : Vector2
-
-var level_name = "Level1_Amasadora"
 
 
 func transition_to_scene(level : String):

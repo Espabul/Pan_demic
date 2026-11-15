@@ -2,12 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_4vke5"]
 [ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_m2ghb"]
+[ext_resource type="Script" uid="uid://bgvysgg8yiugo" path="res://Scenes/Salas/level_7_dibujado.gd" id="1_ustir"]
 [ext_resource type="Texture2D" uid="uid://cpc7p4k3e203k" path="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png" id="2_4vke5"]
 [ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_xai0j"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_6xox2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_l0oyq"]
 [ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="5_1fl3a"]
 [ext_resource type="AudioStream" uid="uid://cihkli2u0ffi5" path="res://Assets/music/lnplusmusic-funky-funky-music-628830.mp3" id="8_xai0j"]
+[ext_resource type="PackedScene" uid="uid://baf2dabpi87hd" path="res://Scenes/Misc/masa_madre.tscn" id="7_m2ghb"]
+[ext_resource type="PackedScene" uid="uid://w8xi85jpkga0" path="res://Scenes/Misc/pinchos.tscn" id="8_xai0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l0oyq"]
 texture = ExtResource("2_4vke5")
@@ -395,6 +398,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_l0oyq")
 
 [node name="level_7_dibujado" type="Node2D" unique_id=1056248714]
+script = ExtResource("1_ustir")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=421598480]
 
@@ -445,3 +449,49 @@ texture = ExtResource("5_1fl3a")
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1077712560]
 stream = ExtResource("8_xai0j")
 autoplay = true
+[node name="masa_madre_dash" parent="." unique_id=204618669 instance=ExtResource("7_m2ghb")]
+position = Vector2(-1291.4402, -1685.7686)
+
+[node name="Pinchos" parent="." unique_id=2006810557 instance=ExtResource("8_xai0j")]
+position = Vector2(-1437, 291)
+scale = Vector2(2, 2)
+
+[node name="Pinchos2" parent="Pinchos" unique_id=2053316565 instance=ExtResource("8_xai0j")]
+position = Vector2(93, 0)
+
+[node name="Pinchos3" parent="." unique_id=1952262416 instance=ExtResource("8_xai0j")]
+position = Vector2(-668, 287)
+scale = Vector2(2, 2)
+
+[node name="Pinchos4" parent="Pinchos3" unique_id=1455494117 instance=ExtResource("8_xai0j")]
+position = Vector2(91.5, 1)
+
+[node name="Pinchos2" parent="." unique_id=1532347856 instance=ExtResource("8_xai0j")]
+position = Vector2(93, 298)
+scale = Vector2(2, 2)
+
+[node name="Pinchos" parent="Pinchos2" unique_id=896134179 instance=ExtResource("8_xai0j")]
+position = Vector2(166.5, -3.8146973e-06)
+
+[node name="Pinchos2" parent="Pinchos2" unique_id=1332051233 instance=ExtResource("8_xai0j")]
+position = Vector2(87.5, 0)
+
+[node name="Pinchos4" parent="." unique_id=286538043 instance=ExtResource("8_xai0j")]
+position = Vector2(985, 297)
+scale = Vector2(2, 2)
+
+[node name="Pinchos" parent="Pinchos4" unique_id=1926405818 instance=ExtResource("8_xai0j")]
+position = Vector2(167.00002, 1.0000062)
+
+[node name="Pinchos2" parent="Pinchos4" unique_id=97258496 instance=ExtResource("8_xai0j")]
+position = Vector2(86.5, 0)
+
+[node name="Pinchos5" parent="." unique_id=144431367 instance=ExtResource("8_xai0j")]
+position = Vector2(2009, 297)
+scale = Vector2(2, 2)
+
+[node name="Pinchos" parent="Pinchos5" unique_id=927917827 instance=ExtResource("8_xai0j")]
+position = Vector2(120, 0)
+
+[node name="Pinchos2" parent="Pinchos5" unique_id=430990506 instance=ExtResource("8_xai0j")]
+position = Vector2(230.5, 0)
