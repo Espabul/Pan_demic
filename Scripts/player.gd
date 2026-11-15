@@ -43,9 +43,9 @@ func _ready() -> void:
 	
 	upgrades = SceneManager.upgrades
 	if upgrades >=1:
-		can_dash = true
-	if upgrades >=2:
 		can_shoot = true
+	if upgrades >=2:
+		can_dash = true
 
 
 func shoot_proyectile():

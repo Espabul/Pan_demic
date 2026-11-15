@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://baf2dabpi87hd"]
+
+[ext_resource type="Script" uid="uid://cvxyldy05wtqt" path="res://Scenes/Misc/masa_madre.gd" id="1_buxov"]
+[ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="1_pn0vs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pn0vs"]
+radius = 81.09871
+
+[sub_resource type="Animation" id="Animation_buxov"]
+resource_name = "Flotar"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 6), Vector2(0, -5), Vector2(0, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_juu3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbl0o"]
+_data = {
+&"Flotar": SubResource("Animation_buxov"),
+&"RESET": SubResource("Animation_juu3a")
+}
+
+[node name="Area2D" type="Area2D" unique_id=204618669]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_buxov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478807311]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_pn0vs")
+
+[node name="MasaMadre" type="Sprite2D" parent="." unique_id=1900944515]
+texture = ExtResource("1_pn0vs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MasaMadre" unique_id=323483331]
+libraries/ = SubResource("AnimationLibrary_tbl0o")
+autoplay = &"Flotar"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

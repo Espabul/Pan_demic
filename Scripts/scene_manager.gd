@@ -23,6 +23,7 @@ var level_name = "Level1_Amasadora"
 var transition_caterpanillar_screen = preload("res://Scenes/UI/scene_transition_screen.tscn")
 
 var upgrades : int = 0
+var key_obtained = false
 
 var spawn_pos : Vector2
 
