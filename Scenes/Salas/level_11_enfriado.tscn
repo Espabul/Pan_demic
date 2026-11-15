@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_8fpj1"]
 [ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_36wdx"]
+[ext_resource type="Script" uid="uid://d17t6i1374jol" path="res://Scenes/Salas/level_11_enfriado.gd" id="1_hyxj5"]
 [ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_g6qwk"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_pjbou"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_pjbou"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b8tr6ka5kr0xo" path="res://Scenes/Enemigos/Epifungus/appendix_mouth.tscn" id="6_36wdx"]
 [ext_resource type="PackedScene" uid="uid://1mkqprqns0fb" path="res://Scenes/Enemigos/Epifungus/appendix_eye.tscn" id="7_g6qwk"]
 [ext_resource type="PackedScene" uid="uid://bwcpidjhe62ph" path="res://Scenes/Enemigos/Epifungus/RootBase.tscn" id="8_hyxj5"]
+[ext_resource type="AudioStream" uid="uid://dqyoe8xt3wf0j" path="res://Assets/music/bouncyrunner-boss-fight-one-400508.mp3" id="11_hyxj5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxp78"]
 texture = ExtResource("2_pjbou")
@@ -397,6 +399,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_kxp78")
 
 [node name="level_11_enfriado" type="Node2D" unique_id=675519364]
+script = ExtResource("1_hyxj5")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1939064454]
 
@@ -462,3 +465,7 @@ position = Vector2(-254, -1597)
 
 [node name="RootBase3" parent="." unique_id=619104221 instance=ExtResource("8_hyxj5")]
 position = Vector2(3174, -57)
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1534722144]
+stream = ExtResource("11_hyxj5")
+autoplay = true

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://w6mwvtb4rust"]
 
+[ext_resource type="Script" uid="uid://qaqlcjpgu6ui" path="res://Scenes/Salas/level_9_enfriado.gd" id="1_hmc4c"]
 [ext_resource type="PackedScene" uid="uid://dth2ljmmqgu1s" path="res://Scenes/player/player.tscn" id="1_irm5c"]
 [ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_j0ne3"]
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_3mii2"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_3mii2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_kybpr"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_pg5ad"]
+[ext_resource type="AudioStream" uid="uid://cihkli2u0ffi5" path="res://Assets/music/lnplusmusic-funky-funky-music-628830.mp3" id="8_hmc4c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kybpr"]
 texture = ExtResource("2_3mii2")
@@ -394,6 +396,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_kybpr")
 
 [node name="level_9_enfriado" type="Node2D" unique_id=724676458]
+script = ExtResource("1_hmc4c")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=869241816]
 
@@ -442,3 +445,7 @@ position = Vector2(-1218, -262)
 [node name="Puerta2" parent="." unique_id=2013085028 instance=ExtResource("5_pg5ad")]
 position = Vector2(1796, 310)
 rotation = 1.5707964
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=613627655]
+stream = ExtResource("8_hmc4c")
+autoplay = true
