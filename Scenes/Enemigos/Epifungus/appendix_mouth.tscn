@@ -221,7 +221,7 @@ autoplay = &"Spawn"
 libraries/ = SubResource("AnimationLibrary_u3o24")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1892473695]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=960944205]

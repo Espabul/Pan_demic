@@ -4,7 +4,6 @@ class_name HurtState
 
 
 func enter():
-	print("Entering State Hurt")
 	var character = state_machine.get_parent()
 	#animacion
 	character.hit_animation.play("Hit")

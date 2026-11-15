@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bvxwttqaestnh"]
+
+[ext_resource type="Texture2D" uid="uid://bpwddicuq4fbm" path="res://Assets/backgrounds/MesaTrabajo_background.jpg" id="1_hl0yj"]
+[ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_c1jb4"]
+
+[node name="Node2D" type="Node2D" unique_id=430975999]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=396208837]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1882840522]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(3840, 0)
+
+[node name="MesaTrabajoBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=422813494]
+texture = ExtResource("1_hl0yj")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=369694932]
+motion_mirroring = Vector2(3840, 0)
+
+[node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=156081659]
+texture = ExtResource("2_c1jb4")
+centered = false

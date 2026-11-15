@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://533wqmaysnrg"]
+
+[ext_resource type="Texture2D" uid="uid://oc7m0bhjiyvk" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0000.png" id="1_7t0ha"]
+[ext_resource type="Texture2D" uid="uid://i04e8g4hfic8" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0001.png" id="2_07ks6"]
+[ext_resource type="Texture2D" uid="uid://c7trben4s2x42" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0002.png" id="3_7v5hn"]
+[ext_resource type="Texture2D" uid="uid://bvpnwk7oml4g0" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0003.png" id="4_twx30"]
+[ext_resource type="Texture2D" uid="uid://bs0xfnrhhqm4w" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0004.png" id="5_76uyl"]
+[ext_resource type="Texture2D" uid="uid://bl7ru04sw37vm" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0005.png" id="6_62w5n"]
+[ext_resource type="Texture2D" uid="uid://umdckn4fj1a1" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0006.png" id="7_iqf4x"]
+[ext_resource type="Texture2D" uid="uid://13foh4sdwj1d" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0007.png" id="8_x3pbm"]
+[ext_resource type="Texture2D" uid="uid://bw6maktfkcdwm" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0008.png" id="9_qgmbi"]
+[ext_resource type="Script" uid="uid://dub7hxqd2fmxj" path="res://Scripts/Enemigos/Epifungus/hand_death_effect.gd" id="10_07ks6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7t0ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_07ks6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7v5hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_twx30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76uyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_62w5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iqf4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x3pbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qgmbi")
+}],
+"loop": 0,
+"name": &"HandDeathEffect",
+"speed": 15.0
+}]
+
+[node name="HandDeathEffect" type="AnimatedSprite2D" unique_id=1788993530]
+sprite_frames = SubResource("SpriteFrames_vbfun")
+animation = &"HandDeathEffect"
+autoplay = "HandDeathEffect"
+frame = 8
+frame_progress = 1.0
+script = ExtResource("10_07ks6")
+
+[node name="Timer" type="Timer" parent="." unique_id=2069708678]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

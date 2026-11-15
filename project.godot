@@ -88,6 +88,7 @@ ataque={
 2d_physics/layer_3="jugador"
 2d_physics/layer_4="recolectable"
 2d_physics/layer_5="daño jugador enemigos"
+2d_physics/layer_6="DañoEnemigosJugador"
 
 [physics]
 

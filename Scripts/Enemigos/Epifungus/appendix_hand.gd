@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var daño = $Daño
 
 var direction = 1
-var app_hand_death_effect = preload("res://Scenes/Enemigos/Baguettier/baguettier_death_effect.tscn")
+var app_hand_death_effect = preload("res://Scenes/Enemigos/Epifungus/Death_effects/hand_death_effect.tscn")
 
 @onready var animacion = $Sprite2D/AnimationPlayer
 @onready var dmg_animacion = $Sprite2D/DamageEffect

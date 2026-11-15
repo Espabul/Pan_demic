@@ -6,7 +6,6 @@ class_name DashState
 
 
 func enter():
-	print("Entering State Dash")
 	var character = state_machine.get_parent()
 	#animacion
 	character.animacion.play("dash")

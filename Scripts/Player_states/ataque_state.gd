@@ -3,7 +3,6 @@ extends State
 class_name AtaqueState
 
 func enter():
-	print("Entering State Ataque")
 	var character = state_machine.get_parent()
 	#animacion
 	if character.animacion:

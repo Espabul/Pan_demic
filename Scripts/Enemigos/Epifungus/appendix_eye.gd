@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var damage_amount : int = 1
 
 var direction = 1
-var app_eye_death_effect = preload("res://Scenes/Enemigos/Baguettier/baguettier_death_effect.tscn")
+var app_eye_death_effect = preload("res://Scenes/Enemigos/Epifungus/Death_effects/eye_death_effect.tscn")
 
 @onready var animacion = $Sprite2D/AnimationPlayer
 @onready var dmg_animacion = $Sprite2D/DamageEffect

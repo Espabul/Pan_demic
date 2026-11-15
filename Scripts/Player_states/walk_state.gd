@@ -3,7 +3,6 @@ extends State
 class_name WalkState
 
 func enter():
-	print("Entering State Walk")
 	var character = state_machine.get_parent()
 	#animacion
 	character.animacion.play("run")

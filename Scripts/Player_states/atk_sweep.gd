@@ -3,6 +3,11 @@ extends AnimatedSprite2D
 var direction: int
 var damage_amount : int = 1
 
+@onready var hitbox_collision = $hitbox
+
+func _ready() -> void:
+	if direction == -1:
+		hitbox_collision.position.x = 180
 
 func _on_atk_time_timeout() -> void:
 	queue_free()

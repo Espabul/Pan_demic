@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://jfhn531h7d3t"]
+
+[ext_resource type="Texture2D" uid="uid://wprnbk2ilxq8" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0005.PNG" id="1_sptwr"]
+[ext_resource type="Texture2D" uid="uid://n8us4p1u0qa5" path="res://Assets/Sprites/Pancio/Pancio_explode/Pancio_Boss_Attack_3_0006.PNG" id="2_kmg8w"]
+[ext_resource type="Script" uid="uid://cm4nlcpnoqr4m" path="res://Scenes/Enemigos/Pancio/pancio_death_effect.gd" id="3_d7ctf"]
+[ext_resource type="Texture2D" uid="uid://rywkbbsl83hw" path="res://Assets/Particles/WhiteParticle.png" id="3_kmg8w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sptwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kmg8w")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="Animation" id="Animation_d7ctf"]
+resource_name = "Death"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.5999999, 1.7, 1.8, 1.9000001, 2, 2.1000001, 2.2, 2.3000002, 2.4, 2.5000002, 2.6, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-0.03490658503988659, 0.13962634015954636, -0.03490658503988659, 0.13962634015954636, -0.03490658503988659, 0.13962634015954636, -0.03490658503988659, 0.13962634015954636, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.08726646259971647, 0.22689280275926285, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793, -0.17453292519943295, 0.3141592653589793]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004, 1.2, 1.5, 1.8333334, 2.1333334, 2.4666667, 2.7666667, 3.0666666, 3.2333333),
+"transitions": PackedFloat32Array(1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05, 1e-05, 6.276706e-05),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(2.4589493, 0.8652482, 0.7228457, 1), Color(1, 1, 1, 1), Color(2.4589992, 0.5519444, 0.4532901, 1), Color(1, 1, 1, 1), Color(2.459, 0.4135434, 0.34671313, 1), Color(1, 1, 1, 1), Color(2.459, 0.25416088, 0.23814276, 1), Color(1, 1, 1, 1), Color(2.458793, 0, 0.13705948, 1), Color(1, 1, 1, 1), Color(2.458793, 0, 0.13705948, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmg8w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxrmy"]
+_data = {
+&"Death": SubResource("Animation_d7ctf"),
+&"RESET": SubResource("Animation_kmg8w")
+}
+
+[sub_resource type="Gradient" id="Gradient_2sm05"]
+colors = PackedColorArray(0.7921569, 0.49019608, 0.25490198, 1, 0.92941177, 0.7294118, 0.46666667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r8g73"]
+gradient = SubResource("Gradient_2sm05")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hmy72"]
+lifetime_randomness = 0.12
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 326.52
+initial_velocity_max = 377.55
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_r8g73")
+
+[node name="PancioDeathEffect" type="AnimatedSprite2D" unique_id=630114459]
+sprite_frames = SubResource("SpriteFrames_vbfun")
+autoplay = "default"
+frame = 1
+frame_progress = 0.80363643
+script = ExtResource("3_d7ctf")
+
+[node name="Timer" type="Timer" parent="." unique_id=1535265201]
+wait_time = 4.2
+one_shot = true
+autostart = true
+
+[node name="ExtraEffects" type="AnimationPlayer" parent="." unique_id=98292938]
+libraries/ = SubResource("AnimationLibrary_xxrmy")
+autoplay = &"Death"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1896593]
+z_index = -1
+position = Vector2(73, 97)
+emitting = false
+amount = 60
+texture = ExtResource("3_kmg8w")
+lifetime = 1.3
+speed_scale = 2.0
+explosiveness = 0.29
+randomness = 0.09
+process_material = SubResource("ParticleProcessMaterial_hmy72")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

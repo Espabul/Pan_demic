@@ -44,11 +44,14 @@ var atk_proyect = preload("res://Scenes/player/atk_sweep.tscn")
 var player_death_effect = preload("res://Scenes/player/player_death_effect.tscn")
 
 func _ready() -> void:
+	
+	global_position = SceneManager.spawn_pos
+	
 	upgrades = SceneManager.upgrades
 	if upgrades >=1:
-		can_dash = true
-	if upgrades >=2:
 		can_shoot = true
+	if upgrades >=2:
+		can_dash = true
 
 
 func shoot_proyectile():
@@ -73,6 +76,7 @@ func atk_proyectile():
 	direction = -1 if animacion.flip_h else 1
 	atk_instance.position = Vector2(230 * direction, 0)
 	atk_instance.rotation = deg_to_rad(15 * direction)
+	atk_instance.direction = direction
 	
 	add_child(atk_instance)
 
@@ -126,6 +130,9 @@ func player_death():
 	var player_death_effect_instance = player_death_effect.instantiate() as Node2D
 	player_death_effect_instance.global_position = global_position
 	get_parent().add_child(player_death_effect_instance)
+	
+	if get_tree().current_scene.find_child("Pancio"):
+		get_tree().current_scene.find_child("Pancio").queue_free()
 	
 	queue_free()
 	

@@ -3,9 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bu1swnlosa3ab" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0000.PNG" id="1_8bsck"]
 [ext_resource type="Script" uid="uid://dg6nubw0xl3f4" path="res://Scenes/Enemigos/zumbon/zumbon.gd" id="1_fgivi"]
 [ext_resource type="Texture2D" uid="uid://3183l8nj80c3" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0001.PNG" id="2_mnqc2"]
+[ext_resource type="Texture2D" uid="uid://iew5hso6srwk" path="res://Assets/Sprites/zumbon/zumbon_attack/Zumbón_attack_0000.PNG" id="3_d2hxw"]
 [ext_resource type="Texture2D" uid="uid://bbhey87ck8oxs" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0002.PNG" id="3_fgivi"]
+[ext_resource type="Texture2D" uid="uid://1778nwddlpqh" path="res://Assets/Sprites/zumbon/zumbon_attack/Zumbón_attack_0001.PNG" id="4_7hggv"]
 [ext_resource type="Texture2D" uid="uid://b7grb8v40gnsh" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0003.PNG" id="4_cqbfs"]
+[ext_resource type="Texture2D" uid="uid://cnxyxh1ujw13q" path="res://Assets/Sprites/zumbon/zumbon_attack/Zumbón_attack_0002.PNG" id="5_4akwa"]
 [ext_resource type="Texture2D" uid="uid://dvf41tnjdyr8l" path="res://Assets/Sprites/zumbon/zumbon_move/Zumbón_move_0004.PNG" id="5_p5627"]
+[ext_resource type="Texture2D" uid="uid://b5xiqcw2fdn4" path="res://Assets/Sprites/zumbon/zumbon_attack/Zumbón_attack_0003.PNG" id="6_lxek4"]
+[ext_resource type="Texture2D" uid="uid://cx6hgd0rmblsw" path="res://Assets/Sprites/zumbon/zumbon_attack/Zumbón_attack_0004.PNG" id="7_svkov"]
+[ext_resource type="Texture2D" uid="uid://d158kjastrgob" path="res://Assets/Sprites/zumbon/zumbon_attack/Zumbón_attack_0005.PNG" id="8_8vpsa"]
 
 [sub_resource type="Animation" id="Animation_qetqd"]
 length = 0.001
@@ -20,6 +26,46 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_8bsck")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ixgtb"]
+resource_name = "die"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_d2hxw"), ExtResource("4_7hggv"), ExtResource("5_4akwa"), ExtResource("6_lxek4"), ExtResource("7_svkov"), ExtResource("8_8vpsa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(6.276706e-05, 6.276706e-05, 1e-05),
+"update": 0,
+"values": [Color(2.458793, 0, 0.13705948, 1), Color(2.458793, 0, 0.13705948, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b5m7g"]
@@ -41,10 +87,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [SubResource("CompressedTexture2D_b5m7g"), ExtResource("2_mnqc2"), ExtResource("3_fgivi"), ExtResource("4_cqbfs"), ExtResource("5_p5627")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8bsck"]
 _data = {
 &"RESET": SubResource("Animation_qetqd"),
+&"die": SubResource("Animation_ixgtb"),
 &"move": SubResource("Animation_thyff")
 }
 
@@ -60,9 +119,8 @@ radius = 32.06244
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqbfs"]
 radius = 31.0
 
-[node name="zumbon" type="CharacterBody2D" unique_id=1922201499]
+[node name="zumbon" type="CharacterBody2D" unique_id=1922201499 groups=["enemy"]]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_fgivi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1074915874]
@@ -87,7 +145,7 @@ shape = SubResource("CircleShape2D_8w0r3")
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1990920545]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1291397422]
 position = Vector2(4, -1)
@@ -103,5 +161,7 @@ position = Vector2(4, -1)
 shape = SubResource("CircleShape2D_cqbfs")
 debug_color = Color(0.32503247, 0.4902842, 1, 0.41960785)
 
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
