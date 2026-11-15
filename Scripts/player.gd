@@ -38,6 +38,9 @@ var atk_proyect = preload("res://Scenes/player/atk_sweep.tscn")
 var player_death_effect = preload("res://Scenes/player/player_death_effect.tscn")
 
 func _ready() -> void:
+	
+	global_position = SceneManager.spawn_pos
+	
 	upgrades = SceneManager.upgrades
 	if upgrades >=1:
 		can_dash = true
