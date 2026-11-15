@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="5_pjhlv"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="6_16ais"]
 [ext_resource type="Texture2D" uid="uid://ccekc1urp0r45" path="res://Assets/Tilesets/Masa_Madre.png" id="7_16ais"]
+[ext_resource type="AudioStream" uid="uid://bdbthd7k58iir" path="res://Assets/music/atlasaudio-funky-background-617565.mp3" id="10_neysc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxjcb"]
 texture = ExtResource("2_sg5nx")
@@ -445,3 +446,7 @@ scale = Vector2(1, 0.96354175)
 [node name="MasaMadre" type="Sprite2D" parent="." unique_id=465135768]
 position = Vector2(2116, -1902)
 texture = ExtResource("7_16ais")
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1747179147]
+stream = ExtResource("10_neysc")
+autoplay = true

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_3mii2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_kybpr"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_pg5ad"]
+[ext_resource type="AudioStream" uid="uid://cihkli2u0ffi5" path="res://Assets/music/lnplusmusic-funky-funky-music-628830.mp3" id="8_hmc4c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kybpr"]
 texture = ExtResource("2_3mii2")
@@ -442,3 +443,7 @@ position = Vector2(-1218, -262)
 [node name="Puerta2" parent="." unique_id=2013085028 instance=ExtResource("5_pg5ad")]
 position = Vector2(1796, 310)
 rotation = 1.5707964
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=613627655]
+stream = ExtResource("8_hmc4c")
+autoplay = true

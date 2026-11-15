@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="5_2252j"]
 [ext_resource type="PackedScene" uid="uid://bftwpdqr5voh1" path="res://Scenes/Misc/boton.tscn" id="6_0ofv7"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="7_t0r4m"]
+[ext_resource type="AudioStream" uid="uid://bdbthd7k58iir" path="res://Assets/music/atlasaudio-funky-background-617565.mp3" id="10_8j50v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2252j"]
 texture = ExtResource("2_ntval")
@@ -443,3 +444,7 @@ position = Vector2(-1038, -928)
 [node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("7_t0r4m")]
 position = Vector2(-509, -2058)
 scale = Vector2(1.1171875, 1.2005208)
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=107650120]
+stream = ExtResource("10_8j50v")
+autoplay = true

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_x8n0w"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_gdx5d"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="5_gdx5d"]
+[ext_resource type="AudioStream" uid="uid://dqyoe8xt3wf0j" path="res://Assets/music/bouncyrunner-boss-fight-one-400508.mp3" id="8_68cph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3snwq"]
 texture = ExtResource("2_x8n0w")
@@ -437,3 +438,7 @@ scale = Vector2(1.5, 1.5)
 next_scene = "level_5_frigo"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("5_gdx5d")]
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1975315342]
+stream = ExtResource("8_68cph")
+autoplay = true

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_2csk2"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_54rje"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_giacs"]
+[ext_resource type="AudioStream" uid="uid://bf1kjvc5ncdrq" path="res://Assets/music/the_mountain-funky-508017.mp3" id="8_qyns5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_54rje"]
 texture = ExtResource("2_2csk2")
@@ -450,3 +451,7 @@ rotation = 1.5707964
 
 [node name="Puerta3" parent="." unique_id=5251555 instance=ExtResource("5_giacs")]
 position = Vector2(2272, -261)
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1048269799]
+stream = ExtResource("8_qyns5")
+autoplay = true
