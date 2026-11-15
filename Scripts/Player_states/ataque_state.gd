@@ -14,6 +14,8 @@ func enter():
 	character.atk_cooldowntimer.start()
 	
 	character.atk_proyectile()
+	
+	character.punch.play()
 
 func physics_update(delta: float):
 	var character = state_machine.get_parent()

@@ -16,6 +16,7 @@ func enter():
 	character.can_dash = false
 	character.dash_cooldowntimer.wait_time = character.DASH_COOLDOWN
 	character.dash_cooldowntimer.start()
+	character.dash.play()
 
 
 

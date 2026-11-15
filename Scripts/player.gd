@@ -5,6 +5,7 @@ extends CharacterBody2D
 var upgrades : int
 
 
+
 const SPEED = 500.0
 const JUMP_VELOCITY = -1800.0
 const DASH_DURATION = 0.2
@@ -29,6 +30,11 @@ var hurtstate = false
 @onready var shoot_timer = $shoot_timer
 @onready var hurt_cooldowntimer = $Hurt_cooldown
 @onready var hit_animation = $HitAnimationPlayer
+@onready var punch = $Punch
+@onready var jump = $Jump
+@onready var throw = $Throw
+@onready var dash = $Dash
+@onready var hurt = $Hurt
 
 
 
@@ -55,6 +61,7 @@ func shoot_proyectile():
 	bullet_instance.scale = Vector2(0.75, 0.75)
 	
 	get_tree().current_scene.add_child(bullet_instance)
+	throw.play()
 
 
 func atk_proyectile():
