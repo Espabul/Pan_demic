@@ -10,6 +10,7 @@ var app_hand_death_effect = preload("res://Scenes/Enemigos/Baguettier/baguettier
 @onready var animacion = $Sprite2D/AnimationPlayer
 @onready var dmg_animacion = $Sprite2D/DamageEffect
 @onready var spawn_timer = $SpawnTimer
+@onready var daño = $Daño
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +28,7 @@ func _process(delta: float) -> void:
 func spit():
 	if animacion.current_animation == "Idle":
 		animacion.play("Spit")
+		daño.play()
 
 
 

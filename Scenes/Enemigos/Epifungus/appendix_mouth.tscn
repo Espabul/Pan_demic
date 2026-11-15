@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://diw052im35xh8" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_spit/Mouth_spit_atk_0009.png" id="19_6yptc"]
 [ext_resource type="Texture2D" uid="uid://drl72lpnpy3rs" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_spit/Mouth_spit_atk_0010.png" id="20_ic1w5"]
 [ext_resource type="Texture2D" uid="uid://bc5ttscl6ytbw" path="res://Assets/Sprites/FinalBoss/Appendix_mouth/Mouth_spit/Mouth_spit_atk_0011.png" id="21_t88jr"]
+[ext_resource type="AudioStream" uid="uid://ckii6byra834h" path="res://Assets/Sounds/683101__florianreichelt__quick-woosh.mp3" id="31_ic1w5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8g73"]
 radius = 97.0
@@ -231,6 +232,9 @@ collision_mask = 16
 position = Vector2(-6, -178)
 shape = SubResource("CapsuleShape2D_vbfun")
 debug_color = Color(0, 0.64778787, 0.20987913, 0.41960785)
+
+[node name="Daño" type="AudioStreamPlayer2D" parent="." unique_id=2097033811]
+stream = ExtResource("31_ic1w5")
 
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

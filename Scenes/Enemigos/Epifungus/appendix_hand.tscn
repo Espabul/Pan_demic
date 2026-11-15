@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://umdckn4fj1a1" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0006.png" id="21_g3hic"]
 [ext_resource type="Texture2D" uid="uid://13foh4sdwj1d" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0007.png" id="22_mb5c3"]
 [ext_resource type="Texture2D" uid="uid://bw6maktfkcdwm" path="res://Assets/Sprites/FinalBoss/Appendix_hand/Hand_death/Hand_death_0008.png" id="23_cnx3j"]
+[ext_resource type="AudioStream" uid="uid://ckii6byra834h" path="res://Assets/Sounds/683101__florianreichelt__quick-woosh.mp3" id="27_fkaxy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vnjfj"]
 radius = 59.0
@@ -235,6 +236,9 @@ collision_mask = 4
 position = Vector2(16, 49)
 shape = SubResource("CapsuleShape2D_r8g73")
 debug_color = Color(0.64287156, 0.5062529, 0.3793611, 0.41960785)
+
+[node name="Daño" type="AudioStreamPlayer2D" parent="." unique_id=484573626]
+stream = ExtResource("27_fkaxy")
 
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
