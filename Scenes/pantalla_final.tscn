@@ -59,3 +59,5 @@ offset_top = 589.0
 offset_right = 643.0
 offset_bottom = 620.0
 text = "Volver al menú"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

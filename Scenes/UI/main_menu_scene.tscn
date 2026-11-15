@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2v2dcqr4m4gx" path="res://Scripts/UI/main_menu_scene.gd" id="1_7a04i"]
 [ext_resource type="Texture2D" uid="uid://bmgcs1ylt1fen" path="res://Assets/UI/theme/toast_png_for_menu_screen.png" id="1_i2xx2"]
 [ext_resource type="Theme" uid="uid://yta5tdcry2nd" path="res://Assets/UI/theme/game_theme.tres" id="2_i2xx2"]
+[ext_resource type="FontFile" uid="uid://bqn0w138oqbdc" path="res://Assets/Fonts/GrinchedRegular.otf" id="4_bw73x"]
 
 [node name="MainMenuScreen" type="CanvasLayer" unique_id=72299163]
 process_mode = 3
@@ -41,16 +42,27 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=286069384]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1693946821]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.33527663, 0.16675821, 0.056757495, 1)
+theme_override_fonts/font = ExtResource("4_bw73x")
+theme_override_font_sizes/font_size = 60
+text = "PAN_DEMIC"
+horizontal_alignment = 1
+
 [node name="PlayButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=471662446]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bw73x")
 text = "PLAY"
 
 [node name="NewGameButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=74500472]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bw73x")
 text = "NEW GAME"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=687809586]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bw73x")
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
