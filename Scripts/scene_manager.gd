@@ -3,8 +3,13 @@ extends Node
 
 
 var scenes : Dictionary = {"Checkpoint" : "res://Scenes/Salas/Level1_Amasadora.tscn",
-							"Level1_Amasadora": "res://Scenes/Salas/Level1_Amasadora.tscn",
-							"LevelTEST": "res://Scenes/Salas/LevelTEST.tscn"}
+							"Level_1_Amasadora": "res://Scenes/Salas/Level1_Amasadora.tscn",
+							"LevelTEST": "res://Scenes/Salas/LevelTEST.tscn",
+							"level_2_mesa_de_trabajo": "res://Scenes/Salas/level_2_mesa_de_trabajo.tscn",
+							"level_3_mesa_de_trabajo": "res://Scenes/Salas/level_3_mesa_de_trabajo.tscn",
+							"level_4_frigo": "res://Scenes/Salas/level_4_frigo_1.tscn",
+							"level_5_frigo": "res://Scenes/Salas/level_5_frigo_2.tscn"}
+
 
 var last_scene : String = "Level1_Amasadora"
 
