@@ -18,6 +18,7 @@ var scenes : Dictionary = {"Checkpoint" : "res://Scenes/Salas/Level1_Amasadora.t
 							"level_11_enfriado": "res://Scenes/Salas/level_11_enfriado.tscn"}
 
 
+
 var last_scene : String = "Level1_Amasadora"
 var level_name = "Level1_Amasadora"
 
@@ -28,8 +29,6 @@ var key_obtained = false
 var passed_fight_rooms = 0
 
 var spawn_pos : Vector2
-
-var level_name = "Level1_Amasadora"
 
 
 func transition_to_scene(level : String):
