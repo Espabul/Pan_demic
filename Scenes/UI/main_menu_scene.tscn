@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dv7d8rofrggrp"]
 
 [ext_resource type="Script" uid="uid://c2v2dcqr4m4gx" path="res://Scripts/UI/main_menu_scene.gd" id="1_7a04i"]
-[ext_resource type="Texture2D" uid="uid://bmgcs1ylt1fen" path="res://Assets/UI/theme/toast_png_for_menu_screen.png" id="1_i2xx2"]
+[ext_resource type="Texture2D" uid="uid://0cweww7fkskh" path="res://Assets/UI/Pantalla_Inicio.png" id="2_bw73x"]
 [ext_resource type="Theme" uid="uid://yta5tdcry2nd" path="res://Assets/UI/theme/game_theme.tres" id="2_i2xx2"]
 [ext_resource type="FontFile" uid="uid://bqn0w138oqbdc" path="res://Assets/Fonts/GrinchedRegular.otf" id="4_bw73x"]
+[ext_resource type="AudioStream" uid="uid://cihkli2u0ffi5" path="res://Assets/music/lnplusmusic-funky-funky-music-628830.mp3" id="5_uci31"]
 
 [node name="MainMenuScreen" type="CanvasLayer" unique_id=72299163]
 process_mode = 3
@@ -15,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_i2xx2")
+texture = ExtResource("2_bw73x")
 expand_mode = 1
 stretch_mode = 5
 
@@ -64,6 +65,11 @@ text = "NEW GAME"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_bw73x")
 text = "EXIT"
+
+[node name="Música" type="AudioStreamPlayer" parent="." unique_id=2039195887]
+stream = ExtResource("5_uci31")
+volume_db = -11.5
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
