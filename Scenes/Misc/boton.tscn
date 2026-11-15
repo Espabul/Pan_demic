@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bftwpdqr5voh1"]
+
+[ext_resource type="Texture2D" uid="uid://dh3yraccf7w5d" path="res://Assets/Tilesets/Objetos_PNG_maemia.png" id="1_1gxt2"]
+[ext_resource type="Script" uid="uid://c414ny85gsw3m" path="res://Scenes/Misc/boton.gd" id="2_dnyhu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbfun"]
+atlas = ExtResource("1_1gxt2")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gxt2"]
+radius = 21.0
+height = 78.0
+
+[node name="Boton" type="Sprite2D" unique_id=61881143]
+texture = SubResource("AtlasTexture_vbfun")
+hframes = 2
+script = ExtResource("2_dnyhu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=259776142]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1838612854]
+position = Vector2(0, 37)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1gxt2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
