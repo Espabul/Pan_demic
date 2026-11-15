@@ -418,5 +418,6 @@ next_scene = "level_5_frigo"
 [node name="Door3" parent="." unique_id=1305721584 instance=ExtResource("3_2csk2")]
 position = Vector2(2579, -248)
 scale = Vector2(1.5, 1.5)
+next_scene = "level_7_dibujado"
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_54rje")]
