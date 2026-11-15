@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cifogrnvs7twy"]
 
 [ext_resource type="Script" uid="uid://d3iju0i3cwjwe" path="res://Scripts/Misc/door.gd" id="1_5kh6l"]
+[ext_resource type="AudioStream" uid="uid://o4n4r6acjo3s" path="res://Assets/Sounds/400329__n-razm__door_open.wav" id="2_u7e53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbfun"]
 size = Vector2(186, 176)
@@ -14,5 +15,8 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea2D" unique_id=1829405902]
 shape = SubResource("RectangleShape2D_vbfun")
+
+[node name="Door" type="AudioStreamPlayer2D" parent="." unique_id=823311309]
+stream = ExtResource("2_u7e53")
 
 [connection signal="body_entered" from="ExitArea2D" to="." method="_on_exit_area_2d_body_entered"]
