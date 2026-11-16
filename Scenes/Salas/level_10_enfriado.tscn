@@ -439,6 +439,7 @@ position = Vector2(-760.9999, 653.0001)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_11_enfriado"
 spawn_pos = Vector2(-797, -2381)
+room_advancer = 10
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_ng01w")]
 
@@ -455,6 +456,8 @@ autoplay = true
 
 [node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("9_evuax")]
 position = Vector2(177, 55)
+patrol_point_xpos = 177
+patrol_range = 150
 
 [node name="Flybun" parent="." unique_id=14139485 instance=ExtResource("10_njgcg")]
 position = Vector2(-104, -1095)

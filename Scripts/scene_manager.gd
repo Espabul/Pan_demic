@@ -30,6 +30,8 @@ var key_obtained = false
 var passed_fight_rooms = 0
 
 var spawn_pos : Vector2
+var check_spawn_pos : Vector2
+
 
 
 func transition_to_scene(level : String):
@@ -46,6 +48,7 @@ func transition_to_scene(level : String):
 
 func transition_to_scene_checkpoint():
 	await get_tree().create_timer(0.6).timeout
+	spawn_pos = check_spawn_pos
 	transition_to_scene("Checkpoint")
 	HealthManager.increase_health(10)
 	if last_scene == "Checkpoint":
@@ -60,3 +63,8 @@ func play_transition_animation():
 func set_checkpoint_scene(level: String):
 	scenes.set("Checkpoint", scenes.get(level))
 	level_name = level
+
+
+func advance_room(number: int):
+	if number>passed_fight_rooms:
+		passed_fight_rooms = number

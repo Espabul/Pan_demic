@@ -5,7 +5,10 @@ var activado = false
 
 @onready var collision_enable = $Area2D/CollisionShape2D
 
-
+func pulsar():
+	collision_enable.set_deferred("disabled", true)
+	frame = 1
+	activado = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

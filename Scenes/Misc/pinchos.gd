@@ -16,6 +16,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 		SceneManager.play_transition_animation()
 		
 		
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.4).timeout
 		
 		collision_enable.set_deferred("disabled", false)
+		body.global_position = respawn_pos

@@ -4,6 +4,10 @@ extends Node2D
 @onready var door = $Door
 @export var spawn_pos : Vector2
 
+@export var room_advancer : int = 0
+
+
+
 func _on_exit_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		var player = body as CharacterBody2D
@@ -21,5 +25,9 @@ func _on_exit_area_2d_body_entered(body: Node2D) -> void:
 		
 		door.play()
 		await get_tree().create_timer(0.3).timeout
+		
+		
+		SceneManager.advance_room(room_advancer)
+		
 		SceneManager.spawn_pos = spawn_pos
 		SceneManager.transition_to_scene(next_scene)

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://qheuo3qvasx0" path="res://Scenes/Enemigos/caterpanillar/caterpanillar.tscn" id="10_vamvg"]
 [ext_resource type="PackedScene" uid="uid://bytn8jgae56dh" path="res://Scenes/Enemigos/Croissanter/croissanter.tscn" id="11_juu2w"]
 [ext_resource type="PackedScene" uid="uid://bks11k5adur6j" path="res://Scenes/Enemigos/zumbon/zumbon.tscn" id="12_g3nm7"]
+[ext_resource type="Texture2D" uid="uid://2nhrh5n0vy7r" path="res://Assets/UI/Guides/Guias_fire.png" id="15_tn5jl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxjcb"]
 texture = ExtResource("2_sg5nx")
@@ -451,22 +452,35 @@ stream = ExtResource("10_neysc")
 autoplay = true
 
 [node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("10_vamvg")]
-position = Vector2(-318, 226)
+position = Vector2(-471, 225)
+rango = 180
 
 [node name="caterpanillar2" parent="." unique_id=1492945952 instance=ExtResource("10_vamvg")]
-position = Vector2(2037, -930)
+position = Vector2(1956, -924)
+rango = 100
 
 [node name="Croissanter" parent="." unique_id=377938656 instance=ExtResource("11_juu2w")]
-position = Vector2(1835, 135)
+position = Vector2(1671, 139)
+patrol_point_xpos = 1670
+patrol_range = 150
 
 [node name="zumbon" parent="." unique_id=1922201499 instance=ExtResource("12_g3nm7")]
 position = Vector2(569, -1321)
 
 [node name="caterpanillar3" parent="." unique_id=557775261 instance=ExtResource("10_vamvg")]
 position = Vector2(-814, -928)
+rango = 100
 
 [node name="Puerta" parent="." unique_id=1948629910 instance=ExtResource("6_16ais")]
 position = Vector2(1916, -1922)
 
 [node name="MasaMadre" parent="." unique_id=1728142897 instance=ExtResource("9_xns0p")]
 position = Vector2(2119, -1905)
+room_advancer = 2
+
+[node name="ShootGuide" type="Sprite2D" parent="." unique_id=2102471038]
+modulate = Color(1, 1, 1, 0.2627451)
+position = Vector2(2110, -2319)
+rotation = 0.082030475
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("15_tn5jl")

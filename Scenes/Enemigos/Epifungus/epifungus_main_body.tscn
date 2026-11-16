@@ -9,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bt12uqcofodn7" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0020.png" id="6_cfdwh"]
 [ext_resource type="Texture2D" uid="uid://dolehtb5532jq" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0024.png" id="7_o4hhf"]
 [ext_resource type="Texture2D" uid="uid://bf1qruhid7q2m" path="res://Assets/Sprites/FinalBoss/Main_body/Epifungus_idle_0028.png" id="8_gv373"]
-[ext_resource type="Script" uid="uid://b4p14u2vbqkov" path="res://Scripts/state_machine.gd" id="10_gc1xd"]
-[ext_resource type="Script" uid="uid://ct6kvob7bpngi" path="res://Scripts/Enemigos/Epifungus/Epifungus_States/epi_summon_state.gd" id="11_yr2xc"]
-[ext_resource type="Script" uid="uid://c3aliextp3ggb" path="res://Scripts/Enemigos/Epifungus/Epifungus_States/epi_wait_state.gd" id="12_cfdwh"]
 
 [sub_resource type="Animation" id="Animation_vrgi8"]
 resource_name = "Idle_Epifungus"
@@ -50,6 +47,22 @@ _data = {
 &"RESET": SubResource("Animation_fl4nh")
 }
 
+[sub_resource type="Animation" id="Animation_yh6fx"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e-05),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_yr2xc"]
 resource_name = "damage_effect"
 length = 0.3
@@ -68,6 +81,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cfdwh"]
 _data = {
+&"RESET": SubResource("Animation_yh6fx"),
 &"damage_effect": SubResource("Animation_yr2xc")
 }
 
@@ -76,7 +90,7 @@ radius = 69.0
 height = 906.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfun"]
-radius = 87.0
+radius = 104.0
 height = 946.0
 
 [node name="Epifungus_main_body" type="CharacterBody2D" unique_id=1842748894]
@@ -94,6 +108,7 @@ autoplay = &"Idle_Epifungus"
 
 [node name="DamageEffect" type="AnimationPlayer" parent="Sprite2D" unique_id=379913076]
 libraries/ = SubResource("AnimationLibrary_cfdwh")
+autoplay = &"RESET"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=967351384]
 position = Vector2(135, 31)
@@ -104,20 +119,8 @@ collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=597987782 groups=["enemy"]]
-position = Vector2(130, 51)
+position = Vector2(133, 50)
 shape = SubResource("CapsuleShape2D_vbfun")
 debug_color = Color(0.2850505, 0.6209913, 0.32700935, 0.41960785)
-
-[node name="StateMachine" type="Node" parent="." unique_id=2080777087]
-script = ExtResource("10_gc1xd")
-metadata/_custom_type_script = "uid://b4p14u2vbqkov"
-
-[node name="EpiSummonState" type="Node" parent="StateMachine" unique_id=943671841]
-script = ExtResource("11_yr2xc")
-metadata/_custom_type_script = "uid://ct6kvob7bpngi"
-
-[node name="EpiWaitState" type="Node" parent="StateMachine" unique_id=1161695188]
-script = ExtResource("12_cfdwh")
-metadata/_custom_type_script = "uid://c3aliextp3ggb"
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

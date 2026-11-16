@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d3hrus1t680le" path="res://Assets/Tilesets/Tileset_basic_template.png" id="2_2csk2"]
 [ext_resource type="Texture2D" uid="uid://j8ukwryq7yrx" path="res://Assets/backgrounds/Frigo_foreground.png" id="2_qyns5"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="3_2csk2"]
+[ext_resource type="Texture2D" uid="uid://capjjvtjcn708" path="res://Assets/UI/Guides/Guias_key.png" id="3_upikl"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="4_54rje"]
 [ext_resource type="PackedScene" uid="uid://cmc16eja22xv" path="res://Scenes/Misc/puerta.tscn" id="5_giacs"]
 [ext_resource type="AudioStream" uid="uid://bf1kjvc5ncdrq" path="res://Assets/music/the_mountain-funky-508017.mp3" id="8_qyns5"]
@@ -407,6 +408,12 @@ script = ExtResource("1_qyns5")
 position = Vector2(399.5, -292.49997)
 scale = Vector2(0.9658853, 0.70972216)
 texture = ExtResource("1_rbwja")
+
+[node name="KeyGuide" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=231183176]
+modulate = Color(1, 1, 1, 0.18039216)
+position = Vector2(1964.9998, -328.99994)
+rotation = -0.36651915
+texture = ExtResource("3_upikl")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1939947180]
 

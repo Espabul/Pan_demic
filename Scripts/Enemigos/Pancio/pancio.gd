@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var enemy_health : int = 30
+@export var enemy_health : int = 3
 @export var damage_amount : int = 1
 @export var middle_position : int
 @export var close_range : int
@@ -31,7 +31,7 @@ var state_timer_end = false
 
 
 var pancio_death_effect = preload("res://Scenes/Enemigos/Pancio/pancio_death_effect.tscn")
-var key = preload("res://Scenes/Misc/llave.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -118,12 +118,11 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		print(enemy_health)
 		if enemy_health <= 0:
 			var pancio_death_effect_instance = pancio_death_effect.instantiate() as Node2D
-			var key_instance = key
+			
 			pancio_death_effect_instance.global_position = global_position
 			pancio_death_effect_instance.flip_h = direction>0
 			get_parent().add_child(pancio_death_effect_instance)
-			key_instance.global_position = global_position
-			get_parent().add_child(key_instance)
+			
 			
 			queue_free()
 

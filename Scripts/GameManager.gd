@@ -18,7 +18,8 @@ func start_game():
 	
 	SceneManager.transition_to_scene(DataManager.game_data.checkpoint_scene)
 
-
+func restart_game():
+	SceneManager.transition_to_scene("cinematica")
 
 func quit_game():
 	DataManager.save_data()

@@ -180,7 +180,7 @@ radius = 214.0
 height = 1222.0
 
 [node name="Baguettier" type="CharacterBody2D" unique_id=1171065870 groups=["enemy"]]
-collision_mask = 5
+collision_layer = 2
 script = ExtResource("1_hh4mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062416478]

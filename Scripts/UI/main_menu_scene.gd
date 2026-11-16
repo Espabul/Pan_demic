@@ -18,5 +18,5 @@ func _on_new_game_button_pressed() -> void:
 	DataManager.reset_data()
 	DataManager.save_data()
 	DataManager.load_data()
-	GameManager.start_game()
+	GameManager.restart_game()
 	queue_free()

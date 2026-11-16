@@ -436,6 +436,7 @@ position = Vector2(1791, 564)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_6_frigo"
 spawn_pos = Vector2(1774, -2474)
+room_advancer = 5
 
 [node name="Door" parent="." unique_id=782674543 instance=ExtResource("3_irnpp")]
 position = Vector2(1800, -2776)
@@ -459,6 +460,8 @@ autoplay = true
 
 [node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("9_rytrd")]
 position = Vector2(-163, 49)
+patrol_point_xpos = -163
+patrol_range = 160
 
 [node name="zumbon" parent="." unique_id=1922201499 instance=ExtResource("10_rytrd")]
 position = Vector2(-24, -977)

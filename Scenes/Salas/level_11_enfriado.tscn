@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://1mkqprqns0fb" path="res://Scenes/Enemigos/Epifungus/appendix_eye.tscn" id="7_g6qwk"]
 [ext_resource type="PackedScene" uid="uid://bwcpidjhe62ph" path="res://Scenes/Enemigos/Epifungus/RootBase.tscn" id="8_hyxj5"]
 [ext_resource type="AudioStream" uid="uid://dqyoe8xt3wf0j" path="res://Assets/music/bouncyrunner-boss-fight-one-400508.mp3" id="11_hyxj5"]
+[ext_resource type="Texture2D" uid="uid://6xjb4phpnet5" path="res://Assets/UI/Guides/Guias_kill.png" id="13_w42mf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxp78"]
 texture = ExtResource("2_pjbou")
@@ -442,18 +443,14 @@ spawn_pos = Vector2(-1067, 176)
 [node name="Epifungus_main_body" parent="." unique_id=1842748894 instance=ExtResource("5_8vn15")]
 position = Vector2(-159, -171)
 
+[node name="AppendixEye" parent="." unique_id=2110285143 instance=ExtResource("7_g6qwk")]
+position = Vector2(541, 10)
+
 [node name="AppendixMouth" parent="." unique_id=1732114737 instance=ExtResource("6_36wdx")]
 position = Vector2(-1482, -1418)
 
-[node name="AppendixMouth3" parent="." unique_id=159712702 instance=ExtResource("6_36wdx")]
-position = Vector2(2149, -1451)
-scale = Vector2(-1, 1)
-
 [node name="AppendixMouth2" parent="." unique_id=917191212 instance=ExtResource("6_36wdx")]
 position = Vector2(2981, -1454)
-
-[node name="AppendixEye" parent="." unique_id=2110285143 instance=ExtResource("7_g6qwk")]
-position = Vector2(541, 10)
 
 [node name="AppendixEye2" parent="." unique_id=381931622 instance=ExtResource("7_g6qwk")]
 position = Vector2(-608, 15.999999)
@@ -471,5 +468,9 @@ position = Vector2(3174, -57)
 stream = ExtResource("11_hyxj5")
 autoplay = true
 
-[connection signal="tree_exited" from="AppendixEye" to="." method="_on_appendix_eye_tree_exited"]
-[connection signal="tree_exited" from="AppendixEye2" to="." method="_on_appendix_eye_2_tree_exited"]
+[node name="GuiaBoss" type="Sprite2D" parent="." unique_id=1990879166]
+modulate = Color(1, 1, 1, 0.45882353)
+position = Vector2(-1162.0001, -2188.0002)
+rotation = 0.15533431
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("13_w42mf")

@@ -442,6 +442,7 @@ position = Vector2(3170, -122)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_9_enfriado"
 spawn_pos = Vector2(-1296, -229)
+room_advancer = 8
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_j0cks")]
 
@@ -459,10 +460,10 @@ scale = Vector2(1.0859375, 1.046875)
 autoplay = true
 
 [node name="Flybun" parent="." unique_id=14139485 instance=ExtResource("9_b1gkj")]
-position = Vector2(-200, -1207)
+position = Vector2(-682, -177)
 
 [node name="Flybun2" parent="." unique_id=1028660492 instance=ExtResource("9_b1gkj")]
-position = Vector2(1218, -1207)
+position = Vector2(1858, -185)
 
 [node name="zumbon" parent="." unique_id=1922201499 instance=ExtResource("10_jogit")]
 position = Vector2(500, -728)
@@ -473,3 +474,5 @@ position = Vector2(2163, -1446)
 [node name="Checkpoint" parent="." unique_id=2045484885 instance=ExtResource("12_ft04q")]
 position = Vector2(515, -1683)
 scale = Vector2(1.5, 1.5)
+checkpoint_scene = "level_8_horno"
+room_advancer = 8

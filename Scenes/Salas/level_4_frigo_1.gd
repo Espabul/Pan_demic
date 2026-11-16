@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var puerta = $Puerta
+@onready var puerta = $Puerta3
 
 
 func _ready() -> void:

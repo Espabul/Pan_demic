@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://de5rf5l3d4riy" path="res://Scenes/Salas/level_3_mesa_de_trabajo.gd" id="1_k01s7"]
 [ext_resource type="Texture2D" uid="uid://bi45ltx5hnk84" path="res://Assets/foreground/Foreground_mesa_trabajo.png" id="2_8j50v"]
 [ext_resource type="Texture2D" uid="uid://cpc7p4k3e203k" path="res://Assets/Tilesets/Tileset_Mesa_Trabajo.png" id="2_ntval"]
+[ext_resource type="Texture2D" uid="uid://ep5qyv0tqank" path="res://Assets/UI/Guides/Guias_check.png" id="3_3jqsi"]
 [ext_resource type="PackedScene" uid="uid://t742p21fjpwv" path="res://Scenes/Enemigos/Baguettier/baguettier.tscn" id="3_j6xlt"]
 [ext_resource type="PackedScene" uid="uid://cifogrnvs7twy" path="res://Scenes/Misc/door.tscn" id="4_1swy8"]
 [ext_resource type="PackedScene" uid="uid://bc1unypn4g0bs" path="res://Scenes/UI/game_screen.tscn" id="5_2252j"]
@@ -406,6 +407,12 @@ position = Vector2(648, -1146)
 scale = Vector2(1.273177, 1.3023148)
 texture = ExtResource("1_a4v64")
 
+[node name="CheckGuide" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=320497434]
+modulate = Color(1, 1, 1, 0.21960784)
+position = Vector2(-142, -2212)
+rotation = 0.36651915
+texture = ExtResource("3_3jqsi")
+
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=202488483]
 
 [node name="ForegroundMesaTrabajo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=122616629]
@@ -438,6 +445,7 @@ position = Vector2(2594, -2305)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_4_frigo"
 spawn_pos = Vector2(-1272, 186)
+room_advancer = 3
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("5_2252j")]
 
@@ -452,13 +460,16 @@ scale = Vector2(1.1171875, 1.2005208)
 autoplay = true
 
 [node name="Baguettier" parent="." unique_id=1171065870 instance=ExtResource("3_j6xlt")]
-position = Vector2(82, -953)
+position = Vector2(172, -962)
+patrol_range = 200
 
 [node name="caterpanillar" parent="." unique_id=355569004 instance=ExtResource("10_8j50v")]
-position = Vector2(88, 229)
+position = Vector2(-147, 233)
+rango = 300
 
 [node name="caterpanillar2" parent="." unique_id=1273723984 instance=ExtResource("10_8j50v")]
 position = Vector2(1823, -289)
+rango = 30
 
 [node name="Fungitajo" parent="." unique_id=1545032201 instance=ExtResource("11_0ovnv")]
 position = Vector2(1402, -2088)
@@ -466,3 +477,5 @@ position = Vector2(1402, -2088)
 [node name="Checkpoint" parent="." unique_id=2045484885 instance=ExtResource("13_7ht13")]
 position = Vector2(-823.00006, -2055)
 scale = Vector2(1.5, 1.5)
+checkpoint_scene = "level_3_mesa_de_trabajo"
+room_advancer = 3

@@ -4,7 +4,10 @@ extends CharacterBody2D
 @export var damage_amount : int = 1
 
 @export var enemy_health = 5
-var epifungus_death_effect = preload("res://Scenes/Enemigos/Baguettier/baguettier_death_effect.tscn")
+
+@onready var dmg_effect = $Sprite2D/DamageEffect
+
+var epifungus_death_effect = preload("res://Scenes/Enemigos/Epifungus/epifungus_death_effect.tscn")
 
 var can_be_hit = false
 
@@ -23,8 +26,10 @@ func _process(delta: float) -> void:
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	print("Hurtbox area entered")
 	if area.get_parent().has_method("get_damage_amount") and can_be_hit:
+		print("epifungus hurt")
 		var node = area.get_parent() as Node
 		enemy_health -= node.damage_amount
+		dmg_effect.play("damage_effect")
 		print(enemy_health)
 		if enemy_health <= 0:
 			var epifungus_death_effect_instance = epifungus_death_effect.instantiate() as Node2D

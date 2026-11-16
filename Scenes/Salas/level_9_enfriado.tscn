@@ -438,6 +438,7 @@ position = Vector2(1796, 666)
 scale = Vector2(1.5, 1.5)
 next_scene = "level_10_enfriado"
 spawn_pos = Vector2(1765, -1200)
+room_advancer = 9
 
 [node name="GameScreen" parent="." unique_id=1350099081 instance=ExtResource("4_kybpr")]
 
@@ -448,3 +449,4 @@ autoplay = true
 [node name="Croissanter" parent="." unique_id=377938656 instance=ExtResource("9_btt73")]
 position = Vector2(20, 132)
 patrol_point_xpos = 20
+patrol_range = 300
